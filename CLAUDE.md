@@ -186,8 +186,8 @@ card flag:
 
 | Flag | Means | Effect on the YAML |
 |---|---|---|
-| **Green** (`Ctrl+3`) | correct as it now stands in Anki | adopt any Hebrew or English edit, clear `needs_review` |
-| **Red** (`Ctrl+1`) | still wrong, or edited but unfinished | adopt any edit, keep `needs_review` |
+| **Green** (`⌘3` on macOS, `Ctrl+3` elsewhere) | correct as it now stands in Anki | adopt any Hebrew or English edit, clear `needs_review` |
+| **Red** (`⌘1` / `Ctrl+1`) | still wrong, or edited but unfinished | adopt any edit, keep `needs_review` |
 | none | untouched | nothing at all |
 
 `scripts/harvest_review.py` reads the collection (read-only, scratchpad copy), matches

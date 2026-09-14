@@ -182,8 +182,11 @@ Review them in Anki and record each verdict with a flag:
 
 | Flag | Means |
 |---|---|
-| **Green** (`Ctrl+3`) | correct as it stands — clears the flag |
-| **Red** (`Ctrl+1`) | still wrong — keeps it flagged for another pass |
+| **Green** (`⌘3` on macOS, `Ctrl+3` elsewhere) | correct as it stands — clears the flag |
+| **Red** (`⌘1` / `Ctrl+1`) | still wrong — keeps it flagged for another pass |
+
+Anki is a Qt application, so every shortcut its docs spell `Ctrl+N` is `⌘N` on macOS.
+The menu route always works: select the rows, then right-click → Flag, or Cards → Flag.
 
 Fix the Hebrew or the English directly in the Anki editor where either needs changing;
 the harvest picks both up along with the flag. Then:

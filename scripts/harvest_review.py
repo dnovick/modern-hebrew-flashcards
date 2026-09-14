@@ -3,8 +3,10 @@
 
 Review flagged cards in Anki, then mark each one:
 
-    green (Ctrl+3)  correct as it now stands — clears the review flag
-    red   (Ctrl+1)  still wrong — keeps it flagged for another pass
+    green (Cmd+3 on macOS, Ctrl+3 elsewhere)  correct as it stands — clears the flag
+    red   (Cmd+1 / Ctrl+1)                    still wrong — keeps it flagged
+
+The menu route always works too: select rows, right-click -> Flag, or Cards -> Flag.
 
 Edit the Hebrew or the English directly in Anki if either needs changing; this picks
 both up along with the flag. Unflagged cards are left completely alone.
@@ -67,7 +69,8 @@ def main() -> int:
 
     if not result.changes:
         print("\nNothing flagged yet. In the Anki browser, search tag:needs-review and mark\n"
-              "each card green (Ctrl+3, correct) or red (Ctrl+1, still wrong).")
+              "each card green (correct) or red (still wrong) — Cmd+3 / Cmd+1 on macOS,\n"
+              "Ctrl+3 / Ctrl+1 elsewhere, or right-click -> Flag.")
         return 0
 
     print(f"\n{result.approved} approved, {result.edits} with edited Hebrew:\n")
