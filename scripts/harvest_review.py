@@ -30,7 +30,7 @@ sys.path.insert(0, str(_REPO / "src"))
 
 from hebrew_cards.anki import collection as col       # noqa: E402
 from hebrew_cards.loader import DeckLoadError, load_all  # noqa: E402
-from hebrew_cards.review import harvest               # noqa: E402
+from hebrew_cards.review import find_orphans, harvest  # noqa: E402
 from hebrew_cards.yamlio import dump_deck             # noqa: E402
 
 
@@ -64,6 +64,14 @@ def main() -> int:
     copy = col.copy_collection(scratch / "collection.anki2")
     notes = col.read_notes(copy, generated=True)
     _print_status(notes)
+
+    orphans = find_orphans(decks, notes)
+    if orphans:
+        print(f"\n{len(orphans)} note(s) in Anki no longer have an entry in the deck data.")
+        print("Importing never deletes notes, so these linger until removed by hand:")
+        for orphan in orphans:
+            print(f'   {orphan.deck}   {orphan.hebrew}  "{orphan.english}"')
+        print("Find them in the browser by their text and delete them.")
 
     result = harvest(decks, notes)
 

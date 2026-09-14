@@ -52,6 +52,16 @@ class Change:
 
 
 @dataclass
+class Orphan:
+    """A generated note in Anki with no entry behind it any more."""
+
+    deck: str
+    nid: int
+    hebrew: str
+    english: str
+
+
+@dataclass
 class HarvestResult:
     changes: list[Change] = field(default_factory=list)
     unmatched: list[str] = field(default_factory=list)
@@ -96,6 +106,31 @@ ENGLISH_FIELD = 1
 
 def _field(note: RawNote, index: int) -> str:
     return note.fields[index].strip() if len(note.fields) > index else ""
+
+
+def find_orphans(
+    decks: list[tuple[Path, DeckFile]],
+    notes: list[RawNote],
+) -> list[Orphan]:
+    """Generated notes whose entry no longer exists in the YAML.
+
+    Importing a package adds and updates notes; it never deletes them. So when an
+    entry is removed from the source — two duplicates merged into one, say — its note
+    stays behind in the collection forever, still scheduled, still appearing in
+    reviews. Nothing detects that except looking for it, which is what this does.
+    Deleting the note is the owner's action, in Anki.
+    """
+    known = set(index_by_guid(decks))
+    return [
+        Orphan(
+            deck=note.deck,
+            nid=note.nid,
+            hebrew=_field(note, CITATION_FIELD),
+            english=_field(note, ENGLISH_FIELD),
+        )
+        for note in notes
+        if note.guid not in known
+    ]
 
 
 def harvest(

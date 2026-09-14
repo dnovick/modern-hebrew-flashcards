@@ -96,10 +96,7 @@ entries:
 - id: disturb
   pos: verb
   lemma: הִפְרִיע
-  english: disturb
-  needs_review: true
-  review_notes:
-  - הִפְרִיע also appears in this deck with a different gloss (disturb / interrupt, interfere) — merge or disambiguate
+  english: disturb, interrupt, interfere
   source_nid: 1414194392
 - id: make-fit
   pos: verb
@@ -144,14 +141,6 @@ entries:
   lemma: הִרְשִׁים
   english: impress
   source_nid: 1414194400
-- id: interrupt
-  pos: verb
-  lemma: הִפְרִיע
-  english: interrupt, interfere
-  needs_review: true
-  review_notes:
-  - הִפְרִיע also appears in this deck with a different gloss (disturb / interrupt, interfere) — merge or disambiguate
-  source_nid: 1414194401
 - id: defile
   pos: verb
   lemma: הִכְתִּים

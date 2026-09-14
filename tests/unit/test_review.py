@@ -173,3 +173,21 @@ def test_both_fields_can_change_at_once() -> None:
     harvest(decks, [note])
     assert entry.hebrew == "עָשָׂה"
     assert entry.english == "do, make"
+
+
+def test_orphans_are_detected() -> None:
+    """Merging two entries leaves the loser's note behind in Anki forever."""
+    from hebrew_cards.review import find_orphans
+
+    decks = a_deck(an_entry())
+    live = flagged_note("ball", "כָּדוּר", FLAG_NONE)
+    stale = flagged_note("interrupt", "הִפְרִיע", FLAG_NONE)
+    orphans = find_orphans(decks, [live, stale])
+    assert len(orphans) == 1
+    assert orphans[0].hebrew == "הִפְרִיע"
+
+
+def test_no_orphans_when_everything_matches() -> None:
+    decks = a_deck(an_entry())
+    orphans_fn = __import__("hebrew_cards.review", fromlist=["find_orphans"]).find_orphans
+    assert orphans_fn(decks, [flagged_note("ball", "כָּדוּר", FLAG_NONE)]) == []

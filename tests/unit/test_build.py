@@ -121,10 +121,15 @@ def _open_package(path: Path, workdir: Path) -> sqlite3.Connection:
 @pytest.mark.integration
 def test_building_the_real_decks(tmp_path: Path) -> None:
     """Behavioral test: build every real deck and inspect the package Anki would read."""
+    decks = load_all(DECKS_DIR)
+    expected_notes = sum(len(deck.entries) for _, deck in decks)
+
     out = tmp_path / "out.apkg"
-    stats = build_package(load_all(DECKS_DIR), out)
-    assert stats.notes == 400
-    assert stats.decks == 14
+    stats = build_package(decks, out)
+    # Counts come from the data, not a literal: entries legitimately come and go as
+    # duplicates are merged, and a hardcoded number just fails on the next merge.
+    assert stats.notes == expected_notes
+    assert stats.decks == len(decks)
 
     conn = _open_package(out, tmp_path / "unpacked")
     models_json, decks_json = conn.execute("select models, decks from col").fetchone()
@@ -141,13 +146,13 @@ def test_building_the_real_decks(tmp_path: Path) -> None:
     assert generated, "no decks were written"
     assert all(name.startswith("Modern Hebrew::") for name in generated)
 
-    assert conn.execute("select count(*) from notes").fetchone()[0] == 400
+    assert conn.execute("select count(*) from notes").fetchone()[0] == expected_notes
     # One card per note for now: the Hebrew front. The audio card's front is
     # {{Audio}}, which is empty until audio is generated, so Anki makes no card for
     # it yet — and will make one for every note the moment audio exists.
-    assert conn.execute("select count(*) from cards").fetchone()[0] == 400
+    assert conn.execute("select count(*) from cards").fetchone()[0] == expected_notes
     ordinals = dict(conn.execute("select ord, count(*) from cards group by ord"))
-    assert ordinals == {0: 400}, "only the Hebrew-front template should generate cards"
+    assert ordinals == {0: expected_notes}, "only the Hebrew-front template should generate cards"
     # The CoreData debris in the source collection must not survive.
     assert conn.execute("select count(*) from notes where tags like '%MCTag%'").fetchone()[0] == 0
     assert conn.execute(
@@ -160,6 +165,7 @@ def test_building_the_real_decks(tmp_path: Path) -> None:
 def test_rebuilding_produces_identical_guids(tmp_path: Path) -> None:
     """A rebuild must update notes in place, not duplicate them on re-import."""
     decks = load_all(DECKS_DIR)
+    expected = sum(len(deck.entries) for _, deck in decks)
     guids = []
     for run in ("first", "second"):
         out = tmp_path / f"{run}.apkg"
@@ -168,7 +174,7 @@ def test_rebuilding_produces_identical_guids(tmp_path: Path) -> None:
         guids.append(sorted(row[0] for row in conn.execute("select guid from notes")))
         conn.close()
     assert guids[0] == guids[1]
-    assert len(set(guids[0])) == 400, "GUIDs must be unique across all decks"
+    assert len(set(guids[0])) == expected, "GUIDs must be unique across all decks"
 
 
 @pytest.mark.integration
