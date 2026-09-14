@@ -166,8 +166,13 @@ using CI to find out.
   concurrent builds combine instead of conflicting. Never rewrite or reorder it.
 - `coverage-baseline.json` can conflict. Resolve by re-measuring, never by picking a
   side — the number has to match what the tool reports on that code.
-- The Anki collection is per-machine and not in git. Review flags made on one machine
-  are invisible to the other; harvest on the machine where the flagging happened.
+- The Anki collection is not in git, but the owner syncs it through AnkiWeb, and
+  **flags sync with it** — they live on cards, not in a local-only store. Review work
+  done on one machine is therefore available on the other. Sync Anki before harvesting,
+  since the harvest reads whatever that machine's collection currently holds.
+- `dist/` is gitignored, so the built `.apkg` does not travel. Rebuild it on the other
+  machine rather than looking for it.
+- `.venv` does not travel either. See the README for the one-line setup.
 
 ## Autonomous action policy
 
