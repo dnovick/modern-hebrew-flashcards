@@ -29,6 +29,7 @@ _FIELD_ORDER = (
     "infinitive",
     "drill",
     "governs",
+    "audio",
     "tags",
     "needs_review",
     "review_notes",

@@ -16,7 +16,7 @@ import pytest
 
 from hebrew_cards.build import PROVENANCE_TAG, build_note, build_package, _field_values, _tags
 from hebrew_cards.loader import load_all
-from hebrew_cards.models import Entry
+from hebrew_cards.models import DeckFile, DeckMeta, Entry
 from hebrew_cards.notetypes import model_for
 
 DECKS_DIR = Path(__file__).resolve().parents[2] / "data" / "decks"
@@ -43,8 +43,34 @@ def test_adjective_fields_fall_back_to_the_ms_form() -> None:
     assert values["FormFS"] == "טוֹבָה"
 
 
-def test_audio_field_is_present_but_empty_until_the_audio_milestone() -> None:
+def test_audio_field_is_empty_until_audio_is_generated() -> None:
+    """An empty Audio field is what suppresses the audio card — see note types."""
     assert _field_values(noun())["Audio"] == ""
+
+
+def test_audio_field_carries_the_sound_reference_when_present() -> None:
+    entry = noun()
+    entry.audio = "[sound:kadur.mp3]"
+    assert _field_values(entry)["Audio"] == "[sound:kadur.mp3]"
+
+
+def test_both_card_types_exist_on_every_note_type() -> None:
+    """Written Hebrew and audio are both first-class fronts, not one substituting."""
+    for pos in ("noun", "adjective", "verb", "adverb"):
+        names = [t["name"] for t in model_for(pos).templates]
+        assert names == ["Hebrew → meaning", "Audio → meaning"]
+
+
+def test_the_audio_front_shows_nothing_but_audio() -> None:
+    """Any visible text on that front would make it a reading card."""
+    audio_card = model_for("noun").templates[1]
+    assert audio_card["qfmt"].strip() == "{{Audio}}"
+
+
+def test_the_hebrew_front_shows_the_written_form() -> None:
+    hebrew_card = model_for("noun").templates[0]
+    assert "{{Hebrew}}" in hebrew_card["qfmt"]
+    assert "{{Audio}}" not in hebrew_card["qfmt"]
 
 
 def test_every_note_carries_the_provenance_tag() -> None:
@@ -115,8 +141,12 @@ def test_building_the_real_decks(tmp_path: Path) -> None:
     assert all(name.startswith("Modern Hebrew (rebuild)::") for name in generated)
 
     assert conn.execute("select count(*) from notes").fetchone()[0] == 400
-    # One card per note: audio → meaning, no reverse card.
+    # One card per note for now: the Hebrew front. The audio card's front is
+    # {{Audio}}, which is empty until audio is generated, so Anki makes no card for
+    # it yet — and will make one for every note the moment audio exists.
     assert conn.execute("select count(*) from cards").fetchone()[0] == 400
+    ordinals = dict(conn.execute("select ord, count(*) from cards group by ord"))
+    assert ordinals == {0: 400}, "only the Hebrew-front template should generate cards"
     # The CoreData debris in the source collection must not survive.
     assert conn.execute("select count(*) from notes where tags like '%MCTag%'").fetchone()[0] == 0
     assert conn.execute(
@@ -138,3 +168,28 @@ def test_rebuilding_produces_identical_guids(tmp_path: Path) -> None:
         conn.close()
     assert guids[0] == guids[1]
     assert len(set(guids[0])) == 400, "GUIDs must be unique across all decks"
+
+
+@pytest.mark.integration
+def test_audio_cards_appear_once_the_audio_field_is_populated(tmp_path: Path) -> None:
+    """The second card type is gated on the field, so it needs no config change.
+
+    Builds the same note twice — once without audio, once with — and checks that the
+    second grows an extra card. This is the mechanism the audio milestone relies on.
+    """
+    silent = Entry(id="ball", pos="noun", hebrew="כָּדוּר", english="ball")
+    deck = DeckFile(meta=DeckMeta(name="Nouns"), entries=[silent])
+
+    out = tmp_path / "silent.apkg"
+    build_package([(Path("nouns.yaml"), deck)], out)
+    conn = _open_package(out, tmp_path / "silent")
+    assert conn.execute("select count(*) from cards").fetchone()[0] == 1
+    conn.close()
+
+    voiced = silent.model_copy(update={"audio": "[sound:kadur.mp3]"})
+    deck_with_audio = DeckFile(meta=DeckMeta(name="Nouns"), entries=[voiced])
+    out2 = tmp_path / "voiced.apkg"
+    build_package([(Path("nouns.yaml"), deck_with_audio)], out2)
+    conn = _open_package(out2, tmp_path / "voiced")
+    assert conn.execute("select count(*) from cards").fetchone()[0] == 2
+    conn.close()

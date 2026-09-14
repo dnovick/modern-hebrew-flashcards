@@ -250,6 +250,57 @@ Key rules (always enforced):
 
 ## Card design
 
+### Vocabulary
+
+Every entry generates up to two cards. They train different skills and neither
+substitutes for the other.
+
+| Card | Front | Back |
+|---|---|---|
+| **Hebrew → meaning** | the pointed Hebrew | English, plus grammar detail and a replay control when audio exists |
+| **Audio → meaning** | audio and nothing else | English, plus the pointed Hebrew |
+
+- **Written Hebrew fronts are permanent, not a stopgap.** The owner wants them.
+  Listening is the weaker skill, not the only one being trained.
+- **Audio fronts are optional.** They appear for entries that have audio and not
+  otherwise — no configuration switch, because Anki builds a card only when its
+  front renders non-empty, and the audio front is `{{Audio}}` alone.
+- **The audio front must stay audio-only.** Any visible text on it turns a listening
+  card into a reading card, and the Hebrew-front card already covers reading.
+- Production cards (English → Hebrew) are still not generated. Both card types above
+  are recognition; production is a separate skill the owner has not asked for.
+
+Adding audio to a deck therefore doubles its card count. That is the intended
+behaviour, but it is worth stating when a deck is about to gain audio.
+
+## Data model
+
+Full specification: **[`docs/standards/data-model.md`](docs/standards/data-model.md)**
+
+Key rules (always enforced):
+
+- **One note per lexeme**, with per-POS note types (`MHF Noun`, `MHF Adjective`,
+  `MHF Verb`, `MHF Root`). The one exception is `MHF Verb Form`, one note per
+  conjugated form — each form is independently scheduled, since knowing כּוֹתֶבֶת says
+  little about whether you know כָּתַבְתִּי.
+- **Store everything, drill a subset.** Full paradigms live in YAML whether or not they
+  currently produce cards. A verb's `drill:` list controls which forms become cards;
+  the project default is `[present, past.1s, past.3ms]`.
+- **Never generate Hebrew forms algorithmically.** Weak verbs break the rules and
+  `gizra` only partly predicts how. A script may *propose* regular forms; they land
+  with `needs_review: true` and stay flagged until a human confirms.
+- **Guard conditional card templates on the field that makes the card meaningful**
+  (`{{#Plural}}...{{/Plural}}`), never on one that is always populated — that
+  generates junk cards for entries lacking the real content.
+- **Fields display, tags select.** Mirror linguistic properties into both.
+- `gender` is required on every noun. Unknown gender is `needs_review`, never a guess.
+- **Card generation is staged per deck** via `meta.card_types`. Notes are always built
+  with full metadata; enabling a card type is a config flip, not a data change. The
+  full matrix over the 400 extracted entries is ~1,800 cards — roughly 3.5× the
+  current review load — so default new decks to `[audio_meaning]` and let the owner opt in.
+
+## Card design
+
 ### Vocabulary (the primary card type)
 
 One card per entry. No reverse card.

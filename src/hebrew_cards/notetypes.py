@@ -42,21 +42,38 @@ CSS = """
   direction: ltr;
 }
 hr#answer { margin: 22px 0; border: none; border-top: 1px solid #ddd; }
+.replay { margin-top: 16px; }
 """
 
-# Until milestone 3 generates audio, the Audio field is empty on every note. A strict
-# audio-only front would render blank, so Anki would generate no card at all and the
-# deck would be unreviewable. This falls back to the written form, clearly marked, and
-# switches to audio by itself the moment the field is populated.
-_NO_AUDIO_NOTICE = '<div class="placeholder">no audio yet — reading, not listening</div>'
+# Two ways into a word, and they train different things:
+#
+#   "Hebrew → meaning"  reading recognition. Gated on the Hebrew field, which every
+#                       note has, so this card always exists.
+#   "Audio → meaning"   listening recognition, with nothing visible to read. Gated on
+#                       the Audio field, which is empty until audio is generated — so
+#                       Anki creates this card only for decks that have audio, and
+#                       creates it automatically once they do.
+#
+# Anki builds a card only when its front renders non-empty, so the gating needs no
+# extra machinery: the presence of the field is the switch.
 
 
-def _audio_front(citation_field: str) -> str:
+def _hebrew_front(citation_field: str) -> str:
+    return f'<div class="heb">{{{{{citation_field}}}}}</div>'
+
+
+def _hebrew_back(citation_field: str, meta_rows: str = "") -> str:
     return (
-        "{{#Audio}}{{Audio}}{{/Audio}}\n"
-        "{{^Audio}}" + _NO_AUDIO_NOTICE
-        + f'<div class="heb">{{{{{citation_field}}}}}</div>{{{{/Audio}}}}'
+        "{{FrontSide}}\n<hr id=answer>\n"
+        '<div class="english">{{English}}</div>\n'
+        + meta_rows
+        + "\n{{#Audio}}<div class=\"replay\">{{Audio}}</div>{{/Audio}}"
     )
+
+
+def _audio_front() -> str:
+    """Audio and nothing else — any visible text turns this into a reading card."""
+    return "{{Audio}}"
 
 
 def _audio_back(citation_field: str, meta_rows: str = "") -> str:
@@ -66,6 +83,22 @@ def _audio_back(citation_field: str, meta_rows: str = "") -> str:
         f'<div class="heb">{{{{{citation_field}}}}}</div>\n'
         + meta_rows
     )
+
+
+def _card_pair(citation_field: str, meta_rows: str = "") -> list[dict[str, str]]:
+    """The two standard vocabulary cards for a note type."""
+    return [
+        {
+            "name": "Hebrew → meaning",
+            "qfmt": _hebrew_front(citation_field),
+            "afmt": _hebrew_back(citation_field, meta_rows),
+        },
+        {
+            "name": "Audio → meaning",
+            "qfmt": _audio_front(),
+            "afmt": _audio_back(citation_field, meta_rows),
+        },
+    ]
 
 
 def _model(name: str, fields: list[str], templates: list[dict[str, str]]) -> genanki.Model:
@@ -82,17 +115,11 @@ def noun_model() -> genanki.Model:
     return _model(
         "MHF Noun",
         ["Hebrew", "English", "Gender", "Plural", "Audio", "PluralAudio", "Notes"],
-        [
-            {
-                "name": "Audio → meaning",
-                "qfmt": _audio_front("Hebrew"),
-                "afmt": _audio_back(
-                    "Hebrew",
-                    '{{#Gender}}<div class="meta">{{Gender}}</div>{{/Gender}}\n'
-                    '{{#Plural}}<div class="meta">{{Plural}}</div>{{/Plural}}',
-                ),
-            }
-        ],
+        _card_pair(
+            "Hebrew",
+            '{{#Gender}}<div class="meta">{{Gender}}</div>{{/Gender}}\n'
+            '{{#Plural}}<div class="meta">{{Plural}}</div>{{/Plural}}',
+        ),
     )
 
 
@@ -100,16 +127,7 @@ def adjective_model() -> genanki.Model:
     return _model(
         "MHF Adjective",
         ["Hebrew", "English", "FormMS", "FormFS", "FormMP", "FormFP", "Audio", "Notes"],
-        [
-            {
-                "name": "Audio → meaning",
-                "qfmt": _audio_front("Hebrew"),
-                "afmt": _audio_back(
-                    "Hebrew",
-                    '{{#FormFS}}<div class="meta">{{FormFS}}</div>{{/FormFS}}',
-                ),
-            }
-        ],
+        _card_pair("Hebrew", '{{#FormFS}}<div class="meta">{{FormFS}}</div>{{/FormFS}}'),
     )
 
 
@@ -117,17 +135,11 @@ def verb_model() -> genanki.Model:
     return _model(
         "MHF Verb",
         ["Lemma", "English", "Root", "Binyan", "Gizra", "Infinitive", "Audio", "Notes"],
-        [
-            {
-                "name": "Audio → meaning",
-                "qfmt": _audio_front("Lemma"),
-                "afmt": _audio_back(
-                    "Lemma",
-                    '{{#Infinitive}}<div class="meta">{{Infinitive}}</div>{{/Infinitive}}\n'
-                    '{{#Binyan}}<div class="meta">{{Binyan}}</div>{{/Binyan}}',
-                ),
-            }
-        ],
+        _card_pair(
+            "Lemma",
+            '{{#Infinitive}}<div class="meta">{{Infinitive}}</div>{{/Infinitive}}\n'
+            '{{#Binyan}}<div class="meta">{{Binyan}}</div>{{/Binyan}}',
+        ),
     )
 
 
@@ -136,13 +148,7 @@ def particle_model() -> genanki.Model:
     return _model(
         "MHF Particle",
         ["Hebrew", "English", "Audio", "Notes"],
-        [
-            {
-                "name": "Audio → meaning",
-                "qfmt": _audio_front("Hebrew"),
-                "afmt": _audio_back("Hebrew"),
-            }
-        ],
+        _card_pair("Hebrew"),
     )
 
 

@@ -17,8 +17,9 @@ Existing Anki decks do not help with that, because they have no audio and are
 mostly English→Hebrew recognition. Reading `כָּדוּר` and recalling "ball" is a
 different skill from hearing that word in a sentence and not stalling.
 
-So this project inverts the default: **audio is the front of the card**, text is
-the answer.
+So the project adds a card type the old decks never had: **audio on the front, with
+nothing to read**. It sits alongside the written-Hebrew cards rather than replacing
+them — reading and listening are different skills, and only one of them is the gap.
 
 ## Architecture
 
@@ -62,7 +63,8 @@ Beyond plain vocabulary, these are the formats that actually target the stated g
 
 | Type | Front | Back | Trains |
 |---|---|---|---|
-| **Audio → meaning** | audio only | English + pointed Hebrew | core listening recognition |
+| **Hebrew → meaning** | pointed Hebrew | English + grammar detail | reading recognition |
+| **Audio → meaning** | audio only | English + pointed Hebrew | listening recognition |
 | **Sentence dictation** | sentence audio | full sentence text | parsing connected speech |
 | **Audio cloze** | sentence audio, one word blanked | the missing word | hearing a word in context |
 | Minimal pairs | two clips | which one was X | phoneme discrimination |
@@ -72,11 +74,11 @@ Beyond plain vocabulary, these are the formats that actually target the stated g
 | Adjective agreement | citation + target form | the agreeing form | the four-form pattern |
 | Root family | a root | the words derived from it | guessing unknown words by ear |
 
-The audio-fronted types are the point of the project. Production cards
-(English → Hebrew) are deliberately **not** generated — the gap is recognition.
+Production cards (English → Hebrew) are deliberately **not** generated — both
+vocabulary cards above are recognition, and production is a separate skill.
 
-For vocabulary, one card is generated per entry: audio on the front with no visible
-text of any kind, English plus the pointed Hebrew on the back.
+Audio-fronted cards are what the old decks were missing, but they are additions, not
+replacements. A word with audio gets two cards: one read, one heard.
 
 ## Data model
 
@@ -137,10 +139,10 @@ python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
 `Modern Hebrew (rebuild)` deck root. Import it by hand — nothing here ever writes
 to your live collection.
 
-> **Cards currently have no audio.** Until the audio milestone lands, the front of
-> a card falls back to the written Hebrew, marked with a warning. These are reading
-> cards, not the listening cards the project is for. The template switches to audio
-> automatically once the field is populated.
+> **Audio is not generated yet**, so only the Hebrew-front cards exist today. The
+> audio-front template is already in place and gated on the `Audio` field, so those
+> cards appear by themselves once audio lands — no rebuild of the data, no config
+> change. Expect the card count to roughly double at that point.
 
 Milestones:
 

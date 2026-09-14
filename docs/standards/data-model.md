@@ -129,14 +129,18 @@ cards.
 
 | Card | Front | Back | From |
 |---|---|---|---|
-| Audio → meaning | audio only | English + pointed Hebrew | every entry |
+| Hebrew → meaning | the pointed Hebrew | English + grammar detail | every entry |
+| Audio → meaning | audio only | English + pointed Hebrew | every entry that has audio |
 | Gender ID | noun audio | m / f | `MHF Noun` |
 | Plural production | singular audio | plural form | `MHF Noun`, guarded on `Plural` |
 | Adjective agreement | citation + target gender/number | agreeing form | `MHF Adjective` |
 | Form → parse | conjugated-form audio | person, number, tense, binyan, lemma | `MHF Verb Form` |
 | Root family | the root | words in the decks derived from it | `MHF Root` |
 
-The front of an audio card contains **nothing but audio** — see `CLAUDE.md`, Card design.
+Both vocabulary cards are generated for every entry that supports them. The audio
+card's front is `{{Audio}}` alone, so Anki creates it only where audio exists — the
+field's presence is the switch, and no configuration is needed to turn it on. The
+audio front stays audio-only; the Hebrew-front card is what covers reading.
 
 ## Staged generation
 

@@ -20,12 +20,16 @@ This carries over the reference project's rule unchanged. The original rationale
 that transliteration lets a learner dodge the script entirely, and the habit is hard
 to unlearn once formed.
 
-A second rationale applies specifically here. Transliteration's main remaining value
-for Modern Hebrew is marking stress, which nikud does not encode — `אוֹכֶל` is *ókhel*
-(food) or *okhél* (eating) depending on it. But in this project every card carries
-audio, and **the recording is the stress cue**. A written stress mark would be a
-redundant second signal, and a weaker one, since the goal is training the ear rather
-than the eye.
+A second consideration applies here. Transliteration's main remaining value for
+Modern Hebrew is marking stress, which nikud does not encode — `אוֹכֶל` is *ókhel*
+(food) or *okhél* (eating) depending on it. Where a word has audio, the recording
+supplies that cue directly and better than a written mark would.
+
+Note the limit of that argument: audio is optional, so some cards carry none, and
+for those nothing marks the stress. The decision still stands on consistency with
+the owner's other projects, which was the primary reason for it. If unmarked stress
+turns out to cause real trouble on silent cards, the fix is to give those words
+audio rather than to reintroduce romanization.
 
 **The one narrow exception**, inherited from the reference standard: a brief
 illustrative English sound-alike is permitted when a card is specifically teaching a

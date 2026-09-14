@@ -50,6 +50,10 @@ class Entry(BaseModel):
     # A preposition the lexeme governs, e.g. נִטְפָּל (אל)
     governs: str | None = None
 
+    # Anki sound reference, e.g. "[sound:kadur-he-IL-A.mp3]". Populated by audio
+    # generation; empty here means Anki generates no audio card for this entry.
+    audio: str | None = None
+
     tags: list[str] = Field(default_factory=list)
 
     # Authoring metadata. Stays in YAML; only `needs_review` reaches Anki, as a tag.

@@ -40,7 +40,7 @@ def _field_values(entry: Entry) -> dict[str, str]:
     forms = entry.forms or {}
     common = {
         "English": entry.english,
-        "Audio": "",          # populated by the audio milestone
+        "Audio": entry.audio or "",
         "Notes": "",
     }
     if entry.pos == "verb":
