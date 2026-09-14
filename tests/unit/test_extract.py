@@ -205,3 +205,27 @@ def test_generated_notes_are_never_read_back_as_source() -> None:
     assert not is_generated("Basic", "")
     # A tag that merely contains the marker as a substring is not the marker.
     assert not is_generated("Basic", "src::mhfx")
+
+
+@pytest.mark.integration
+def test_generated_notes_are_found_outside_the_modern_hebrew_tree(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """Harvest must see generated notes wherever they live.
+
+    During migration they sit under a staging root ("Modern Hebrew (rebuild)"), which
+    the source-side scope check deliberately excludes. Applying that check to the
+    generated side too made harvest report zero notes and silently do nothing.
+    """
+    if not DEFAULT_COLLECTION.exists():
+        pytest.skip("no local Anki collection")
+
+    from hebrew_cards.anki import collection as col
+
+    copy = col.copy_collection(tmp_path / "collection.anki2")
+    generated = col.read_notes(copy, generated=True)
+    source = col.read_notes(copy, generated=False)
+
+    # Whatever the deck layout, the two sides never overlap.
+    assert not ({n.nid for n in generated} & {n.nid for n in source})
+    # Source notes are confined to the Modern Hebrew tree; generated ones are not.
+    assert all(col.in_scope(n.deck) for n in source)
+    assert all(col.is_generated(n.notetype, n.tags) for n in generated)

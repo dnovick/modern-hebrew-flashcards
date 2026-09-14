@@ -32,6 +32,20 @@ from hebrew_cards.review import harvest               # noqa: E402
 from hebrew_cards.yamlio import dump_deck             # noqa: E402
 
 
+def _print_status(notes: list[col.RawNote]) -> None:
+    """Report review progress, so it can be checked without hunting through the UI."""
+    awaiting = [n for n in notes if "needs-review" in n.tags.split()]
+    green = [n for n in notes if n.flag == col.FLAG_GREEN]
+    red = [n for n in notes if n.flag == col.FLAG_RED]
+    undecided = [n for n in awaiting if n.flag == col.FLAG_NONE]
+
+    print(f"{len(notes)} generated notes in the collection")
+    print(f"  {len(awaiting):4d} tagged needs-review")
+    print(f"  {len(green):4d} flagged green  (correct)        [search: flag:3]")
+    print(f"  {len(red):4d} flagged red    (still wrong)    [search: flag:1]")
+    print(f"  {len(undecided):4d} still undecided                [search: tag:needs-review flag:0]")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--decks", type=Path, default=_REPO / "data" / "decks")
@@ -47,13 +61,13 @@ def main() -> int:
     scratch = Path(tempfile.mkdtemp(prefix="hebrew-cards-review-"))
     copy = col.copy_collection(scratch / "collection.anki2")
     notes = col.read_notes(copy, generated=True)
-    flagged = [n for n in notes if n.flag != col.FLAG_NONE]
-    print(f"{len(notes)} generated notes in the collection, {len(flagged)} flagged")
+    _print_status(notes)
 
     result = harvest(decks, notes)
 
     if not result.changes:
-        print("\nNothing flagged. Flag cards green (correct) or red (still wrong) in Anki first.")
+        print("\nNothing flagged yet. In the Anki browser, search tag:needs-review and mark\n"
+              "each card green (Ctrl+3, correct) or red (Ctrl+1, still wrong).")
         return 0
 
     print(f"\n{result.approved} approved, {result.edits} with edited Hebrew:\n")

@@ -89,9 +89,15 @@ def is_generated(notetype: str, tags: str) -> bool:
 def read_notes(collection_copy: Path, *, generated: bool = False) -> list[RawNote]:
     """Return `Modern Hebrew::*` notes from the collection copy.
 
-    By default this yields only *source* notes — the legacy ones extraction reads.
+    By default this yields only *source* notes: in the `Modern Hebrew` tree, and not
+    produced by this pipeline.
+
     Pass `generated=True` to read the notes this pipeline produced instead, which is
-    what the review-harvest flow needs.
+    what the review-harvest flow needs. Those are matched by note marker alone, with
+    no deck restriction — a generated note is generated wherever it sits, and it may
+    legitimately sit outside the `Modern Hebrew` tree (under a staging root during a
+    migration, or anywhere the owner has moved it). Requiring a deck match here once
+    made harvest silently find nothing.
     """
     conn = sqlite3.connect(f"file:{collection_copy}?mode=ro", uri=True)
     try:
@@ -116,10 +122,10 @@ def read_notes(collection_copy: Path, *, generated: bool = False) -> list[RawNot
         query = "select id, mid, flds, tags, guid from notes"
         for nid, mid, flds, tags, guid in conn.execute(query):
             deck = note_deck.get(nid, "?")
-            if not in_scope(deck):
-                continue
             notetype = notetypes.get(mid, "?")
             if is_generated(notetype, tags) != generated:
+                continue
+            if not generated and not in_scope(deck):
                 continue
             notes.append(
                 RawNote(
