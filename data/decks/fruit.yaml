@@ -41,7 +41,7 @@ entries:
   source_nid: 1414194168
 - id: apple
   pos: noun
-  hebrew: תַפּוּחַ
+  hebrew: תַּפּוּחַ
   english: apple
   tags:
   - topic::fruit

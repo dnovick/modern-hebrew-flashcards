@@ -39,8 +39,26 @@ def load_deck(path: Path) -> DeckFile:
         if entry.id in seen:
             raise DeckLoadError(f"{path.name}: duplicate entry id {entry.id!r}")
         seen.add(entry.id)
+        _normalize_hebrew(entry)
         _check_hebrew(path, entry)
     return deck
+
+
+def _normalize_hebrew(entry: Entry) -> None:
+    """NFC-normalize every Hebrew field.
+
+    Combining marks have a canonical order — dagesh (class 21) precedes patach
+    (class 33) — and hand-editing YAML can easily produce them the other way round,
+    which renders inconsistently across fonts and breaks equality comparisons against
+    otherwise identical text. Normalizing on load rather than on write means
+    externally-edited files are handled the same as generated ones.
+    """
+    for field_name in ("hebrew", "lemma", "plural", "infinitive", "governs"):
+        value = getattr(entry, field_name)
+        if value:
+            setattr(entry, field_name, hebrew.normalize(value))
+    if entry.forms:
+        entry.forms = {k: hebrew.normalize(v) for k, v in entry.forms.items()}
 
 
 def _check_hebrew(path: Path, entry: Entry) -> None:

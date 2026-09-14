@@ -88,3 +88,22 @@ def test_the_check_covers_every_hebrew_field(tmp_path: Path) -> None:
     bad = VALID.replace("hebrew: כָּדוּר", "hebrew: כָּדוּר\n  plural: ַתַפּוּחִים")
     with pytest.raises(DeckLoadError, match="begins with a combining mark"):
         load_deck(write(tmp_path, bad))
+
+
+def test_hebrew_is_nfc_normalized_on_load(tmp_path: Path) -> None:
+    """Hand-edited YAML can carry combining marks in a non-canonical order.
+
+    Canonical order is by combining class ascending: patach is 17 and dagesh is 21,
+    so patach precedes dagesh. Written the other way the text compares unequal to the
+    same word written correctly, which would break deduplication and GUID stability.
+    Codepoints are spelled out here because the two orderings are visually identical.
+    """
+    import unicodedata
+
+    TAV, PATACH, DAGESH = "\u05ea", "\u05b7", "\u05bc"
+    non_canonical = TAV + DAGESH + PATACH
+    canonical = TAV + PATACH + DAGESH
+    assert unicodedata.normalize("NFC", non_canonical) == canonical, "premise check"
+
+    deck = load_deck(write(tmp_path, VALID.replace("hebrew: כָּדוּר", f"hebrew: {non_canonical}")))
+    assert deck.entries[0].hebrew == canonical
