@@ -2,5 +2,5 @@
   "unit_min_percent": 62.85,
   "full_min_percent": 69.67,
   "updated": "2026-09-13",
-  "notes": "Initial baseline, set by the extraction milestone. Raise only via `python scripts/check_coverage.py --update-baseline`, in the same commit that earns the increase \u2014 never by hand. Branch coverage is on (setup.cfg), so these numbers are stricter and lower than line coverage would report."
+  "notes": "full_min_percent moved DOWN this commit, 69.75 -> 69.67. Cause: scripts/extract_collection.py grew from 83 to 88 statements when the --force overwrite guard was added, and scripts/ is measured but has no direct tests, so new uncovered statements dilute the total even though the commit added no untested library code (loader.py is at 100%). The drop is 0.08 points, inside the 0.1 tolerance, so the ratchet would not have failed either way. Recorded explicitly because the policy requires a lowered floor to say why — a floor that drifts down unremarked stops being a ratchet. Raise only via `python scripts/check_coverage.py --update-baseline`, in the same commit that earns the increase, never by hand."
 }
