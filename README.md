@@ -172,6 +172,31 @@ distinguishes them. Two markers do, and extraction depends on them:
 never fold the pipeline's own output back into its source data. It also refuses to
 overwrite `data/decks/` without `--force`.
 
+## Reviewing flagged entries
+
+Extraction flags anything it could not vouch for — unpointed Hebrew, a gloss that
+looks misfiled, two entries claiming the same word. Those carry `needs_review` in the
+YAML and a `needs-review` tag in Anki. Search `tag:needs-review` to find them.
+
+Review them in Anki and record each verdict with a flag:
+
+| Flag | Means |
+|---|---|
+| **Green** (`Ctrl+3`) | correct as it stands — clears the flag |
+| **Red** (`Ctrl+1`) | still wrong — keeps it flagged for another pass |
+
+Fix the Hebrew directly in the Anki editor where it needs changing; the harvest picks
+up the edit along with the flag. Then:
+
+```bash
+.venv/bin/python scripts/harvest_review.py            # show what it would do
+.venv/bin/python scripts/harvest_review.py --apply    # write it to the YAML
+.venv/bin/python scripts/build_decks.py               # rebuild
+```
+
+Unflagged cards are left completely alone, so an accidental edit in the browser can
+never rewrite the source data — only an explicit verdict does.
+
 ## Development
 
 Conventions follow [`berean-bible-bots`](https://github.com/dnovick/berean-bible-bots)
