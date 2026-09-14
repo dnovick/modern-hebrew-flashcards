@@ -140,8 +140,8 @@ The front of an audio card contains **nothing but audio** — see `CLAUDE.md`, C
 
 ## Staged generation
 
-The full matrix over the existing 516 notes produces roughly 2,100 cards — about four
-times the current review load, with verb forms alone accounting for 57% of it.
+The full matrix over the 400 extracted entries produces roughly 1,800 cards — about
+3.5× the current review load, with verb forms alone accounting for over half of it.
 
 Card generation is therefore **staged**, controlled per deck:
 

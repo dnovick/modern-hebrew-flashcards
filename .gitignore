@@ -29,3 +29,7 @@ service-account*.json
 
 # macOS
 .DS_Store
+
+# Coverage measurement output (coverage-baseline.json IS tracked)
+coverage-unit.json
+coverage-full.json

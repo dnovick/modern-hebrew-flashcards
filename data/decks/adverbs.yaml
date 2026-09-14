@@ -1,0 +1,91 @@
+meta:
+  name: Adverbs
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Adverbs
+entries:
+- id: accidentally
+  pos: adverb
+  hebrew: בְּטָעוּת
+  english: accidentally, mistakenly
+  source_nid: 1414194310
+- id: regrettably
+  pos: adverb
+  hebrew: לְצַעֲרִי
+  english: regrettably, unfortunately
+  source_nid: 1414194311
+- id: temporarily
+  pos: adverb
+  hebrew: זְמַנִּית
+  english: temporarily
+  source_nid: 1414194312
+- id: frankly
+  pos: adverb
+  hebrew: בְּכֵנוּת
+  english: frankly
+  source_nid: 1414194313
+- id: to-the-best-of-my-understanding
+  pos: adverb
+  hebrew: לְפִי מֵיטַב הֲבָנָתִי
+  english: to the best of my understanding
+  source_nid: 1414194314
+- id: between-us
+  pos: adverb
+  hebrew: בֵּינֵינוּ
+  english: between us, confidentially
+  source_nid: 1414194315
+- id: personally
+  pos: adverb
+  hebrew: אִישִׁית
+  english: personally
+  source_nid: 1414194316
+- id: astonishingly
+  pos: adverb
+  hebrew: לְתַדְהֵמַתִי
+  english: astonishingly
+  source_nid: 1414194317
+- id: actually
+  pos: adverb
+  hebrew: בְּעֶצֶם
+  english: actually
+  source_nid: 1414194318
+- id: when
+  pos: adverb
+  hebrew: אֵימָתַי
+  english: when?
+  source_nid: 1414194319
+- id: especially
+  pos: adverb
+  hebrew: בִּמְיֻחָד
+  english: especially
+  source_nid: 1414194320
+- id: not-at-all
+  pos: adverb
+  hebrew: בִּכְלָל לֹא
+  english: not at all
+  source_nid: 1414194321
+- id: too-much
+  pos: adverb
+  hebrew: יוֹתֵר מִדַי
+  english: too much
+  source_nid: 1414194322
+- id: quite
+  pos: adverb
+  hebrew: דַי
+  english: quite
+  source_nid: 1414194323
+- id: certainly
+  pos: adverb
+  hebrew: וַדַאִי
+  english: certainly
+  source_nid: 1414194324
+- id: lest
+  pos: adverb
+  hebrew: שֶׁמַא
+  english: lest
+  source_nid: 1414194325
+- id: surprisingly
+  pos: adverb
+  hebrew: לְהַפְתָּעָתִי
+  english: surprisingly
+  source_nid: 1414194326

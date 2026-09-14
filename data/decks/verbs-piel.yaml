@@ -1,0 +1,96 @@
+meta:
+  name: Verbs::Piel
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Verbs::Piel
+entries:
+- id: fire
+  pos: verb
+  lemma: פִטֵּר
+  english: fire, lay off, dismiss
+  binyan: piel
+  source_nid: 1414194376
+- id: cool
+  pos: verb
+  lemma: צִינֵן
+  english: cool
+  binyan: piel
+  source_nid: 1414194377
+- id: blow-up
+  pos: verb
+  lemma: פּוֹצֵץ
+  english: blow up, shatter, smash
+  binyan: piel
+  source_nid: 1414194378
+- id: entertain
+  pos: verb
+  lemma: בִּידֵר
+  english: entertain
+  binyan: piel
+  source_nid: 1414194379
+- id: add
+  pos: verb
+  lemma: צֵירֵף
+  english: add, connect, attach
+  binyan: piel
+  source_nid: 1414194380
+- id: iron
+  pos: verb
+  lemma: גִיהֵץ
+  english: iron
+  binyan: piel
+  source_nid: 1414194381
+- id: fry
+  pos: verb
+  lemma: טִיגֵּן
+  english: fry
+  binyan: piel
+  source_nid: 1414194382
+- id: abuse
+  pos: verb
+  lemma: נִיצֵל
+  english: abuse, take advantage of, exploit
+  binyan: piel
+  source_nid: 1414194383
+- id: win
+  pos: verb
+  lemma: נִיצֵח
+  english: win
+  binyan: piel
+  source_nid: 1414194384
+- id: tilt
+  pos: verb
+  lemma: שִׁיפֵּעַ
+  english: tilt, slant
+  binyan: piel
+  source_nid: 1414194385
+- id: treat
+  pos: verb
+  lemma: טִיפֵּל
+  english: treat, take care of
+  binyan: piel
+  source_nid: 1414194386
+- id: stroke
+  pos: verb
+  lemma: לִיטֵף
+  english: stroke, caress
+  binyan: piel
+  source_nid: 1414194387
+- id: yawn
+  pos: verb
+  lemma: פִּיהֵק
+  english: yawn
+  binyan: piel
+  source_nid: 1414194388
+- id: comb
+  pos: verb
+  lemma: סִרֵק
+  english: comb
+  binyan: piel
+  source_nid: 1414194389
+- id: converse
+  pos: verb
+  lemma: שׂוֹחֵחַ
+  english: converse, chat
+  binyan: piel
+  source_nid: 1414194390

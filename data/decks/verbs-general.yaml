@@ -1,0 +1,294 @@
+meta:
+  name: Verbs::General
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Verbs::General
+  notes:
+  - Source deck mixes parts of speech — it contains adverbs (תֵכֶף 'instantaneously', בְּפֵרוּשׁ 'clearly') alongside verbs. Entries whose gloss looks adverbial are flagged; the rest still need a pass.
+entries:
+- id: instantaneously
+  pos: verb
+  lemma: תֵכֶף
+  english: instantaneously
+  needs_review: true
+  review_notes:
+  - gloss looks adverbial; this source deck mixes parts of speech
+  source_nid: 1414194308
+- id: clearly
+  pos: verb
+  lemma: בְּפֵרוּשׁ
+  english: clearly
+  needs_review: true
+  review_notes:
+  - gloss looks adverbial; this source deck mixes parts of speech
+  source_nid: 1414194309
+- id: do
+  pos: verb
+  lemma: עשה
+  english: do, make
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194337
+- id: organize
+  pos: verb
+  lemma: עָרַך
+  english: organize, edit, handle
+  source_nid: 1414194338
+- id: burn
+  pos: verb
+  lemma: שָׂרָף
+  english: burn
+  source_nid: 1414194339
+- id: clap
+  pos: verb
+  lemma: מָחָא
+  english: clap
+  source_nid: 1414194340
+- id: shake-hands
+  pos: verb
+  lemma: לָחָץ יָדַיִים
+  english: shake hands
+  source_nid: 1414194341
+- id: reveal
+  pos: verb
+  lemma: חָשַׂף
+  english: reveal, expose
+  source_nid: 1414194342
+- id: attack
+  pos: verb
+  lemma: תָקַף
+  english: attack
+  source_nid: 1414194343
+- id: belch
+  pos: verb
+  lemma: גִיהֵק
+  english: belch
+  source_nid: 1414194371
+- id: hiccup
+  pos: verb
+  lemma: שִׁיהֵק
+  english: hiccup
+  source_nid: 1414194372
+- id: pay
+  pos: verb
+  lemma: שִילֵם
+  english: pay
+  source_nid: 1414194373
+- id: refuse
+  pos: verb
+  lemma: סִירֵב
+  english: refuse, decline, reject
+  source_nid: 1414194374
+- id: wear-out
+  pos: verb
+  lemma: רִיפֵּט
+  english: wear out, tatter
+  source_nid: 1414194375
+- id: promise
+  pos: verb
+  lemma: הבטיח
+  english: promise
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194391
+- id: disturb
+  pos: verb
+  lemma: הִפְרִיע
+  english: disturb
+  needs_review: true
+  review_notes:
+  - הִפְרִיע also appears in this deck with a different gloss (disturb / interrupt, interfere) — merge or disambiguate
+  source_nid: 1414194392
+- id: make-fit
+  pos: verb
+  lemma: הִכְשִׁיר
+  english: make fit, qualify
+  source_nid: 1414194393
+- id: present
+  pos: verb
+  lemma: הִצִיג
+  english: present
+  source_nid: 1414194394
+- id: preach
+  pos: verb
+  lemma: הִכְרִיז
+  english: preach, announce, declare
+  source_nid: 1414194395
+- id: warn
+  pos: verb
+  lemma: הִזְהִיר
+  english: warn
+  source_nid: 1414194396
+- id: persist
+  pos: verb
+  lemma: הִתְמִיד
+  english: persist
+  source_nid: 1414194397
+- id: offend
+  pos: verb
+  lemma: הֶעֱלִיב
+  english: offend, insult
+  source_nid: 1414194398
+- id: neglect
+  pos: verb
+  lemma: הזניח
+  english: neglect
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194399
+- id: impress
+  pos: verb
+  lemma: הִרְשִׁים
+  english: impress
+  source_nid: 1414194400
+- id: interrupt
+  pos: verb
+  lemma: הִפְרִיע
+  english: interrupt, interfere
+  needs_review: true
+  review_notes:
+  - הִפְרִיע also appears in this deck with a different gloss (disturb / interrupt, interfere) — merge or disambiguate
+  source_nid: 1414194401
+- id: defile
+  pos: verb
+  lemma: הכתים
+  english: defile, stain
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194402
+- id: persist-2
+  pos: verb
+  lemma: התמיד
+  english: persist, persevere
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194403
+- id: disobey
+  pos: verb
+  lemma: הִמְרֶה
+  english: disobey
+  source_nid: 1414194404
+- id: bear-fruit
+  pos: verb
+  lemma: הֵנִיב
+  english: bear fruit, yield
+  source_nid: 1414194405
+- id: distribute
+  pos: verb
+  lemma: הֵפִיץ
+  english: distribute, scatter
+  source_nid: 1414194406
+- id: remove
+  pos: verb
+  lemma: הֵסִיר
+  english: remove
+  source_nid: 1414194407
+- id: deposit
+  pos: verb
+  lemma: הפְקִיד
+  english: deposit
+  needs_review: true
+  review_notes:
+  - a consonant appears to be missing its vowel point
+  source_nid: 1414194408
+- id: interfere
+  pos: verb
+  lemma: הִתְעָרֵב
+  english: interfere
+  needs_review: true
+  review_notes:
+  - הִתְעָרֵב also appears in this deck with a different gloss (interfere / interrupt, interfere) — merge or disambiguate
+  source_nid: 1414194423
+- id: pant
+  pos: verb
+  lemma: הִתְנָשֵף
+  english: pant
+  source_nid: 1414194424
+- id: breathe-heavily
+  pos: verb
+  lemma: התנשם
+  english: breathe heavily
+  needs_review: true
+  review_notes:
+  - unpointed
+  - gloss looks adverbial; this source deck mixes parts of speech
+  source_nid: 1414194425
+- id: participate
+  pos: verb
+  lemma: השתתף
+  english: participate
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194426
+- id: workout
+  pos: verb
+  lemma: התעמל
+  english: workout
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194427
+- id: train
+  pos: verb
+  lemma: התאמן
+  english: train, practice
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194428
+- id: look
+  pos: verb
+  lemma: מתבונן
+  english: look, contemplate
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194429
+- id: cough
+  pos: verb
+  lemma: השתעל
+  english: cough
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194430
+- id: compete
+  pos: verb
+  lemma: התמודד
+  english: compete
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194431
+- id: renounce
+  pos: verb
+  lemma: התכחש
+  english: renounce, deny
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194432
+- id: stretch-oneself
+  pos: verb
+  lemma: הִתְמָתֵּחַ
+  english: stretch oneself
+  source_nid: 1414194433
+- id: interrupt-2
+  pos: verb
+  lemma: הִתְעָרֵב
+  english: interrupt, interfere
+  needs_review: true
+  review_notes:
+  - הִתְעָרֵב also appears in this deck with a different gloss (interfere / interrupt, interfere) — merge or disambiguate
+  source_nid: 1414194434
+- id: dress-up
+  pos: verb
+  lemma: הִתְחַפֵּשׂ
+  english: dress up, disguise
+  source_nid: 1414194435

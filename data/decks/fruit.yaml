@@ -1,0 +1,51 @@
+meta:
+  name: Fruit
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Fruit
+entries:
+- id: orange
+  pos: noun
+  hebrew: תָפוּז
+  english: orange
+  tags:
+  - topic::fruit
+  source_nid: 1414194163
+- id: grape
+  pos: noun
+  hebrew: עֵנָב
+  english: grape
+  tags:
+  - topic::fruit
+  source_nid: 1414194165
+- id: grapefruit
+  pos: noun
+  hebrew: אֶשְכּוֹלִית
+  english: grapefruit
+  tags:
+  - topic::fruit
+  source_nid: 1414194166
+- id: banana
+  pos: noun
+  hebrew: בָּנָנָה
+  english: banana
+  tags:
+  - topic::fruit
+  source_nid: 1414194167
+- id: strawberry
+  pos: noun
+  hebrew: תוּת
+  english: strawberry
+  tags:
+  - topic::fruit
+  source_nid: 1414194168
+- id: apple
+  pos: noun
+  hebrew: ַתַפּוּח
+  english: apple
+  tags:
+  - topic::fruit
+  needs_review: true
+  review_notes:
+  - a pointing mark precedes the first letter — the nikud is misplaced
+  source_nid: 1414194195

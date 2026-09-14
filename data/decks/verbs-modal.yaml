@@ -1,0 +1,81 @@
+meta:
+  name: Verbs::Modal
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Verbs::Modal
+entries:
+- id: need-to
+  pos: modal
+  hebrew: צָרִיךְ
+  english: need to, have to, ought to
+  source_nid: 1414194449
+- id: must
+  pos: modal
+  hebrew: מוּכְרַח
+  english: must, have to, should
+  source_nid: 1414194450
+- id: be-required
+  pos: modal
+  hebrew: חַיָּב
+  english: be required, obliged to
+  source_nid: 1414194451
+- id: can
+  pos: modal
+  hebrew: יָכוֹל
+  english: can, may be able to, be capable of
+  source_nid: 1414194452
+- id: may
+  pos: modal
+  hebrew: עֲשׂוּי
+  english: may, could
+  source_nid: 1414194453
+- id: might
+  pos: modal
+  hebrew: עָלוּל
+  english: might, liable to
+  source_nid: 1414194454
+- id: be-able-to-capable-physically
+  pos: modal
+  hebrew: מְסֻגָּל
+  english: be able to (capable physically, mentally, etc.)
+  source_nid: 1414194455
+- id: expected-to
+  pos: modal
+  hebrew: צָפוּי
+  english: expected to, is likely, is anticipated
+  source_nid: 1414194456
+- id: about-to
+  pos: modal
+  hebrew: עָתִיד
+  english: about to, expected to
+  source_nid: 1414194457
+- id: about-to-2
+  pos: modal
+  hebrew: עוֹמֵד
+  english: about to, expected to
+  source_nid: 1414194458
+- id: be-ready
+  pos: modal
+  hebrew: מוּכָן
+  english: be ready, willing
+  source_nid: 1414194459
+- id: be-set
+  pos: modal
+  hebrew: עָרוּךְ
+  english: be set, ready
+  source_nid: 1414194460
+- id: prepare
+  pos: modal
+  hebrew: הִתְכּוֹנֵן
+  english: prepare, plan, get ready
+  source_nid: 1414194461
+- id: intend
+  pos: modal
+  hebrew: הִתְכָּוֵּן
+  english: intend
+  source_nid: 1414194462
+- id: make-plans
+  pos: modal
+  hebrew: תִּכְנֵן
+  english: make plans, plan
+  source_nid: 1414194463

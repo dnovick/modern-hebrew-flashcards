@@ -1,0 +1,138 @@
+meta:
+  name: Verbs::Paal
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Verbs::Paal
+entries:
+- id: pluck
+  pos: verb
+  lemma: קָטַף
+  english: pluck, pick (fruit)
+  binyan: paal
+  source_nid: 1414194344
+- id: save-money
+  pos: verb
+  lemma: חָסַךְ
+  english: save (money)
+  binyan: paal
+  needs_review: true
+  review_notes:
+  - חָסַךְ also appears in this deck with a different gloss (save (e.g. money) / save (money)) — merge or disambiguate
+  source_nid: 1414194345
+- id: invade
+  pos: verb
+  lemma: פָּלַשׁ
+  english: invade
+  binyan: paal
+  source_nid: 1414194346
+- id: opine
+  pos: verb
+  lemma: סָבַר
+  english: opine, believe, assume
+  binyan: paal
+  source_nid: 1414194347
+- id: hang
+  pos: verb
+  lemma: תָלַה
+  english: hang
+  binyan: paal
+  source_nid: 1414194348
+- id: discuss
+  pos: verb
+  lemma: דָן
+  english: discuss, judge, sentence
+  binyan: paal
+  source_nid: 1414194349
+- id: boil
+  pos: verb
+  lemma: רָתַח
+  english: boil
+  binyan: paal
+  source_nid: 1414194350
+- id: grill
+  pos: verb
+  lemma: צָלָה
+  english: grill, toast, roast
+  binyan: paal
+  source_nid: 1414194351
+- id: crack
+  pos: verb
+  lemma: סָדַק
+  english: crack, cause to crack
+  binyan: paal
+  source_nid: 1414194352
+- id: pronounce
+  pos: verb
+  lemma: הָגָה
+  english: pronounce, utter
+  binyan: paal
+  source_nid: 1414194353
+- id: abandon
+  pos: verb
+  lemma: זָנַךְ
+  english: abandon
+  binyan: paal
+  source_nid: 1414194354
+- id: flow
+  pos: verb
+  lemma: זָרַם
+  english: flow
+  binyan: paal
+  source_nid: 1414194355
+- id: postpone
+  pos: verb
+  lemma: דָחָה
+  english: postpone, reject, push away
+  binyan: paal
+  source_nid: 1414194356
+- id: extract
+  pos: verb
+  lemma: שָׁלַף
+  english: extract, draw (a weapon)
+  binyan: paal
+  source_nid: 1414194357
+- id: wear
+  pos: verb
+  lemma: עָנַד
+  english: wear, put on (jewelry, watch)
+  binyan: paal
+  source_nid: 1414194358
+- id: rely-on
+  pos: verb
+  lemma: סָמַךְ
+  english: rely on, rest upon, depend on (על)
+  binyan: paal
+  source_nid: 1414194359
+- id: land-e-g
+  pos: verb
+  lemma: נָחַת
+  english: land (e.g., plane)
+  binyan: paal
+  source_nid: 1414194360
+- id: roast
+  pos: verb
+  lemma: קָלָה
+  english: roast, toast
+  binyan: paal
+  source_nid: 1414194361
+- id: sip
+  pos: verb
+  lemma: לָגַם
+  english: sip, gulp, swallow (liquid)
+  binyan: paal
+  source_nid: 1414194362
+- id: sip-2
+  pos: verb
+  lemma: גָמָא
+  english: sip, gulp
+  binyan: paal
+  source_nid: 1414194363
+- id: save-e-g-money
+  pos: verb
+  lemma: חָסַךְ
+  english: save (e.g. money)
+  binyan: paal
+  needs_review: true
+  review_notes:
+  - חָסַךְ also appears in this deck with a different gloss (save (e.g. money) / save (money)) — merge or disambiguate
+  source_nid: 1414194364

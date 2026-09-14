@@ -1,0 +1,90 @@
+meta:
+  name: Verbs::Hiphil
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Verbs::Hiphil
+entries:
+- id: limit
+  pos: verb
+  lemma: הִגְבִּיל
+  english: limit
+  binyan: hiphil
+  source_nid: 1414194409
+- id: lose-game
+  pos: verb
+  lemma: הִפְסִיד
+  english: lose (game, money)
+  binyan: hiphil
+  source_nid: 1414194410
+- id: to-agree
+  pos: verb
+  lemma: הוֹאִיל
+  english: to agree, to be so kind as to
+  binyan: hiphil
+  source_nid: 1414194411
+- id: replace
+  pos: verb
+  lemma: הִחְלִיף
+  english: replace
+  binyan: hiphil
+  source_nid: 1414194412
+- id: boil
+  pos: verb
+  lemma: הִרְתִיחַ
+  english: boil
+  binyan: hiphil
+  source_nid: 1414194413
+- id: assemble
+  pos: verb
+  lemma: הִרְכִּיב
+  english: assemble, put together, put on, wear (glasses)
+  binyan: hiphil
+  source_nid: 1414194414
+- id: warn
+  pos: verb
+  lemma: הִתְרִיעַ
+  english: warn, caution, protest
+  binyan: hiphil
+  source_nid: 1414194415
+- id: record
+  pos: verb
+  lemma: הִקְלִיט
+  english: record, tape
+  binyan: hiphil
+  source_nid: 1414194416
+- id: influence
+  pos: verb
+  lemma: הִשְׁפִּיעַ
+  english: influence
+  binyan: hiphil
+  source_nid: 1414194417
+- id: type
+  pos: verb
+  lemma: הִקְלִיד
+  english: type
+  binyan: hiphil
+  source_nid: 1414194418
+- id: destroy
+  pos: verb
+  lemma: הִשְׁמִיד
+  english: destroy
+  binyan: hiphil
+  source_nid: 1414194419
+- id: annihilate
+  pos: verb
+  lemma: הִכְחִיד
+  english: annihilate, eradicate, conceal
+  binyan: hiphil
+  source_nid: 1414194420
+- id: obtain
+  pos: verb
+  lemma: הִשִׂיג
+  english: obtain, achieve, catch up with
+  binyan: hiphil
+  source_nid: 1414194421
+- id: amaze
+  pos: verb
+  lemma: הִדְהִים
+  english: amaze, astonish
+  binyan: hiphil
+  source_nid: 1414194422

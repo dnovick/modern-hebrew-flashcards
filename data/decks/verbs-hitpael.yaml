@@ -1,0 +1,81 @@
+meta:
+  name: Verbs::Hitpael
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Verbs::Hitpael
+entries:
+- id: get-undressed
+  pos: verb
+  lemma: הִתְפַּשֵּׁט
+  english: get undressed, extend, spread
+  binyan: hitpael
+  source_nid: 1414194436
+- id: be-accepted
+  pos: verb
+  lemma: הִתְקָבֶּל
+  english: be accepted, be received
+  binyan: hitpael
+  source_nid: 1414194437
+- id: discuss
+  pos: verb
+  lemma: הִתְווַכֵּחַ
+  english: discuss, argue, debate
+  binyan: hitpael
+  source_nid: 1414194438
+- id: discuss-2
+  pos: verb
+  lemma: הִידָּבֵּר
+  english: discuss, participate in a discussion
+  binyan: hitpael
+  source_nid: 1414194439
+- id: join-a-group
+  pos: verb
+  lemma: הִצְטָרֵף
+  english: join (a group, organization)
+  binyan: hitpael
+  source_nid: 1414194440
+- id: resign
+  pos: verb
+  lemma: הִתְפָּטֵר
+  english: resign, quit, get rid of (slang)
+  binyan: hitpael
+  source_nid: 1414194441
+- id: develop-oneself
+  pos: verb
+  lemma: הִתְפָּתֵּחַ
+  english: develop (oneself), evolve
+  binyan: hitpael
+  source_nid: 1414194442
+- id: behave
+  pos: verb
+  lemma: הִתְנַהֵג
+  english: behave
+  binyan: hitpael
+  source_nid: 1414194443
+- id: get-down
+  pos: verb
+  lemma: הִשְׁתטֵּח
+  english: get down, prostrate oneself, be flattened
+  binyan: hitpael
+  needs_review: true
+  review_notes:
+  - a consonant appears to be missing its vowel point
+  source_nid: 1414194444
+- id: pretend
+  pos: verb
+  lemma: הִתְייַמֵּר
+  english: pretend
+  binyan: hitpael
+  source_nid: 1414194445
+- id: improve
+  pos: verb
+  lemma: הִשְׁתַפֵּר
+  english: improve
+  binyan: hitpael
+  source_nid: 1414194446
+- id: crumble
+  pos: verb
+  lemma: הִתְפּוֹרֵר
+  english: crumble
+  binyan: hitpael
+  source_nid: 1414194447

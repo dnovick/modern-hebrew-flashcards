@@ -1,0 +1,316 @@
+meta:
+  name: Adjectives
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Adjectives
+entries:
+- id: prosperous
+  pos: adjective
+  hebrew: מְשַׂגְשֵׂג
+  english: prosperous
+  source_nid: 1414194251
+- id: exhausted
+  pos: adjective
+  hebrew: מְתוּשְתָש
+  english: exhausted
+  source_nid: 1414194253
+- id: clear
+  pos: adjective
+  hebrew: שָקוּף
+  english: clear, transparent
+  source_nid: 1414194254
+- id: ashamed
+  pos: adjective
+  hebrew: מְבוּיָשׁ
+  english: ashamed
+  source_nid: 1414194255
+- id: perfect
+  pos: adjective
+  hebrew: מוּשְׁלָם
+  english: perfect
+  source_nid: 1414194259
+- id: sanctimonious
+  pos: adjective
+  hebrew: מִתְחַסֵד
+  english: sanctimonious, self righteous
+  source_nid: 1414194261
+- id: lukewarm
+  pos: adjective
+  hebrew: פושר
+  english: lukewarm
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194262
+- id: ridiculous
+  pos: adjective
+  hebrew: מְגוּחָךְ
+  english: ridiculous
+  source_nid: 1414194263
+- id: fluent
+  pos: adjective
+  hebrew: שׁוטֵף
+  english: fluent
+  needs_review: true
+  review_notes:
+  - a consonant appears to be missing its vowel point
+  source_nid: 1414194264
+- id: naughty
+  pos: adjective
+  hebrew: שׁוֹבָב
+  english: naughty
+  source_nid: 1414194267
+- id: nervous
+  pos: adjective
+  hebrew: חָרֵד
+  english: nervous, anxious
+  source_nid: 1414194269
+- id: innocent
+  pos: adjective
+  hebrew: תָמִים
+  english: innocent, naive
+  source_nid: 1414194271
+- id: polite
+  pos: adjective
+  hebrew: מְנוּמָס
+  english: polite
+  source_nid: 1414194273
+- id: enthusiastic
+  pos: adjective
+  hebrew: נִלְהָב
+  english: enthusiastic
+  source_nid: 1414194275
+- id: calm
+  pos: adjective
+  hebrew: רָגוּעַ
+  english: calm, easygoing
+  source_nid: 1414194277
+- id: hard-working
+  pos: adjective
+  hebrew: חָרוּץ
+  english: hard-working
+  source_nid: 1414194278
+- id: introverted
+  pos: adjective
+  hebrew: מוּפְנָם
+  english: introverted
+  source_nid: 1414194279
+- id: indecisive
+  pos: adjective
+  hebrew: הָסֶסָן
+  english: indecisive, hesitant
+  source_nid: 1414194281
+- id: sympathetic
+  pos: adjective
+  hebrew: אוֹהֵד
+  english: sympathetic, supportive
+  source_nid: 1414194283
+- id: serious
+  pos: adjective
+  hebrew: רְצִינִי
+  english: serious
+  source_nid: 1414194286
+- id: limited
+  pos: adjective
+  hebrew: מוּגְבָּל
+  english: limited
+  source_nid: 1414194287
+- id: vacant
+  pos: adjective
+  hebrew: פָּנוּי
+  english: vacant
+  source_nid: 1414194288
+- id: reckless
+  pos: adjective
+  hebrew: פָּזִיז
+  english: reckless
+  source_nid: 1414194289
+- id: commercial
+  pos: adjective
+  hebrew: מִסְחָרִי
+  english: commercial
+  source_nid: 1414194290
+- id: unfit
+  pos: adjective
+  hebrew: נִפְסָד
+  english: unfit, faulty, indecent
+  source_nid: 1414194291
+- id: reasonable
+  pos: adjective
+  hebrew: סָבִיר
+  english: reasonable
+  source_nid: 1414194292
+- id: personal
+  pos: adjective
+  hebrew: אִישִׁי
+  english: personal
+  source_nid: 1414194293
+- id: official
+  pos: adjective
+  hebrew: רִשְׁמִי
+  english: official
+  source_nid: 1414194294
+- id: logical
+  pos: adjective
+  hebrew: הֶגְיוֹנִי
+  english: logical
+  source_nid: 1414194295
+- id: talented
+  pos: adjective
+  hebrew: מוּכְשָׁר
+  english: talented
+  source_nid: 1414194296
+- id: crowded
+  pos: adjective
+  hebrew: צָפוּף
+  english: crowded, dense
+  source_nid: 1414194297
+- id: elegant
+  pos: adjective
+  hebrew: מְהוּדָר
+  english: elegant, fancy
+  source_nid: 1414194298
+- id: complicated
+  pos: adjective
+  hebrew: מְסוּבָך
+  english: complicated
+  source_nid: 1414194299
+- id: clear-2
+  pos: adjective
+  hebrew: צָלוּל
+  english: clear, lucid
+  source_nid: 1414194300
+- id: flexible
+  pos: adjective
+  hebrew: גָמִישׁ
+  english: flexible
+  source_nid: 1414194301
+- id: intelligent
+  pos: adjective
+  hebrew: נָבוֹן
+  english: intelligent, smart
+  source_nid: 1414194302
+- id: clueless
+  pos: adjective
+  hebrew: חסר מושג
+  english: clueless
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194303
+- id: disgraceful
+  pos: adjective
+  hebrew: מַחְפִּיר
+  english: disgraceful, shameful
+  source_nid: 1414194305
+- id: bald
+  pos: adjective
+  hebrew: קֵרֵחַ
+  english: bald
+  source_nid: 1414194306
+- id: common
+  pos: adjective
+  hebrew: נָפוֹץ
+  english: common
+  source_nid: 1414194307
+- id: deaf
+  pos: adjective
+  hebrew: חֵרֵש
+  english: deaf
+  source_nid: 1414194464
+- id: naked
+  pos: adjective
+  hebrew: עירום
+  english: naked
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194465
+- id: tense
+  pos: adjective
+  hebrew: ַמָתוּח
+  english: tense
+  needs_review: true
+  review_notes:
+  - a pointing mark precedes the first letter — the nikud is misplaced
+  source_nid: 1414194466
+- id: whole
+  pos: adjective
+  hebrew: שָׁלֵם
+  english: whole, complete
+  source_nid: 1414194468
+- id: shy
+  pos: adjective
+  hebrew: בַּייְשָן
+  english: shy
+  source_nid: 1414194472
+- id: likely
+  pos: adjective
+  hebrew: עָלוּל
+  english: likely
+  source_nid: 1414194473
+- id: exciting
+  pos: adjective
+  hebrew: מַלְהִיב
+  english: exciting
+  source_nid: 1414194474
+- id: seasoned
+  pos: adjective
+  hebrew: מְתוּבָל
+  english: seasoned
+  source_nid: 1414194476
+- id: remorseful
+  pos: adjective
+  hebrew: מָלֵא חֲרָטָה
+  english: remorseful
+  source_nid: 1414194481
+- id: generous
+  pos: adjective
+  hebrew: נָדִיב
+  english: generous
+  source_nid: 1414194482
+- id: kind
+  pos: adjective
+  hebrew: אָדִיב
+  english: kind
+  source_nid: 1414194484
+- id: bad-tempered
+  pos: adjective
+  hebrew: רָגְזָן
+  english: bad-tempered, cantankerous
+  source_nid: 1414194486
+- id: aggressive
+  pos: adjective
+  hebrew: תוֹקְפָנִי
+  english: aggressive
+  source_nid: 1414194488
+- id: extroverted
+  pos: adjective
+  hebrew: מוּחְצָן
+  english: extroverted
+  source_nid: 1414194490
+- id: sociable
+  pos: adjective
+  hebrew: חֶבְרוּתִי
+  english: sociable, social
+  source_nid: 1414194492
+- id: diligent
+  pos: adjective
+  hebrew: שָׁקְדָן
+  english: diligent
+  source_nid: 1414194496
+- id: ambitious
+  pos: adjective
+  hebrew: שְׁאַפְתָנִי
+  english: ambitious
+  source_nid: 1414194498
+- id: moody
+  pos: adjective
+  hebrew: מְצוּבְרָח
+  english: moody
+  source_nid: 1414194500
+- id: reliable
+  pos: adjective
+  hebrew: מְהֵימָה מְהֵימָה מְהֵימָה מְהֵימָה אָמִין מְהֵימָה מְהֵימָה מְהֵימָה אָמִין מְהֵימָה מְהֵימָה אָמִין מְהֵימָה אָמִין אָמִין
+  english: reliable
+  source_nid: 1414194501

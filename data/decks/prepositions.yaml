@@ -1,0 +1,56 @@
+meta:
+  name: Prepositions
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Prepositions
+entries:
+- id: for
+  pos: preposition
+  hebrew: בְּעַד
+  english: for, for the sake of, on behalf of
+  source_nid: 1414194327
+- id: until
+  pos: preposition
+  hebrew: עַד
+  english: until, up to
+  source_nid: 1414194328
+- id: in-contrast-with
+  pos: preposition
+  hebrew: לְעוּמַת
+  english: in contrast with
+  source_nid: 1414194329
+- id: below
+  pos: preposition
+  hebrew: מִתַּחַת
+  english: below
+  source_nid: 1414194330
+- id: above
+  pos: preposition
+  hebrew: מֵעַל
+  english: above
+  source_nid: 1414194331
+- id: opposite
+  pos: preposition
+  hebrew: מִנֶּגֶד
+  english: opposite
+  source_nid: 1414194332
+- id: behind
+  pos: preposition
+  hebrew: מֵאֲחוֹרֵי
+  english: behind
+  source_nid: 1414194333
+- id: facing
+  pos: preposition
+  hebrew: מִמּוּל
+  english: facing
+  source_nid: 1414194334
+- id: while
+  pos: preposition
+  hebrew: בְּעוֹד
+  english: while, as long as
+  source_nid: 1414194335
+- id: instead-of
+  pos: preposition
+  hebrew: בִּמְקוֹם
+  english: instead of
+  source_nid: 1414194336

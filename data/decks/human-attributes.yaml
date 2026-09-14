@@ -1,0 +1,1333 @@
+meta:
+  name: Human Attributes
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Human Attributes
+entries:
+- id: good
+  pos: adjective
+  hebrew: טוֹב
+  english: good
+  forms:
+    ms: טוֹב
+    fs: טוֹבָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381404
+- id: nice
+  pos: adjective
+  hebrew: נֶחְמָד
+  english: nice, pleasant
+  forms:
+    ms: נֶחְמָד
+    fs: נֶחְמָדָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381406
+- id: courteous
+  pos: adjective
+  hebrew: אָדִיב
+  english: courteous, polite
+  forms:
+    ms: אָדִיב
+    fs: אֲדִיבָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381407
+- id: generous
+  pos: adjective
+  hebrew: נָדִיב
+  english: generous
+  forms:
+    ms: נָדִיב
+    fs: נְדִיבָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381408
+- id: brave
+  pos: adjective
+  hebrew: אַמִּיץ
+  english: brave
+  forms:
+    ms: אַמִּיץ
+    fs: אַמִּיצָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381409
+- id: honest
+  pos: adjective
+  hebrew: יָשָׁר
+  english: honest, upright
+  forms:
+    ms: יָשָׁר
+    fs: יְשָׁרָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381410
+- id: loyal
+  pos: adjective
+  hebrew: נֶאֱמָן
+  english: loyal, faithful
+  forms:
+    ms: נֶאֱמָן
+    fs: נֶאֱמָנָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381411
+- id: trustworthy
+  pos: adjective
+  hebrew: אָמִין
+  english: trustworthy, reliable
+  forms:
+    ms: אָמִין
+    fs: אֲמִינָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381412
+- id: patient
+  pos: adjective
+  hebrew: סַבְלָנִי
+  english: patient
+  forms:
+    ms: סַבְלָנִי
+    fs: סַבְלָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381413
+- id: diligent
+  pos: adjective
+  hebrew: חָרוּץ
+  english: diligent, hardworking
+  forms:
+    ms: חָרוּץ
+    fs: חֲרוּצָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381414
+- id: responsible
+  pos: adjective
+  hebrew: אַחְרָאִי
+  english: responsible
+  forms:
+    ms: אַחְרָאִי
+    fs: אַחְרָאִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381415
+- id: polite
+  pos: adjective
+  hebrew: מְנֻמָּס
+  english: polite, well-mannered
+  forms:
+    ms: מְנֻמָּס
+    fs: מְנֻמֶּסֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381416
+- id: compassionate
+  pos: adjective
+  hebrew: רַחְמָן
+  english: compassionate, merciful
+  forms:
+    ms: רַחְמָן
+    fs: רַחְמָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381417
+- id: humble
+  pos: adjective
+  hebrew: עָנָו
+  english: humble
+  forms:
+    ms: עָנָו
+    fs: עֲנָוָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381418
+- id: modest
+  pos: adjective
+  hebrew: צָנוּעַ
+  english: modest
+  forms:
+    ms: צָנוּעַ
+    fs: צְנוּעָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381419
+- id: happy
+  pos: adjective
+  hebrew: שָׂמֵחַ
+  english: happy, glad
+  forms:
+    ms: שָׂמֵחַ
+    fs: שְׂמֵחָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381420
+- id: cheerful
+  pos: adjective
+  hebrew: עַלִּיז
+  english: cheerful, jolly
+  forms:
+    ms: עַלִּיז
+    fs: עַלִּיזָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381421
+- id: calm
+  pos: adjective
+  hebrew: רָגוּעַ
+  english: calm, relaxed
+  forms:
+    ms: רָגוּעַ
+    fs: רְגוּעָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381422
+- id: quiet
+  pos: adjective
+  hebrew: שָׁקֵט
+  english: quiet
+  forms:
+    ms: שָׁקֵט
+    fs: שְׁקֵטָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381423
+- id: friendly
+  pos: adjective
+  hebrew: חֲבֵרוּתִי
+  english: friendly, sociable
+  forms:
+    ms: חֲבֵרוּתִי
+    fs: חֲבֵרוּתִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - positive
+  source_nid: 1789340381424
+- id: bad
+  pos: adjective
+  hebrew: רַע
+  english: bad, evil
+  forms:
+    ms: רַע
+    fs: רָעָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381425
+- id: cruel
+  pos: adjective
+  hebrew: אַכְזָרִי
+  english: cruel
+  forms:
+    ms: אַכְזָרִי
+    fs: אַכְזָרִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381426
+- id: selfish
+  pos: adjective
+  hebrew: אָנֹכִי
+  english: selfish
+  forms:
+    ms: אָנֹכִי
+    fs: אָנֹכִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381427
+- id: stingy
+  pos: adjective
+  hebrew: קַמְצָן
+  english: stingy, miserly
+  forms:
+    ms: קַמְצָן
+    fs: קַמְצָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381428
+- id: lazy
+  pos: adjective
+  hebrew: עַצְלָן
+  english: lazy
+  forms:
+    ms: עַצְלָן
+    fs: עַצְלָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381429
+- id: irritable
+  pos: adjective
+  hebrew: עַצְבָּנִי
+  english: irritable, on edge
+  forms:
+    ms: עַצְבָּנִי
+    fs: עַצְבָּנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381430
+- id: arrogant
+  pos: adjective
+  hebrew: גַּאַוְתָן
+  english: arrogant, conceited
+  forms:
+    ms: גַּאַוְתָן
+    fs: גַּאַוְתָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381431
+- id: haughty
+  pos: adjective
+  hebrew: יָהִיר
+  english: haughty
+  forms:
+    ms: יָהִיר
+    fs: יְהִירָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381432
+- id: dishonest
+  pos: adjective
+  hebrew: שַׁקְרָן
+  english: dishonest, a liar
+  forms:
+    ms: שַׁקְרָן
+    fs: שַׁקְרָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381433
+- id: deceitful
+  pos: adjective
+  hebrew: רַמַּאי
+  english: deceitful, a cheat
+  forms:
+    ms: רַמַּאי
+    fs: רַמָּאִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381434
+- id: cowardly
+  pos: adjective
+  hebrew: פַּחְדָן
+  english: cowardly
+  forms:
+    ms: פַּחְדָן
+    fs: פַּחְדָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381435
+- id: foolish
+  pos: adjective
+  hebrew: טִפֵּשׁ
+  english: foolish, stupid
+  forms:
+    ms: טִפֵּשׁ
+    fs: טִפְּשָׁה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381436
+- id: coarse
+  pos: adjective
+  hebrew: גַּס
+  english: coarse, crude
+  forms:
+    ms: גַּס
+    fs: גַּסָּה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381437
+- id: impudent
+  pos: adjective
+  hebrew: חָצוּף
+  english: impudent, cheeky
+  forms:
+    ms: חָצוּף
+    fs: חֲצוּפָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381438
+- id: stubborn
+  pos: adjective
+  hebrew: עַקְשָׁן
+  english: stubborn
+  forms:
+    ms: עַקְשָׁן
+    fs: עַקְשָׁנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381439
+- id: aggressive
+  pos: adjective
+  hebrew: תּוֹקְפָנִי
+  english: aggressive
+  forms:
+    ms: תּוֹקְפָנִי
+    fs: תּוֹקְפָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381440
+- id: violent
+  pos: adjective
+  hebrew: אַלִּים
+  english: violent
+  forms:
+    ms: אַלִּים
+    fs: אַלִּימָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381441
+- id: domineering
+  pos: adjective
+  hebrew: שְׁתַלְטָן
+  english: domineering, bossy
+  forms:
+    ms: שְׁתַלְטָן
+    fs: שְׁתַלְטָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381442
+- id: suspicious
+  pos: adjective
+  hebrew: חַשְׁדָן
+  english: suspicious, distrustful
+  forms:
+    ms: חַשְׁדָן
+    fs: חַשְׁדָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381443
+- id: spoiled
+  pos: adjective
+  hebrew: מְפֻנָּק
+  english: spoiled, pampered
+  forms:
+    ms: מְפֻנָּק
+    fs: מְפֻנֶּקֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - character
+  - hebrew
+  - negative
+  source_nid: 1789340381444
+- id: smart
+  pos: adjective
+  hebrew: חָכָם
+  english: smart, wise
+  forms:
+    ms: חָכָם
+    fs: חֲכָמָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381445
+- id: discerning
+  pos: adjective
+  hebrew: נָבוֹן
+  english: discerning, sensible
+  forms:
+    ms: נָבוֹן
+    fs: נְבוֹנָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381446
+- id: clever
+  pos: adjective
+  hebrew: פִּקֵּחַ
+  english: clever, sharp
+  forms:
+    ms: פִּקֵּחַ
+    fs: פִּקַּחַת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381447
+- id: brilliant
+  pos: adjective
+  hebrew: מַבְרִיק
+  english: brilliant
+  forms:
+    ms: מַבְרִיק
+    fs: מַבְרִיקָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381448
+- id: talented
+  pos: adjective
+  hebrew: מוּכְשָׁר
+  english: talented, gifted
+  forms:
+    ms: מוּכְשָׁר
+    fs: מוּכְשֶׁרֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381449
+- id: creative
+  pos: adjective
+  hebrew: יְצִירָתִי
+  english: creative
+  forms:
+    ms: יְצִירָתִי
+    fs: יְצִירָתִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381450
+- id: curious
+  pos: adjective
+  hebrew: סַקְרָן
+  english: curious, inquisitive
+  forms:
+    ms: סַקְרָן
+    fs: סַקְרָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381451
+- id: learned
+  pos: adjective
+  hebrew: מְלֻמָּד
+  english: learned, erudite
+  forms:
+    ms: מְלֻמָּד
+    fs: מְלֻמֶּדֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381452
+- id: experienced
+  pos: adjective
+  hebrew: מְנֻסֶּה
+  english: experienced
+  forms:
+    ms: מְנֻסֶּה
+    fs: מְנֻסָּה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381453
+- id: meticulous
+  pos: adjective
+  hebrew: קַפְּדָן
+  english: meticulous, exacting
+  forms:
+    ms: קַפְּדָן
+    fs: קַפְּדָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - intellect
+  source_nid: 1789340381454
+- id: sad
+  pos: adjective
+  hebrew: עָצוּב
+  english: sad
+  forms:
+    ms: עָצוּב
+    fs: עֲצוּבָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381455
+- id: angry
+  pos: adjective
+  hebrew: כּוֹעֵס
+  english: angry
+  forms:
+    ms: כּוֹעֵס
+    fs: כּוֹעֶסֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381456
+- id: happy-2
+  pos: adjective
+  hebrew: מְאֻשָּׁר
+  english: happy, delighted
+  forms:
+    ms: מְאֻשָּׁר
+    fs: מְאֻשֶּׁרֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381457
+- id: tired
+  pos: adjective
+  hebrew: עָיֵף
+  english: tired
+  forms:
+    ms: עָיֵף
+    fs: עֲיֵפָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381458
+- id: worried
+  pos: adjective
+  hebrew: מֻדְאָג
+  english: worried
+  forms:
+    ms: מֻדְאָג
+    fs: מֻדְאֶגֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381459
+- id: excited
+  pos: adjective
+  hebrew: נִרְגָּשׁ
+  english: excited, moved
+  forms:
+    ms: נִרְגָּשׁ
+    fs: נִרְגֶּשֶׁת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381460
+- id: confused
+  pos: adjective
+  hebrew: מְבֻלְבָּל
+  english: confused
+  forms:
+    ms: מְבֻלְבָּל
+    fs: מְבֻלְבֶּלֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381461
+- id: confident
+  pos: adjective
+  hebrew: בָּטוּחַ
+  english: confident, sure
+  forms:
+    ms: בָּטוּחַ
+    fs: בְּטוּחָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381462
+- id: shy
+  pos: adjective
+  hebrew: בַּיְשָׁן
+  english: shy, bashful
+  forms:
+    ms: בַּיְשָׁן
+    fs: בַּיְשָׁנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381463
+- id: frightened
+  pos: adjective
+  hebrew: מְפֻחָד
+  english: frightened, scared
+  forms:
+    ms: מְפֻחָד
+    fs: מְפֻחֶדֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381464
+- id: hungry
+  pos: adjective
+  hebrew: רָעֵב
+  english: hungry
+  forms:
+    ms: רָעֵב
+    fs: רְעֵבָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381465
+- id: thirsty
+  pos: adjective
+  hebrew: צָמֵא
+  english: thirsty
+  forms:
+    ms: צָמֵא
+    fs: צְמֵאָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381466
+- id: proud
+  pos: adjective
+  hebrew: גֵּאֶה
+  english: proud
+  forms:
+    ms: גֵּאֶה
+    fs: גֵּאָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381467
+- id: in-love
+  pos: adjective
+  hebrew: מְאֹהָב
+  english: in love
+  forms:
+    ms: מְאֹהָב
+    fs: מְאֹהֶבֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381468
+- id: disappointed
+  pos: adjective
+  hebrew: מְאֻכְזָב
+  english: disappointed
+  forms:
+    ms: מְאֻכְזָב
+    fs: מְאֻכְזֶבֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - emotion
+  - hebrew
+  source_nid: 1789340381469
+- id: beautiful
+  pos: adjective
+  hebrew: יָפֶה
+  english: beautiful, handsome
+  forms:
+    ms: יָפֶה
+    fs: יָפָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381470
+- id: ugly
+  pos: adjective
+  hebrew: מְכֹעָר
+  english: ugly
+  forms:
+    ms: מְכֹעָר
+    fs: מְכֹעֶרֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381471
+- id: tall
+  pos: adjective
+  hebrew: גָּבוֹהַּ
+  english: tall
+  forms:
+    ms: גָּבוֹהַּ
+    fs: גְּבוֹהָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381472
+- id: short-in-height
+  pos: adjective
+  hebrew: נָמוּךְ
+  english: short (in height)
+  forms:
+    ms: נָמוּךְ
+    fs: נְמוּכָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381473
+- id: thin
+  pos: adjective
+  hebrew: רָזֶה
+  english: thin, slim
+  forms:
+    ms: רָזֶה
+    fs: רָזָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381474
+- id: fat
+  pos: adjective
+  hebrew: שָׁמֵן
+  english: fat
+  forms:
+    ms: שָׁמֵן
+    fs: שְׁמֵנָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381475
+- id: strong
+  pos: adjective
+  hebrew: חָזָק
+  english: strong
+  forms:
+    ms: חָזָק
+    fs: חֲזָקָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381476
+- id: weak
+  pos: adjective
+  hebrew: חַלָּשׁ
+  english: weak
+  forms:
+    ms: חַלָּשׁ
+    fs: חַלָּשָׁה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381477
+- id: young
+  pos: adjective
+  hebrew: צָעִיר
+  english: young
+  forms:
+    ms: צָעִיר
+    fs: צְעִירָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381478
+- id: old
+  pos: adjective
+  hebrew: זָקֵן
+  english: old, elderly
+  forms:
+    ms: זָקֵן
+    fs: זְקֵנָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381479
+- id: healthy
+  pos: adjective
+  hebrew: בָּרִיא
+  english: healthy
+  forms:
+    ms: בָּרִיא
+    fs: בְּרִיאָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381480
+- id: sick
+  pos: adjective
+  hebrew: חוֹלֶה
+  english: sick, ill
+  forms:
+    ms: חוֹלֶה
+    fs: חוֹלָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381481
+- id: tanned
+  pos: adjective
+  hebrew: שָׁזוּף
+  english: tanned
+  forms:
+    ms: שָׁזוּף
+    fs: שְׁזוּפָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381482
+- id: fair
+  pos: adjective
+  hebrew: בָּהִיר
+  english: fair, light (complexion)
+  forms:
+    ms: בָּהִיר
+    fs: בְּהִירָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381483
+- id: dark-complexion
+  pos: adjective
+  hebrew: כֵּהֶה
+  english: dark (complexion)
+  forms:
+    ms: כֵּהֶה
+    fs: כֵּהָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381484
+- id: bald
+  pos: adjective
+  hebrew: קֵרֵחַ
+  english: bald
+  forms:
+    ms: קֵרֵחַ
+    fs: קֵרַחַת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381485
+- id: muscular
+  pos: adjective
+  hebrew: שְׁרִירִי
+  english: muscular
+  forms:
+    ms: שְׁרִירִי
+    fs: שְׁרִירִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381486
+- id: quick
+  pos: adjective
+  hebrew: זָרִיז
+  english: quick, nimble
+  forms:
+    ms: זָרִיז
+    fs: זְרִיזָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381487
+- id: clumsy
+  pos: adjective
+  hebrew: מְגֻשָּׁם
+  english: clumsy
+  forms:
+    ms: מְגֻשָּׁם
+    fs: מְגֻשֶּׁמֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - physical
+  source_nid: 1789340381488
+- id: rich
+  pos: adjective
+  hebrew: עָשִׁיר
+  english: rich
+  forms:
+    ms: עָשִׁיר
+    fs: עֲשִׁירָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381489
+- id: married
+  pos: adjective
+  hebrew: נָשׂוּי
+  english: married
+  forms:
+    ms: נָשׂוּי
+    fs: נְשׂוּאָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381490
+- id: single
+  pos: adjective
+  hebrew: רַוָּק
+  english: single, unmarried
+  forms:
+    ms: רַוָּק
+    fs: רַוָּקָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381491
+- id: famous
+  pos: adjective
+  hebrew: מְפֻרְסָם
+  english: famous
+  forms:
+    ms: מְפֻרְסָם
+    fs: מְפֻרְסֶמֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381492
+- id: lonely
+  pos: adjective
+  hebrew: בּוֹדֵד
+  english: lonely, solitary
+  forms:
+    ms: בּוֹדֵד
+    fs: בּוֹדֵדָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381493
+- id: funny
+  pos: adjective
+  hebrew: מַצְחִיק
+  english: funny
+  forms:
+    ms: מַצְחִיק
+    fs: מַצְחִיקָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381494
+- id: boring
+  pos: adjective
+  hebrew: מְשַׁעֲמֵם
+  english: boring
+  forms:
+    ms: מְשַׁעֲמֵם
+    fs: מְשַׁעֲמֶמֶת
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381495
+- id: serious
+  pos: adjective
+  hebrew: רְצִינִי
+  english: serious
+  forms:
+    ms: רְצִינִי
+    fs: רְצִינִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381496
+- id: strange
+  pos: adjective
+  hebrew: מוּזָר
+  english: strange, odd
+  forms:
+    ms: מוּזָר
+    fs: מוּזָרָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381497
+- id: religious
+  pos: adjective
+  hebrew: דָּתִי
+  english: religious, observant
+  forms:
+    ms: דָּתִי
+    fs: דָּתִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381498
+- id: secular
+  pos: adjective
+  hebrew: חִלּוֹנִי
+  english: secular
+  forms:
+    ms: חִלּוֹנִי
+    fs: חִלּוֹנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381499
+- id: sensitive
+  pos: adjective
+  hebrew: רָגִישׁ
+  english: sensitive
+  forms:
+    ms: רָגִישׁ
+    fs: רְגִישָׁה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381500
+- id: tough
+  pos: adjective
+  hebrew: קָשׁוּחַ
+  english: tough, hardened
+  forms:
+    ms: קָשׁוּחַ
+    fs: קְשׁוּחָה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381501
+- id: indifferent
+  pos: adjective
+  hebrew: אָדִישׁ
+  english: indifferent, apathetic
+  forms:
+    ms: אָדִישׁ
+    fs: אֲדִישָׁה
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381502
+- id: accommodating
+  pos: adjective
+  hebrew: וַתְרָן
+  english: accommodating, yielding
+  forms:
+    ms: וַתְרָן
+    fs: וַתְרָנִית
+  tags:
+  - topic::human-attributes
+  - adjectives
+  - hebrew
+  - social
+  source_nid: 1789340381503

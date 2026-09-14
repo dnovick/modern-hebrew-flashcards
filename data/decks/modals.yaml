@@ -1,0 +1,11 @@
+meta:
+  name: Modals
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Modals
+entries:
+- id: supposed-to
+  pos: modal
+  hebrew: אָמוּר
+  english: supposed to, should, is expected
+  source_nid: 1414194448

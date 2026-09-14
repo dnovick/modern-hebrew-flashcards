@@ -245,8 +245,8 @@ Key rules (always enforced):
 - `gender` is required on every noun. Unknown gender is `needs_review`, never a guess.
 - **Card generation is staged per deck** via `meta.card_types`. Notes are always built
   with full metadata; enabling a card type is a config flip, not a data change. The
-  full matrix over the existing 516 notes is ~2,100 cards — roughly 4× the current
-  review load — so default new decks to `[audio_meaning]` and let the owner opt in.
+  full matrix over the 400 extracted entries is ~1,800 cards — roughly 3.5× the
+  current review load — so default new decks to `[audio_meaning]` and let the owner opt in.
 
 ## Card design
 

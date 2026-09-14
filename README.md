@@ -89,14 +89,14 @@ Two ideas carry most of the weight:
 
 - **Store everything, drill a subset.** A verb's full paradigm lives in YAML; its
   `drill:` list decides which forms become cards. Storage is free, review time isn't.
-- **Staged card generation.** The full card matrix over the existing 516 notes is
-  ~2,100 cards, about 4× the current review load. Each deck's `meta.card_types`
+- **Staged card generation.** The full card matrix over the 400 extracted entries is
+  ~1,800 cards, about 3.5× the current review load. Each deck's `meta.card_types`
   controls which types are live, so metadata can be complete long before every card
   type is switched on.
 
 ## Deck topics
 
-**Migrated first** (from the existing collection, ~516 cards):
+**Migrated first** (from the existing collection, 457 notes → 400 unique entries):
 nouns · verbs by binyan (paal, piel, hiphil, niphal, hitpael) · adjectives ·
 adverbs · prepositions · modals · fruit · human attributes
 
@@ -126,8 +126,8 @@ technology and phones · army and news vocabulary · animals · school and study
 
 Nothing to run yet. First milestones, in order:
 
-1. Extract the existing `Modern Hebrew::*` notes to YAML, normalized and
-   de-junked (the current tags contain leaked Apple Notes metadata).
+1. ~~Extract the existing `Modern Hebrew::*` notes to YAML.~~ **Done** — 457
+   notes extracted to 400 unique entries across 14 deck files.
 2. Stand up the build: YAML → validated models → `.apkg`, with GUID stability
    tests proving a rebuild updates rather than duplicates.
    Builds land under a `Modern Hebrew (rebuild)` deck root so the originals stay

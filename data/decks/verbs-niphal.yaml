@@ -1,0 +1,49 @@
+meta:
+  name: Verbs::Niphal
+  card_types:
+  - audio_meaning
+  source_deck: Modern Hebrew::Verbs::Niphal
+entries:
+- id: abstain
+  pos: verb
+  lemma: נמנע
+  english: abstain
+  binyan: niphal
+  needs_review: true
+  review_notes:
+  - unpointed
+  source_nid: 1414194365
+- id: be-obliged
+  pos: verb
+  lemma: נֶעֱלַץ
+  english: be obliged
+  binyan: niphal
+  source_nid: 1414194366
+- id: pick-on-someone
+  pos: verb
+  lemma: נִטְפָּל
+  english: pick (on someone)
+  binyan: niphal
+  governs: אל
+  needs_review: true
+  review_notes:
+  - governs 'אל', split out of the Hebrew field — confirm
+  source_nid: 1414194367
+- id: disappear
+  pos: verb
+  lemma: נֶעֶלָם
+  english: disappear
+  binyan: niphal
+  source_nid: 1414194368
+- id: be-annoyed
+  pos: verb
+  lemma: נִרְגַּז
+  english: be annoyed, be angry
+  binyan: niphal
+  source_nid: 1414194369
+- id: freak-out
+  pos: verb
+  lemma: נִלְחָץ
+  english: freak out
+  binyan: niphal
+  source_nid: 1414194370
