@@ -41,6 +41,17 @@ def main() -> int:
                         help="overwrite existing deck files (discards hand edits)")
     args = parser.parse_args()
 
+    existing = sorted(p.name for p in args.out.glob("*.yaml")) if args.out.exists() else []
+    if existing and not args.force and not args.dry_run:
+        print(
+            f"\nERROR: {args.out} already contains {len(existing)} deck files.\n"
+            "Extraction is a one-time migration — data/decks/ is the source of truth now,\n"
+            "and re-running would discard any hand edits made since. Pass --force if that\n"
+            "is genuinely what you want.",
+            file=sys.stderr,
+        )
+        return 1
+
     scratch = args.scratch or Path(tempfile.mkdtemp(prefix="hebrew-cards-"))
     copy = col.copy_collection(scratch / "collection.anki2")
     notes = col.read_notes(copy)
@@ -89,17 +100,6 @@ def main() -> int:
         print("\n(dry run — nothing written)")
         return 0
 
-    existing = sorted(p.name for p in args.out.glob("*.yaml"))
-    if existing and not args.force:
-        print(
-            f"\nERROR: {args.out} already contains {len(existing)} deck files.\n"
-            "Extraction is a one-time migration — data/decks/ is the source of truth now,\n"
-            "and re-running would discard any hand edits made since. Pass --force if that\n"
-            "is genuinely what you want.",
-            file=sys.stderr,
-        )
-        return 1
-
     args.out.mkdir(parents=True, exist_ok=True)
     for deck in decks:
         rule = DECK_RULES[deck.meta.source_deck or ""]
@@ -112,6 +112,9 @@ def main() -> int:
 def _report(decks: list[DeckFile]) -> None:
     """Print a summary of what was extracted and what needs attention."""
     total = sum(len(d.entries) for d in decks)
+    if not total:
+        print("\nNo entries extracted — no legacy Modern Hebrew notes remain.")
+        return
     flagged = [e for d in decks for e in d.entries if e.needs_review]
     print(f"\n{total} entries, {len(flagged)} flagged for review "
           f"({len(flagged) / total:.0%})")
