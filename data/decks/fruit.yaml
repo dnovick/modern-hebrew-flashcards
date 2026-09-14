@@ -8,41 +8,65 @@ entries:
   pos: noun
   hebrew: תָפוּז
   english: orange
+  gender: m
   tags:
   - topic::fruit
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194163
 - id: grape
   pos: noun
   hebrew: עֵנָב
   english: grape
+  gender: m
   tags:
   - topic::fruit
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194165
 - id: grapefruit
   pos: noun
   hebrew: אֶשְכּוֹלִית
   english: grapefruit
+  gender: f
   tags:
   - topic::fruit
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194166
 - id: banana
   pos: noun
   hebrew: בָּנָנָה
   english: banana
+  gender: f
   tags:
   - topic::fruit
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194167
 - id: strawberry
   pos: noun
   hebrew: תוּת
   english: strawberry
+  gender: m
   tags:
   - topic::fruit
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194168
 - id: apple
   pos: noun
   hebrew: תַּפּוּחַ
   english: apple
+  gender: m
   tags:
   - topic::fruit
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194195

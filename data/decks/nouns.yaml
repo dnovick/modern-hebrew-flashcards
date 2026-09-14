@@ -8,394 +8,714 @@ entries:
   pos: noun
   hebrew: כָּדוּר
   english: ball
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194164
 - id: abundance
   pos: noun
   hebrew: שֶׁפַע
   english: abundance
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194171
 - id: failure
   pos: noun
   hebrew: כִּישָלוֹן
   english: failure
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194172
 - id: demonstration
   pos: noun
   hebrew: הַפְגָנָה
   english: demonstration
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194173
 - id: plan
   pos: noun
   hebrew: תוֹכְנִית
   english: plan
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194174
 - id: quality
   pos: noun
   hebrew: אֵיכוּת
   english: quality
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194175
 - id: traffic
   pos: noun
   hebrew: תְּנוּעָה
   english: traffic
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194179
 - id: tension
   pos: noun
   hebrew: מֶתַח
   english: tension, stretch, voltage
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194180
 - id: contract
   pos: noun
   hebrew: חוֹזֶה
   english: contract, agreement
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194181
 - id: insanity
   pos: noun
   hebrew: טֵירוּף
   english: insanity
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194182
 - id: sealing
   pos: noun
   hebrew: סְתִימָה
   english: sealing, plugging, blockage, filling
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194183
 - id: situation
   pos: noun
   hebrew: מַצָּב
   english: situation
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194187
 - id: decoration
   pos: noun
   hebrew: קִישׁוּטִי
   english: decoration
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
+  - קִישׁוּטִי is an adjective ("decorative"), not a noun — gender left unset because it does not apply to the form as stored. The noun is קִישׁוּט (m).
   source_nid: 1414194189
 - id: drive
   pos: noun
   hebrew: נְהִיגָה
   english: drive
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194190
 - id: obstacle
   pos: noun
   hebrew: מִכְשׁוֹל
   english: obstacle
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194191
 - id: meaning
   pos: noun
   hebrew: מַשְׁמָעוּת
   english: meaning
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194196
 - id: depression
   pos: noun
   hebrew: דִכָּאוֹן
   english: depression
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194197
 - id: stain
   pos: noun
   hebrew: כֶּתֶם
   english: stain
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194198
 - id: ladle
   pos: noun
   hebrew: מַצֶקֶת
   english: ladle
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194199
 - id: medicine
   pos: noun
   hebrew: תְרוּפָה
   english: medicine
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194203
 - id: cloth
   pos: noun
   hebrew: מַטְלִית
   english: cloth
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194204
 - id: furniture
   pos: noun
   hebrew: רִיהוּט
   english: furniture
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194205
 - id: treatment
   pos: noun
   hebrew: טִיפּוּל
   english: treatment
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194206
 - id: omelet
   pos: noun
   hebrew: חֲבִיתָה
   english: omelet
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194207
 - id: edition
   pos: noun
   hebrew: מַהֲדוּרָה
   english: edition, issue, newscast
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194209
 - id: advertisement
   pos: noun
   hebrew: פִּרְסוֹמֶת
   english: advertisement
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194210
 - id: detonator
   pos: noun
   hebrew: נַפָץ
   english: detonator
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194211
 - id: broadcast
   pos: noun
   hebrew: שִׁידוּר
   english: broadcast
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194212
 - id: humidity
   pos: noun
   hebrew: לָחוּת
   english: humidity
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194213
 - id: doubt
   pos: noun
   hebrew: סָפֵק
   english: doubt
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194214
 - id: layoff
   pos: noun
   hebrew: פִּיטוּר
   english: layoff, dismissal
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194215
 - id: talent
   pos: noun
   hebrew: כִּשָׁרוֹן
   english: talent
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194216
 - id: nutrition
   pos: noun
   hebrew: תְזוּנָה
   english: nutrition
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194217
 - id: pronunciation
   pos: noun
   hebrew: הֲגִייָה
   english: pronunciation, diction
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194218
 - id: waterfall
   pos: noun
   hebrew: מַפַּל מַיִם
   english: waterfall
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194219
 - id: roar
   pos: noun
   hebrew: רַחַשׁ
   english: roar, rustle
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194220
 - id: whisper
   pos: noun
   hebrew: לְחִישָׁה
   english: whisper
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194221
 - id: cub
   pos: noun
   hebrew: גוּר
   english: cub
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194222
 - id: extinction
   pos: noun
   hebrew: הַכְחָדָה
   english: extinction, annihilation, eradication
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194223
 - id: fur
   pos: noun
   hebrew: פָּרְווָה
   english: fur
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194224
 - id: mashed-potatoes
   pos: noun
   hebrew: פִּירָה
   english: mashed potatoes
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
+  - פִּירָה is a loanword ending in ה; I read it as masculine but am less sure here than elsewhere.
   source_nid: 1414194225
 - id: nightmare
   pos: noun
   hebrew: סִיוּט
   english: nightmare
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194226
 - id: jewelry
   pos: noun
   hebrew: תַכְשִׁיטִים
   english: jewelry
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
+  - תַכְשִׁיטִים is plural; the singular is תַּכְשִׁיט. Gender m.
   source_nid: 1414194227
 - id: clue
   pos: noun
   hebrew: רֶמֶז
   english: clue
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194228
 - id: excuse
   pos: noun
   hebrew: תֵיוּץ
   english: excuse, pretext
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
+  - תֵיוּץ looks like a typo for תֵּירוּץ (terutz). Gender m either way.
   source_nid: 1414194229
 - id: reverse
   pos: noun
   hebrew: מַהְפָּךְ
   english: reverse, upheaval, shake up
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194230
 - id: interview
   pos: noun
   hebrew: רֵאָיוֹן
   english: interview
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194231
 - id: method
   pos: noun
   hebrew: אוֹפֶן
   english: method, fashion, manner
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194232
 - id: frame
   pos: noun
   hebrew: מִסְגֶרֶת
   english: frame
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194233
 - id: fault
   pos: noun
   hebrew: אָשְמָה
   english: fault
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194234
 - id: gymnastics
   pos: noun
   hebrew: הִתְעַמְלוּת
   english: gymnastics
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194235
 - id: mishap
   pos: noun
   hebrew: תַּקָלָה
   english: mishap, fault, malfunction, accident
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194236
 - id: robbery
   pos: noun
   hebrew: שׁוֹד
   english: robbery
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194237
 - id: savings
   pos: noun
   hebrew: חִסְכוֹנוֹת
   english: savings
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
+  - חִסְכוֹנוֹת is plural. The -ot ending does not make it feminine — the singular חִסָּכוֹן is masculine, so m.
   source_nid: 1414194238
 - id: expiry
   pos: noun
   hebrew: תְפוּגָה
   english: expiry
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194239
 - id: snack
   pos: noun
   hebrew: חָטִיף
   english: snack
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194240
 - id: helmet
   pos: noun
   hebrew: קַסְדָה
   english: helmet
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194241
 - id: cellar
   pos: noun
   hebrew: מַרְתֵף
   english: cellar
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194242
 - id: meddler
   pos: noun
   hebrew: חַטְטָן
   english: meddler, nosy
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194243
 - id: scalp
   pos: noun
   hebrew: קַרְקֶפֶת
   english: scalp
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194244
 - id: excess
   pos: noun
   hebrew: עוֹדֵף
   english: excess, surplus, left over, change
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194245
 - id: rank
   pos: noun
   hebrew: דַרְגָה
   english: rank
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194246
 - id: prisoner
   pos: noun
   hebrew: אָסִיר
   english: prisoner, convict
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194247
 - id: boy
   pos: noun
   hebrew: יֶלֶד
   english: boy
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194551
 - id: smell
   pos: noun
   hebrew: רֵיחַ
   english: smell, odor
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194558
 - id: surprise
   pos: noun
   hebrew: הַפְתָעָה
   english: surprise
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194559
 - id: cross
   pos: noun
   hebrew: צְלָב
   english: cross
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194565
 - id: artist
   pos: noun
   hebrew: אָמָן
   english: artist
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194566
 - id: traffic-light
   pos: noun
   hebrew: רַמְזוֹר
   english: traffic light
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194567
 - id: parking
   pos: noun
   hebrew: חֲנָיָה
   english: parking
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194573
 - id: solution
   pos: noun
   hebrew: פִּתְרוֹן
   english: solution
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194574
 - id: detail
   pos: noun
   hebrew: פְּרָט
   english: detail
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194575
 - id: asset
   pos: noun
   hebrew: נֶכֶס
   english: asset, property
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194581
 - id: heretic
   pos: noun
   hebrew: כּוֹפֵר
   english: heretic, unbeliever
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194582
 - id: offer
   pos: noun
   hebrew: הַצָּעָה
   english: offer
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194583
 - id: dish
   pos: noun
   hebrew: כְּלִי אוֹכֶל
   english: dish
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194589
 - id: toothpick
   pos: noun
   hebrew: קֵיסָם
   english: toothpick
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194590
 - id: collar
   pos: noun
   hebrew: צַוָארוֹן
   english: collar
+  gender: m
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194591
 - id: expedition
   pos: noun
   hebrew: מִשְׁלַחַת
   english: expedition
+  gender: f
+  needs_review: true
+  review_notes:
+  - gender proposed, not verified — confirm or correct
   source_nid: 1414194597
