@@ -176,6 +176,25 @@ project where branch protection makes it impossible.
 - The existing collection contains corrupted tags leaked from Apple Notes
   (`<MCTag: <x-coredata://...`). Strip these during extraction; never propagate them.
 
+## The red-flag workflow
+
+Edits made in Anki's own editor are destroyed by the next rebuild, because YAML is the
+source of truth for content. The defined path for a content bug found mid-review:
+
+1. **Owner flags the card red** (flag 1, `Ctrl+1`) and keeps reviewing. Red means
+   exactly one thing in this collection: *content bug — fix in source*. It carries no
+   difficulty or priority meaning. Verified unused across all 2,040 cards at the time
+   this convention was adopted, so it is unambiguous.
+2. Later, `scripts/report_flagged.py` reads the collection (read-only, scratchpad copy)
+   and maps each red-flagged card back to its `data/decks/*.yaml` entry by GUID,
+   reporting file and entry id.
+3. The fix is made **in YAML**, the deck is rebuilt and re-imported.
+4. The owner clears the flag in Anki once the fix lands.
+
+Never instruct the owner to fix content in the Anki editor, and never treat an
+in-Anki edit as authoritative — if YAML and Anki disagree about content, YAML wins by
+definition.
+
 ## Audio
 
 - Target is a cloud multi-voice Hebrew TTS (Google Cloud or Azure). Voice variety

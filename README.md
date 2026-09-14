@@ -48,6 +48,8 @@ src/hebrew_cards/
   build.py        genanki deck assembly
   anki/extract.py one-time read-only extraction from the existing collection
   cli.py          `hebrew-cards validate | build | extract | audio`
+scripts/
+  report_flagged.py  map red-flagged Anki cards back to their YAML entries
 data/decks/       one YAML file per topic deck
 media/            audio cache (gitignored)
 dist/             built .apkg files (gitignored)
@@ -135,6 +137,21 @@ The procedure:
 5. Flip the configured deck root back to `Modern Hebrew` for future builds.
 
 Steps 1 and 4 happen by hand in the Anki UI. This project never deletes decks.
+
+## Fixing a card you spot mid-review
+
+YAML is the source of truth, so an edit made in Anki's editor is overwritten by the
+next rebuild. Instead:
+
+| Step | Where |
+|---|---|
+| 1. Flag the card **red** (`Ctrl+1`), keep reviewing | Anki |
+| 2. `scripts/report_flagged.py` maps red flags back to source entries by GUID | terminal |
+| 3. Fix the entry, rebuild, re-import | `data/decks/*.yaml` |
+| 4. Clear the flag | Anki |
+
+Red means *content bug, fix in source* — nothing else. No flag was in use anywhere in
+the collection when this was adopted, so the meaning is unambiguous.
 
 ## Development
 
