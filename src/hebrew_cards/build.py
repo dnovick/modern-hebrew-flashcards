@@ -111,7 +111,14 @@ def build_deck(deck: DeckFile, deck_slug: str, deck_root: str) -> tuple[genanki.
 
 # Tracked in git rather than left in dist/: this is accumulated history, not a build
 # artifact, and it cannot be regenerated once lost.
-BUILD_STATE = Path("data") / "build-state.json"
+#
+# JSONL, strictly append-only, with `merge=union` in .gitattributes. The project is
+# built from more than one machine, and a JSON object would conflict on every
+# concurrent build — a machine-generated file is the worst thing to hand-merge, since
+# a careless resolution silently discards the history that stops harvest reverting
+# edits. Union merge keeps both sides' lines, which is exactly right for an
+# accumulating log.
+BUILD_STATE = Path("data") / "build-state.jsonl"
 
 
 def build_state_path(repo_root: Path) -> Path:
@@ -153,26 +160,52 @@ def build_package(
     return stats
 
 
-# How many past values to remember per note. Long enough to cover any build the owner
-# might still be running, short enough that the file stays small.
-_HISTORY_LIMIT = 12
+def read_build_history(path: Path) -> dict[str, list[list[str]]]:
+    """Load the append-only history, grouping records by note GUID.
+
+    Duplicate lines are expected and harmless: union merge keeps both sides when two
+    machines record the same build, and dropping them here is cheaper than trying to
+    prevent them there.
+    """
+    history: dict[str, list[list[str]]] = {}
+    if not path.exists():
+        return history
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        record = json.loads(line)
+        values = [record["hebrew"], record["english"]]
+        seen = history.setdefault(record["guid"], [])
+        if values not in seen:
+            seen.append(values)
+    return history
 
 
 def record_build(decks: list[tuple[Path, DeckFile]], path: Path) -> None:
-    """Append this build's field values to the per-note history."""
-    history: dict[str, list[list[str]]] = {}
-    if path.exists():
-        history = json.loads(path.read_text(encoding="utf-8"))
+    """Append any field values this build produced that are not already recorded.
 
+    Only ever appends. Rewriting or reordering the file would defeat union merge and
+    reintroduce the conflicts it exists to avoid.
+    """
+    known = read_build_history(path)
+    new_lines: list[str] = []
     for deck_path, deck in decks:
         for entry in deck.entries:
             guid = note_guid(deck_path.stem, entry.id)
             values = [entry.hebrew or entry.lemma or "", entry.english]
-            seen = history.setdefault(guid, [])
-            if values in seen:
-                seen.remove(values)
-            seen.append(values)
-            del seen[:-_HISTORY_LIMIT]
+            if values in known.get(guid, []):
+                continue
+            known.setdefault(guid, []).append(values)
+            new_lines.append(
+                json.dumps(
+                    {"guid": guid, "hebrew": values[0], "english": values[1]},
+                    ensure_ascii=False,
+                )
+            )
 
+    if not new_lines:
+        return
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(history, ensure_ascii=False, indent=0), encoding="utf-8")
+    with path.open("a", encoding="utf-8") as fh:
+        fh.write("\n".join(new_lines) + "\n")

@@ -48,10 +48,25 @@ def _run_coverage(full: bool) -> float:
     for src in _COV_SOURCES:
         cmd += [f"--cov={src}"]
     cmd += ["--cov-report=term", f"--cov-report=json:{json_out}", "-q"]
-    result = subprocess.run(cmd, cwd=_REPO)
+    result = subprocess.run(cmd, cwd=_REPO, capture_output=True, text=True)
+    print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr)
     if result.returncode != 0:
         print("tests failed — coverage not evaluated", file=sys.stderr)
         raise SystemExit(result.returncode)
+
+    # A skipped test in unit mode means this environment ran something CI cannot, or
+    # vice versa — the usual cause being a test guarded on the owner's local Anki
+    # collection. That silently measures a floor CI can never reach, which failed a
+    # PR once already. Integration tests are excluded from this mode entirely, so a
+    # skip here is worth surfacing rather than a normal occurrence.
+    if not full and " skipped" in result.stdout:
+        print(
+            "\nWARNING: a test skipped during a unit-mode run. If it skipped because "
+            "local data was present or absent, this measurement will not match CI.",
+            file=sys.stderr,
+        )
     with open(json_out) as fh:
         data = json.load(fh)
     percent: float = data["totals"]["percent_covered"]

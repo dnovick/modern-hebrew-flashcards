@@ -212,8 +212,8 @@ Conventions follow [`berean-bible-bots`](https://github.com/dnovick/berean-bible
 - `pytest` with an `integration` marker for anything needing network or paid TTS;
   the default run makes no network calls and spends no credit
 - Coverage tracked by a **must-not-decrease ratchet** against `coverage-baseline.json`
-- Direct pushes to `main` are fine (solo repo, no branch protection); feature
-  branches for anything substantial enough to review as a unit
+- Every change goes through a pull request; `main` is protected
+- CI runs lint, types, tests, and the coverage ratchet on each PR
 - Content rules in [`docs/standards/language.md`](docs/standards/language.md) —
   notably: Hebrew script with nikud everywhere, no transliteration
 - Agent autonomy is governed by [`docs/policies/autonomous-actions.md`](docs/policies/autonomous-actions.md)
