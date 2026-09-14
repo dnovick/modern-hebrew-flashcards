@@ -67,12 +67,32 @@ Beyond plain vocabulary, these are the formats that actually target the stated g
 | **Audio cloze** | sentence audio, one word blanked | the missing word | hearing a word in context |
 | Minimal pairs | two clips | which one was X | phoneme discrimination |
 | Conjugation by ear | conjugated-form audio | person/number/tense + root | morphology at speed |
+| Gender ID | noun audio | m / f | agreement, which gender governs |
+| Plural production | singular audio | the plural form | irregular plurals |
+| Adjective agreement | citation + target form | the agreeing form | the four-form pattern |
+| Root family | a root | the words derived from it | guessing unknown words by ear |
 
 The audio-fronted types are the point of the project. Production cards
 (English → Hebrew) are deliberately **not** generated — the gap is recognition.
 
 For vocabulary, one card is generated per entry: audio on the front with no visible
 text of any kind, English plus the pointed Hebrew on the back.
+
+## Data model
+
+Notes carry full linguistic metadata — gender and plural for nouns, all four agreement
+forms for adjectives, root/binyan/gizra and complete paradigms for verbs — so that many
+card types can be generated from one authoritative entry. See
+[`docs/standards/data-model.md`](docs/standards/data-model.md).
+
+Two ideas carry most of the weight:
+
+- **Store everything, drill a subset.** A verb's full paradigm lives in YAML; its
+  `drill:` list decides which forms become cards. Storage is free, review time isn't.
+- **Staged card generation.** The full card matrix over the existing 516 notes is
+  ~2,100 cards, about 4× the current review load. Each deck's `meta.card_types`
+  controls which types are live, so metadata can be complete long before every card
+  type is switched on.
 
 ## Deck topics
 
