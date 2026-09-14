@@ -62,15 +62,17 @@ Beyond plain vocabulary, these are the formats that actually target the stated g
 
 | Type | Front | Back | Trains |
 |---|---|---|---|
-| **Audio → meaning** | audio only | Hebrew (pointed) + English | core listening recognition |
-| Meaning → Hebrew | English | Hebrew + audio | production / recall |
+| **Audio → meaning** | audio only | English + pointed Hebrew | core listening recognition |
 | **Sentence dictation** | sentence audio | full sentence text | parsing connected speech |
 | **Audio cloze** | sentence audio, one word blanked | the missing word | hearing a word in context |
 | Minimal pairs | two clips | which one was X | phoneme discrimination |
 | Conjugation by ear | conjugated-form audio | person/number/tense + root | morphology at speed |
 
-The audio-fronted types are the point of the project. The text types exist to
-support them.
+The audio-fronted types are the point of the project. Production cards
+(English → Hebrew) are deliberately **not** generated — the gap is recognition.
+
+For vocabulary, one card is generated per entry: audio on the front with no visible
+text of any kind, English plus the pointed Hebrew on the back.
 
 ## Deck topics
 
@@ -176,7 +178,7 @@ a real `.apkg` with correct contents, not merely reviewed.
 
 | Decision | Choice | Rationale |
 |---|---|---|
-| TTS | Cloud multi-voice (Google/Azure) | voice variety is the main lever for ear training |
+| TTS | Google Cloud, Chirp 3 HD (he-IL) | best available Hebrew quality; cost is negligible at this volume (<$1 for the full deck) |
 | Existing cards | extract → clean → rebuild, fresh GUIDs | clean data model; review history deliberately not carried over |
 | Delivery | `.apkg` files, manual import | works headless and in CI; no add-on dependency |
 | Language | Python 3.12 | project policy |

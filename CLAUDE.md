@@ -197,11 +197,50 @@ definition.
 
 ## Audio
 
-- Target is a cloud multi-voice Hebrew TTS (Google Cloud or Azure). Voice variety
-  is the point — a single voice trains a brittle ear.
-- Audio is content-addressed and cached under `media/` (gitignored). The cache key
-  includes text, voice, and speed, so regenerating a deck does not re-bill unchanged
-  cards.
-- API keys come from the environment. Never commit a key, never print one.
-- Every listening card gets at least two voices across its variants where the card
-  type allows it.
+**Provider: Google Cloud Text-to-Speech, Chirp 3 HD voices** (he-IL). Owner decision,
+2026-09-13.
+
+Chirp 3 HD costs ~$30 per million characters against WaveNet's $16, but at this
+project's volume the entire 516-word deck in four voices is ~16.5K characters — under
+a dollar either way, and inside the free tier. Cost is small enough that it should
+never drive a quality decision here; pick the best-sounding tier available for he-IL.
+
+- API credentials come from the environment (service account JSON path in
+  `GOOGLE_APPLICATION_CREDENTIALS`). Never commit a key, never print one, never
+  hardcode a project id.
+- **Generating audio is a Phase 1 action** — it spends money, however little. Ask
+  before a generation run. The cache exists so an approved run is never repeated
+  needlessly.
+- Audio is content-addressed and cached under `media/` (gitignored). The cache key is
+  `sha1(text + voice + speaking_rate)`, so editing an English translation regenerates
+  nothing.
+- **Voice assignment is deterministic**: each entry gets one voice, chosen by hashing
+  its `id` across the available he-IL voice list. The deck as a whole spans every
+  voice; an individual card sounds the same on every review. Reshuffling is a seed
+  change plus a rebuild, which costs pennies.
+- Randomizing the voice per review via template JavaScript was considered and
+  rejected for now — better ear training in principle, unreliable on AnkiMobile and
+  AnkiDroid in practice. Revisit only if the deterministic split proves insufficient.
+
+## Card design
+
+### Vocabulary (the primary card type)
+
+One card per entry. No reverse card.
+
+| Side | Content |
+|---|---|
+| **Front** | Audio only. No Hebrew text, no English, no hint. |
+| **Back** | English translation, plus the pointed Hebrew, plus a replay control. |
+
+The front must contain **nothing but the audio**. Any visible text turns a listening
+exercise into a reading exercise, which is the failure mode this whole project exists
+to avoid. This is the owner's explicit design (2026-09-13), not an inference.
+
+The Hebrew on the back is answer content, not a second card — the answer is already
+committed by the time it is visible, so it cannot short-circuit the exercise, and it
+reinforces spelling and nikud at no extra review cost.
+
+Production cards (English → Hebrew) are **not** generated. The owner's gap is
+recognition, not production.
+

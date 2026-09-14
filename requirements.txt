@@ -6,9 +6,8 @@ pydantic>=2.0          # schema validation for deck YAML
 # Hebrew text handling
 unicodedata2>=15.0     # NFC normalization, nikud category lookups
 
-# TTS — provider not yet chosen (Google vs Azure); add the winner here.
-# google-cloud-texttospeech>=2.16
-# azure-cognitiveservices-speech>=1.38
+# TTS — Google Cloud, Chirp 3 HD voices (he-IL)
+google-cloud-texttospeech>=2.16
 
 # Dev
 pytest>=8.0
