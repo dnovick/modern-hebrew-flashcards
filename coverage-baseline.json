@@ -1,6 +1,6 @@
 {
-  "unit_min_percent": 60.28,
-  "full_min_percent": 65.51,
+  "unit_min_percent": 62.05,
+  "full_min_percent": 69.51,
   "updated": "2026-09-13",
   "notes": "Initial baseline, set by the extraction milestone. Raise only via `python scripts/check_coverage.py --update-baseline`, in the same commit that earns the increase \u2014 never by hand. Branch coverage is on (setup.cfg), so these numbers are stricter and lower than line coverage would report."
 }

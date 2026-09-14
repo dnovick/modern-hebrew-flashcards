@@ -124,15 +124,32 @@ technology and phones · army and news vocabulary · animals · school and study
 
 ## Getting started
 
-Nothing to run yet. First milestones, in order:
+```bash
+python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
+
+.venv/bin/python scripts/extract_collection.py   # Anki collection -> data/decks/*.yaml
+.venv/bin/python scripts/build_decks.py          # data/decks/*.yaml -> dist/*.apkg
+.venv/bin/python -m pytest                       # 71 tests
+.venv/bin/python scripts/check_coverage.py       # coverage ratchet
+```
+
+`build_decks.py` writes `dist/modern-hebrew.apkg` under the
+`Modern Hebrew (rebuild)` deck root. Import it by hand — nothing here ever writes
+to your live collection.
+
+> **Cards currently have no audio.** Until the audio milestone lands, the front of
+> a card falls back to the written Hebrew, marked with a warning. These are reading
+> cards, not the listening cards the project is for. The template switches to audio
+> automatically once the field is populated.
+
+Milestones:
 
 1. ~~Extract the existing `Modern Hebrew::*` notes to YAML.~~ **Done** — 457
    notes extracted to 400 unique entries across 14 deck files.
-2. Stand up the build: YAML → validated models → `.apkg`, with GUID stability
-   tests proving a rebuild updates rather than duplicates.
-   Builds land under a `Modern Hebrew (rebuild)` deck root so the originals stay
-   untouched and reviewable side by side — see *Migrating the existing decks*.
-3. Add the TTS layer and regenerate the migrated decks with audio.
+2. ~~Stand up the build: YAML → validated models → `.apkg`.~~ **Done** — 400 notes
+   across 14 decks, with a test proving two builds produce identical GUIDs so a
+   re-import updates rather than duplicates.
+3. Add the TTS layer and regenerate the decks with audio. **Next.**
 4. Add audio-fronted note types and rebuild.
 5. Start authoring new topic decks.
 
