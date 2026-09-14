@@ -134,23 +134,40 @@ producing correct output on a real, known case.
 
 ## Git workflow
 
-- **Direct pushes to `main` are permitted.** This repo has no branch protection and
-  a single contributor, so the reference project's mandatory feature-branch + PR
-  workflow is not in force here. Owner decision, 2026-09-13 — revisitable.
-- **Feature branches are still the right choice** for anything substantial, risky, or
-  worth reviewing as a unit (a migration run, a schema change, anything touching many
-  decks at once). Use judgment: small, self-contained, obviously-correct changes go
-  straight to `main`; anything the owner would want to read as a coherent diff gets a
-  branch.
-- **After non-trivial changes: commit and push automatically** — do not ask first.
-  This is a standing Phase 2 approval (see the autonomous action policy).
-- Never `git add -A` or `git add .` — stage specific paths.
-- Commit messages describe the *why*, not just the what.
-- GitHub issues are created with `--assignee dnovick`.
-- Destructive git operations (`reset --hard`, `clean -f`, `checkout --`) are Phase 1:
-  ask first, every time.
-- Commits use the default git identity. This project has no author/reviewer bot apps
-  configured (unlike the reference project); do not attempt to use one.
+**Every change goes through a pull request. Never push to `main`.** Branch protection
+enforces this on GitHub; the rule exists because the owner works from more than one
+machine, and changes landing straight on `main` from either would conflict.
+
+- Branch from up-to-date `main`. Fetch first — the other machine may have moved it.
+- Branch names are `kind/short-description`: `feat/`, `fix/`, `chore/`, `docs/`.
+- **Commit and push to the feature branch automatically** after non-trivial changes.
+  That remains Phase 2; it is only `main` that is closed.
+- **Opening the PR is Phase 2** — it is the normal path now, not an exception. Open it
+  when the work is ready and report the link.
+- **Merging is Phase 1.** The owner reviews and says so in chat; then
+  `gh pr merge --squash`. Never merge unasked, and never merge with CI red.
+- After merging, return to `main`, pull, and delete the branch only if asked —
+  branch deletion stays Phase 1.
+- Never `git add -A` or `git add .`; stage specific paths.
+- Commit messages describe the *why*.
+- Destructive git operations (`reset --hard`, `clean -f`, `checkout --`, force-push)
+  are Phase 1: ask first, every time.
+- Commits use the default git identity. This project has no author/reviewer bot apps,
+  unlike the reference project; do not attempt to use one.
+
+CI runs lint, type checks, tests, and the coverage ratchet on every PR
+(`.github/workflows/ci.yml`). Run the same checks locally before pushing rather than
+using CI to find out.
+
+### Working from more than one machine
+
+- `git fetch` and rebase or merge before starting work, not just before pushing.
+- `data/build-state.jsonl` is append-only with `merge=union` in `.gitattributes`, so
+  concurrent builds combine instead of conflicting. Never rewrite or reorder it.
+- `coverage-baseline.json` can conflict. Resolve by re-measuring, never by picking a
+  side — the number has to match what the tool reports on that code.
+- The Anki collection is per-machine and not in git. Review flags made on one machine
+  are invisible to the other; harvest on the machine where the flagging happened.
 
 ## Autonomous action policy
 
@@ -160,13 +177,14 @@ Summary of what matters most here:
 - **Phase 2 (act, owner reviews after):** writing deck YAML and source files, running
   build/validate/lint scripts, staging and committing on a feature branch, pushing a
   feature branch, creating branches and issues.
-- **Phase 1 (ask first):** PR creation and merge, branch deletion, installing new
-  packages, anything that spends TTS credit or touches secrets, and **anything that
-  writes to the live Anki collection** (which is additionally forbidden outright by
-  rule 1 above).
+- **Phase 1 (ask first):** merging a PR, branch deletion, installing new packages,
+  anything that spends TTS credit or touches secrets, and **anything that writes to
+  the live Anki collection** (which is additionally forbidden outright by rule 1
+  above).
+- **Not promotable:** pushing to `main`, which branch protection blocks outright.
 
-Note that pushing to `main` is a Phase 2 action in this project, unlike the reference
-project where branch protection makes it impossible.
+Opening a PR is Phase 2 here, unlike the reference project — every change goes through
+one, so treating it as an exception would mean asking permission for the normal path.
 
 ## Conventions
 

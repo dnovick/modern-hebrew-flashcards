@@ -24,7 +24,6 @@ orange flag is for.
 
 from __future__ import annotations
 
-import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -203,8 +202,9 @@ def load_build_state(path: Path) -> dict[str, list[list[str]]] | None:
     """Read the history of past builds, if there is one."""
     if not path.exists():
         return None
-    loaded: dict[str, list[list[str]]] = json.loads(path.read_text(encoding="utf-8"))
-    return loaded
+    from .build import read_build_history
+
+    return read_build_history(path)
 
 
 def harvest(

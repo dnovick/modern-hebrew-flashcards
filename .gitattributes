@@ -1,0 +1,2 @@
+# Accumulated build history: append-only, so combine both sides rather than conflicting.
+data/build-state.jsonl merge=union

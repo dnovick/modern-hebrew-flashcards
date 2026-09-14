@@ -322,17 +322,60 @@ def test_any_past_build_value_counts_as_untouched() -> None:
     assert entry.english == "disturb, interrupt, interfere"
 
 
-def test_build_history_accumulates_and_is_capped(tmp_path) -> None:  # type: ignore[no-untyped-def]
-    from hebrew_cards.build import record_build
+def test_build_history_accumulates(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    from hebrew_cards.build import read_build_history, record_build
 
-    state = tmp_path / "build-state.json"
+    state = tmp_path / "build-state.jsonl"
     entry = an_entry()
     decks = a_deck(entry)
     for gloss in ("one", "two", "three"):
         entry.english = gloss
         record_build(decks, state)
 
-    import json
-    history = json.loads(state.read_text(encoding="utf-8"))
+    history = read_build_history(state)
     values = [v[1] for v in next(iter(history.values()))]
     assert values == ["one", "two", "three"], "every past build value is remembered"
+
+
+def test_build_history_only_ever_appends(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """Rewriting the file would defeat the union merge that keeps two machines apart."""
+    from hebrew_cards.build import record_build
+
+    state = tmp_path / "build-state.jsonl"
+    entry = an_entry()
+    decks = a_deck(entry)
+    record_build(decks, state)
+    first = state.read_text(encoding="utf-8")
+
+    entry.english = "changed"
+    record_build(decks, state)
+    second = state.read_text(encoding="utf-8")
+
+    assert second.startswith(first), "existing lines must never be rewritten"
+    assert len(second.splitlines()) == len(first.splitlines()) + 1
+
+
+def test_rebuilding_unchanged_data_adds_nothing(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """Otherwise every build would grow the file and churn the diff for no reason."""
+    from hebrew_cards.build import record_build
+
+    state = tmp_path / "build-state.jsonl"
+    decks = a_deck(an_entry())
+    record_build(decks, state)
+    before = state.read_text(encoding="utf-8")
+    record_build(decks, state)
+    assert state.read_text(encoding="utf-8") == before
+
+
+def test_duplicate_lines_from_a_union_merge_are_tolerated(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """Union merge keeps both sides, so the same record can appear twice."""
+    from hebrew_cards.build import read_build_history, record_build
+
+    state = tmp_path / "build-state.jsonl"
+    decks = a_deck(an_entry())
+    record_build(decks, state)
+    doubled = state.read_text(encoding="utf-8")
+    state.write_text(doubled + doubled, encoding="utf-8")
+
+    history = read_build_history(state)
+    assert len(next(iter(history.values()))) == 1, "duplicates collapse on load"
