@@ -89,3 +89,13 @@ entries:
   hebrew: לְהַפְתָּעָתִי
   english: surprisingly
   source_nid: 1414194326
+- id: instantaneously
+  pos: adverb
+  hebrew: תֵכֶף
+  english: instantaneously
+  source_nid: 1414194308
+- id: clearly
+  pos: adverb
+  hebrew: בְּפֵרוּשׁ
+  english: clearly
+  source_nid: 1414194309

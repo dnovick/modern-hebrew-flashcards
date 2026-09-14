@@ -6,16 +6,6 @@ meta:
   notes:
   - Source deck mixes parts of speech — it contains adverbs (תֵכֶף 'instantaneously', בְּפֵרוּשׁ 'clearly') alongside verbs. Entries whose gloss looks adverbial are flagged; the rest still need a pass.
 entries:
-- id: instantaneously
-  pos: verb
-  lemma: תֵכֶף
-  english: instantaneously
-  source_nid: 1414194308
-- id: clearly
-  pos: verb
-  lemma: בְּפֵרוּשׁ
-  english: clearly
-  source_nid: 1414194309
 - id: do
   pos: verb
   lemma: עָשָׂה
@@ -191,12 +181,6 @@ entries:
   lemma: הִתְאַמֵּן
   english: train, practice
   source_nid: 1414194428
-- id: look
-  pos: verb
-  lemma: הִתְבּוֹנֵן
-  english: look, contemplate
-  binyan: hitpael
-  source_nid: 1414194429
 - id: cough
   pos: verb
   lemma: הִשְׁתַּעֵל

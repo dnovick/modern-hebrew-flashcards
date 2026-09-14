@@ -76,3 +76,9 @@ entries:
   english: crumble
   binyan: hitpael
   source_nid: 1414194447
+- id: look
+  pos: verb
+  lemma: הִתְבּוֹנֵן
+  english: look, contemplate
+  binyan: hitpael
+  source_nid: 1414194429
