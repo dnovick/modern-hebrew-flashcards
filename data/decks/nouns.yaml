@@ -53,9 +53,6 @@ entries:
   pos: noun
   hebrew: טֵירוּף
   english: insanity
-  needs_review: true
-  review_notes:
-  - טֵירוּף also appears in this deck with a different gloss (insanity / madness) — merge or disambiguate
   source_nid: 1414194182
 - id: sealing
   pos: noun
@@ -67,29 +64,15 @@ entries:
   hebrew: מַצָּב
   english: situation
   source_nid: 1414194187
-- id: madness
-  pos: noun
-  hebrew: טֵירוּף
-  english: madness
-  needs_review: true
-  review_notes:
-  - טֵירוּף also appears in this deck with a different gloss (insanity / madness) — merge or disambiguate
-  source_nid: 1414194188
 - id: decoration
   pos: noun
   hebrew: קִישׁוּטִי
   english: decoration
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194189
 - id: drive
   pos: noun
   hebrew: נְהִיגָה
   english: drive
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194190
 - id: obstacle
   pos: noun
@@ -290,9 +273,6 @@ entries:
   pos: noun
   hebrew: חִסְכוֹנוֹת
   english: savings
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194238
 - id: expiry
   pos: noun
@@ -398,9 +378,6 @@ entries:
   pos: noun
   hebrew: הַצָּעָה
   english: offer
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194583
 - id: dish
   pos: noun

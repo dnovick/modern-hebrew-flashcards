@@ -38,9 +38,6 @@ entries:
   pos: adjective
   hebrew: פּוֹשֵׁר
   english: lukewarm
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194262
 - id: ridiculous
   pos: adjective
@@ -51,9 +48,6 @@ entries:
   pos: adjective
   hebrew: שׁוֹטֵף
   english: fluent
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194264
 - id: naughty
   pos: adjective
@@ -194,9 +188,6 @@ entries:
   pos: adjective
   hebrew: חֲסַר מוּשָּׂג
   english: clueless
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194303
 - id: disgraceful
   pos: adjective
@@ -222,9 +213,6 @@ entries:
   pos: adjective
   hebrew: עֵירוֹם
   english: naked
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194465
 - id: tense
   pos: adjective

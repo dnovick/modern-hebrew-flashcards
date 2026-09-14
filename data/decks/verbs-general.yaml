@@ -10,25 +10,16 @@ entries:
   pos: verb
   lemma: תֵכֶף
   english: instantaneously
-  needs_review: true
-  review_notes:
-  - gloss looks adverbial; this source deck mixes parts of speech
   source_nid: 1414194308
 - id: clearly
   pos: verb
   lemma: בְּפֵרוּשׁ
   english: clearly
-  needs_review: true
-  review_notes:
-  - gloss looks adverbial; this source deck mixes parts of speech
   source_nid: 1414194309
 - id: do
   pos: verb
   lemma: עָשָׂה
   english: do, make
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194337
 - id: organize
   pos: verb
@@ -89,9 +80,6 @@ entries:
   pos: verb
   lemma: הִבְטִיחַ
   english: promise
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194391
 - id: disturb
   pos: verb
@@ -132,9 +120,6 @@ entries:
   pos: verb
   lemma: הִזְנִיחַ
   english: neglect
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194399
 - id: impress
   pos: verb
@@ -145,17 +130,11 @@ entries:
   pos: verb
   lemma: הִכְתִּים
   english: defile, stain
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194402
 - id: persist-2
   pos: verb
   lemma: הִתְמִיד
   english: persist, persevere
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194403
 - id: disobey
   pos: verb
@@ -181,17 +160,11 @@ entries:
   pos: verb
   lemma: הִפְקִיד
   english: deposit
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194408
 - id: interfere
   pos: verb
   lemma: הִתְעָרֵב
   english: interfere
-  needs_review: true
-  review_notes:
-  - הִתְעָרֵב also appears in this deck with a different gloss (interfere / interrupt, interfere) — merge or disambiguate
   source_nid: 1414194423
 - id: pant
   pos: verb
@@ -202,81 +175,48 @@ entries:
   pos: verb
   lemma: הִתְנַשֵּׁם
   english: breathe heavily
-  needs_review: true
-  review_notes:
-  - gloss looks adverbial; this source deck mixes parts of speech
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194425
 - id: participate
   pos: verb
   lemma: הִשְׁתַּתֵּף
   english: participate
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194426
 - id: workout
   pos: verb
   lemma: הִתְעַמֵּל
   english: workout
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194427
 - id: train
   pos: verb
   lemma: הִתְאַמֵּן
   english: train, practice
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194428
 - id: look
   pos: verb
   lemma: הִתְבּוֹנֵן
   english: look, contemplate
   binyan: hitpael
-  needs_review: true
-  review_notes:
-  - lemma corrected from the present participle מִתְבּוֹנֵן to the 3ms past — confirm
   source_nid: 1414194429
 - id: cough
   pos: verb
   lemma: הִשְׁתַּעֵל
   english: cough
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194430
 - id: compete
   pos: verb
   lemma: הִתְמוֹדֵד
   english: compete
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194431
 - id: renounce
   pos: verb
   lemma: הִתְכַּחֵשׁ
   english: renounce, deny
-  needs_review: true
-  review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194432
 - id: stretch-oneself
   pos: verb
   lemma: הִתְמָתֵּחַ
   english: stretch oneself
   source_nid: 1414194433
-- id: interrupt-2
-  pos: verb
-  lemma: הִתְעָרֵב
-  english: interrupt, interfere
-  needs_review: true
-  review_notes:
-  - הִתְעָרֵב also appears in this deck with a different gloss (interfere / interrupt, interfere) — merge or disambiguate
-  source_nid: 1414194434
 - id: dress-up
   pos: verb
   lemma: הִתְחַפֵּשׂ

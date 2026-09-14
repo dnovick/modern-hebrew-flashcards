@@ -15,9 +15,6 @@ entries:
   lemma: חָסַךְ
   english: save (money)
   binyan: paal
-  needs_review: true
-  review_notes:
-  - חָסַךְ also appears in this deck with a different gloss (save (e.g. money) / save (money)) — merge or disambiguate
   source_nid: 1414194345
 - id: invade
   pos: verb
@@ -127,12 +124,3 @@ entries:
   english: sip, gulp
   binyan: paal
   source_nid: 1414194363
-- id: save-e-g-money
-  pos: verb
-  lemma: חָסַךְ
-  english: save (e.g. money)
-  binyan: paal
-  needs_review: true
-  review_notes:
-  - חָסַךְ also appears in this deck with a different gloss (save (e.g. money) / save (money)) — merge or disambiguate
-  source_nid: 1414194364
