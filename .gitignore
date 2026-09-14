@@ -1,0 +1,31 @@
+# Build output
+dist/
+
+# Audio cache
+media/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Anki working copies — never commit collection data
+*.anki2
+*.anki2-wal
+*.apkg
+*.colpkg
+
+# Secrets
+.env
+*.json.key
+service-account*.json
+
+# macOS
+.DS_Store

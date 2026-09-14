@@ -1,0 +1,17 @@
+# Core
+genanki>=0.13          # .apkg generation
+PyYAML>=6.0            # deck source data
+pydantic>=2.0          # schema validation for deck YAML
+
+# Hebrew text handling
+unicodedata2>=15.0     # NFC normalization, nikud category lookups
+
+# TTS — provider not yet chosen (Google vs Azure); add the winner here.
+# google-cloud-texttospeech>=2.16
+# azure-cognitiveservices-speech>=1.38
+
+# Dev
+pytest>=8.0
+pytest-cov>=5.0
+flake8>=7.0
+mypy>=1.8
