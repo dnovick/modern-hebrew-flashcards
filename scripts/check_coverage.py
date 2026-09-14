@@ -26,6 +26,7 @@ import argparse
 import json
 import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent
@@ -61,6 +62,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--full", action="store_true")
     parser.add_argument("--update-baseline", action="store_true")
+    parser.add_argument("--reason", help="why a floor is being lowered (required when it is)")
     args = parser.parse_args()
 
     if args.full and not _COLLECTION.exists():
@@ -73,9 +75,25 @@ def main() -> int:
 
     if args.update_baseline:
         previous = baseline.get(key)
-        baseline[key] = round(measured, 2)
+        new = round(measured, 2)
+        lowering = previous is not None and new < previous
+        if lowering and not args.reason:
+            print(
+                f"REFUSING: this would lower {key} from {previous} to {new}.\n"
+                "The policy requires a lowered floor to state its cause — a ratchet that\n"
+                "drifts down unremarked is not a ratchet. Re-run with:\n"
+                f'  --update-baseline --reason "why coverage legitimately dropped"',
+                file=sys.stderr,
+            )
+            return 1
+        baseline[key] = new
+        if args.reason:
+            direction = "lowered" if lowering else "raised"
+            stamp = f"{key} {direction} {previous} -> {new}: {args.reason}"
+            baseline["notes"] = f"{stamp}\n\n{baseline.get('notes', '')}".strip()
+        baseline["updated"] = date.today().isoformat()
         _BASELINE_FILE.write_text(json.dumps(baseline, indent=2) + "\n")
-        print(f"{key}: {previous} -> {baseline[key]}")
+        print(f"{key}: {previous} -> {new}")
         return 0
 
     floor = baseline[key]

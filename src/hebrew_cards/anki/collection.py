@@ -63,11 +63,21 @@ def copy_collection(destination: Path, source: Path = DEFAULT_COLLECTION) -> Pat
 
     Copying rather than opening in place is deliberate: Anki may be running, and a
     read-only promise is easier to keep when the file is not the real one.
+
+    The sidecar files must come too. Anki runs SQLite in write-ahead-log mode, so
+    while it is open, recent changes live in `collection.anki2-wal` and not in the
+    main database — which can lag by any amount of time. Copying the `.anki2` alone
+    yields a stale snapshot that looks perfectly valid: it silently reported decks
+    the owner had already deleted, and missed an import they had already done.
     """
     if not source.exists():
         raise FileNotFoundError(f"Anki collection not found at {source}")
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(source, destination)
+    for suffix in ("-wal", "-shm"):
+        sidecar = source.with_name(source.name + suffix)
+        if sidecar.exists():
+            shutil.copy2(sidecar, destination.with_name(destination.name + suffix))
     return destination
 
 
@@ -99,7 +109,10 @@ def read_notes(collection_copy: Path, *, generated: bool = False) -> list[RawNot
     migration, or anywhere the owner has moved it). Requiring a deck match here once
     made harvest silently find nothing.
     """
-    conn = sqlite3.connect(f"file:{collection_copy}?mode=ro", uri=True)
+    # Opened read-write, deliberately: this is a disposable copy, and SQLite must be
+    # able to replay the write-ahead log to see the collection's current state. The
+    # live collection is never opened at all — that is what copy_collection() is for.
+    conn = sqlite3.connect(collection_copy)
     try:
         # Deck and notetype names are read into dicts rather than joined in SQL:
         # Anki's schema declares a `unicase` collation that sqlite3 doesn't provide,

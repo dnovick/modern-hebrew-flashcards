@@ -150,7 +150,11 @@ def test_extraction_against_the_real_collection(tmp_path) -> None:  # type: igno
     copy = col.copy_collection(tmp_path / "collection.anki2")
     notes = col.read_notes(copy)
 
-    assert notes, "expected some Modern Hebrew notes"
+    if not notes:
+        # The migration is finished: the legacy decks were deleted once their content
+        # had been extracted, so there is no longer any source data to read. That is
+        # the expected end state, not a failure.
+        pytest.skip("no legacy Modern Hebrew notes remain — migration complete")
     # Nothing from BBH, BBG, Biblical Hebrew, or Psalm 119.
     assert all(col.in_scope(n.deck) for n in notes), "out-of-scope deck leaked"
     # And nothing from this pipeline's own output, which shares the name prefix once
@@ -229,3 +233,23 @@ def test_generated_notes_are_found_outside_the_modern_hebrew_tree(tmp_path) -> N
     # Source notes are confined to the Modern Hebrew tree; generated ones are not.
     assert all(col.in_scope(n.deck) for n in source)
     assert all(col.is_generated(n.notetype, n.tags) for n in generated)
+
+
+@pytest.mark.integration
+def test_the_collection_copy_includes_the_write_ahead_log(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    """Anki keeps recent changes in a WAL sidecar while it is running.
+
+    Copying collection.anki2 alone yields a snapshot that is stale by an unbounded
+    amount but looks entirely valid — it once reported decks the owner had already
+    deleted and missed an import they had already made. The sidecars must travel with
+    the database.
+    """
+    if not DEFAULT_COLLECTION.exists():
+        pytest.skip("no local Anki collection")
+
+    from hebrew_cards.anki import collection as col
+
+    copy = col.copy_collection(tmp_path / "collection.anki2")
+    wal_source = DEFAULT_COLLECTION.with_name(DEFAULT_COLLECTION.name + "-wal")
+    if wal_source.exists():
+        assert copy.with_name(copy.name + "-wal").exists(), "WAL was not copied"
