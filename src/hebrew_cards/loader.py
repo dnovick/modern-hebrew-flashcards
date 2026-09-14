@@ -11,7 +11,8 @@ from pathlib import Path
 import yaml
 from pydantic import ValidationError
 
-from .models import DeckFile
+from . import hebrew
+from .models import DeckFile, Entry
 
 
 class DeckLoadError(Exception):
@@ -38,7 +39,26 @@ def load_deck(path: Path) -> DeckFile:
         if entry.id in seen:
             raise DeckLoadError(f"{path.name}: duplicate entry id {entry.id!r}")
         seen.add(entry.id)
+        _check_hebrew(path, entry)
     return deck
+
+
+def _check_hebrew(path: Path, entry: Entry) -> None:
+    """Reject Hebrew that is structurally invalid.
+
+    A combining mark before the first letter has no valid reading — it is always
+    corruption, usually a furtive patach detached from a final guttural (תַפּוּחַ
+    arriving as ַתַפּוּח). Three entries reached the first built deck that way, so this
+    fails the build rather than letting it happen again.
+    """
+    candidates = [entry.hebrew, entry.lemma, entry.plural, entry.infinitive]
+    candidates.extend((entry.forms or {}).values())
+    for value in candidates:
+        if value and hebrew.is_point(value[0]):
+            raise DeckLoadError(
+                f"{path.name}: entry {entry.id!r}: {value!r} begins with a combining "
+                f"mark, which is never valid — a vowel has come detached from its letter"
+            )
 
 
 def load_all(directory: Path) -> list[tuple[Path, DeckFile]]:

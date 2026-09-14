@@ -346,11 +346,8 @@ entries:
   source_nid: 1414194551
 - id: smell
   pos: noun
-  hebrew: ַרֵיח
+  hebrew: רֵיחַ
   english: smell, odor
-  needs_review: true
-  review_notes:
-  - a pointing mark precedes the first letter — the nikud is misplaced
   source_nid: 1414194558
 - id: surprise
   pos: noun

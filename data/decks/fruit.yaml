@@ -41,11 +41,8 @@ entries:
   source_nid: 1414194168
 - id: apple
   pos: noun
-  hebrew: ַתַפּוּח
+  hebrew: תַפּוּחַ
   english: apple
   tags:
   - topic::fruit
-  needs_review: true
-  review_notes:
-  - a pointing mark precedes the first letter — the nikud is misplaced
   source_nid: 1414194195

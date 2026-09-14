@@ -71,3 +71,20 @@ def test_load_all_is_sorted_and_nonempty(tmp_path: Path) -> None:
 def test_load_all_rejects_an_empty_directory(tmp_path: Path) -> None:
     with pytest.raises(DeckLoadError, match="no deck files"):
         load_all(tmp_path)
+
+
+def test_hebrew_beginning_with_a_combining_mark_is_rejected(tmp_path: Path) -> None:
+    """A detached furtive patach (ַתַפּוּח for תַפּוּחַ) shipped in the first build.
+
+    There is no valid reading of a mark before the first letter, so this fails the
+    build rather than producing a card with visibly broken Hebrew.
+    """
+    bad = VALID.replace("hebrew: כָּדוּר", "hebrew: ַתַפּוּח")
+    with pytest.raises(DeckLoadError, match="begins with a combining mark"):
+        load_deck(write(tmp_path, bad))
+
+
+def test_the_check_covers_every_hebrew_field(tmp_path: Path) -> None:
+    bad = VALID.replace("hebrew: כָּדוּר", "hebrew: כָּדוּר\n  plural: ַתַפּוּחִים")
+    with pytest.raises(DeckLoadError, match="begins with a combining mark"):
+        load_deck(write(tmp_path, bad))

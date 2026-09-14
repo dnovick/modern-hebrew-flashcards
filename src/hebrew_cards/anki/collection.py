@@ -20,7 +20,10 @@ DEFAULT_COLLECTION = (
     Path.home() / "Library" / "Application Support" / "Anki2" / "User 1" / "collection.anki2"
 )
 
-IN_SCOPE_PREFIX = "Modern Hebrew"
+# The legacy tree this project migrates from. Matched exactly or as a "::" parent, so
+# that "Modern Hebrew (rebuild)" — this pipeline's own output, which lives in the same
+# collection once imported — is NOT swept back up as if it were source data.
+IN_SCOPE_ROOT = "Modern Hebrew"
 
 # Anki separates a note's fields with this character.
 FIELD_SEP = "\x1f"
@@ -50,6 +53,17 @@ def copy_collection(destination: Path, source: Path = DEFAULT_COLLECTION) -> Pat
     return destination
 
 
+def in_scope(deck: str) -> bool:
+    """True if `deck` belongs to the legacy tree this project reads from.
+
+    Prefix matching alone is wrong here: once a generated package is imported, the
+    collection also holds `Modern Hebrew (rebuild)::*`, and a naive prefix would pull
+    the pipeline's own output back in as source data — silently doubling the deck on
+    the next extraction.
+    """
+    return deck == IN_SCOPE_ROOT or deck.startswith(f"{IN_SCOPE_ROOT}::")
+
+
 def read_notes(collection_copy: Path) -> list[RawNote]:
     """Return every `Modern Hebrew::*` note in the collection copy."""
     conn = sqlite3.connect(f"file:{collection_copy}?mode=ro", uri=True)
@@ -70,7 +84,7 @@ def read_notes(collection_copy: Path) -> list[RawNote]:
         notes: list[RawNote] = []
         for nid, mid, flds, tags in conn.execute("select id, mid, flds, tags from notes"):
             deck = note_deck.get(nid, "?")
-            if not deck.startswith(IN_SCOPE_PREFIX):
+            if not in_scope(deck):
                 continue
             notes.append(
                 RawNote(

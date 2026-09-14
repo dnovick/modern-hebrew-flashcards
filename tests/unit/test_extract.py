@@ -137,9 +137,10 @@ def test_assign_ids_is_unique_within_a_deck() -> None:
 def test_extraction_against_the_real_collection(tmp_path) -> None:  # type: ignore[no-untyped-def]
     """Behavioral test: run the real extractor over the real collection.
 
-    Asserts known-correct facts established by inspecting the collection directly:
-    457 in-scope notes collapse to 400 entries, nothing outside Modern Hebrew is
-    ever read, and a specific known word comes out with the right fields.
+    Asserts invariants rather than a note count: the collection is live user data that
+    legitimately changes, and an exact count would fail every time the owner adds a
+    card. What must always hold is that only the legacy tree is read, that generated
+    decks are never read back, and that a known word extracts correctly.
     """
     if not DEFAULT_COLLECTION.exists():
         pytest.skip("no local Anki collection")
@@ -149,8 +150,12 @@ def test_extraction_against_the_real_collection(tmp_path) -> None:  # type: igno
     copy = col.copy_collection(tmp_path / "collection.anki2")
     notes = col.read_notes(copy)
 
-    assert len(notes) == 457
-    assert all(n.deck.startswith("Modern Hebrew") for n in notes), "out-of-scope deck leaked"
+    assert notes, "expected some Modern Hebrew notes"
+    # Nothing from BBH, BBG, Biblical Hebrew, or Psalm 119.
+    assert all(col.in_scope(n.deck) for n in notes), "out-of-scope deck leaked"
+    # And nothing from this pipeline's own output, which shares the name prefix once
+    # a generated package has been imported into the same collection.
+    assert not any("(rebuild)" in n.deck for n in notes), "generated decks read back as source"
 
     total = 0
     ball = None
@@ -164,10 +169,26 @@ def test_extraction_against_the_real_collection(tmp_path) -> None:  # type: igno
             if entry.id == "ball":
                 ball = entry
 
-    assert total == 400, "expected 457 source notes to collapse to 400 unique entries"
-
+    assert total > 0
     assert ball is not None, "the noun deck should yield an entry with id 'ball'"
     assert ball.hebrew == "כָּדוּר"     # nbsp stripped from the English side
     assert ball.english == "ball"
     assert ball.pos == "noun"
     assert not ball.needs_review
+
+
+def test_generated_decks_are_not_in_scope() -> None:
+    """The rebuild tree shares a name prefix with the legacy tree it replaces.
+
+    Once a built package is imported, both live in the same collection. Matching on
+    the bare prefix would feed the pipeline's own output back in as source data.
+    """
+    from hebrew_cards.anki.collection import in_scope
+
+    assert in_scope("Modern Hebrew")
+    assert in_scope("Modern Hebrew::Nouns")
+    assert in_scope("Modern Hebrew::Verbs::Paal")
+    assert not in_scope("Modern Hebrew (rebuild)")
+    assert not in_scope("Modern Hebrew (rebuild)::Nouns")
+    assert not in_scope("BBH::Vocabulary::Chapter 26")
+    assert not in_scope("Psalm 119::01 Alef — Vocabulary")

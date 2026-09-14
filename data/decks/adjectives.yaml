@@ -228,11 +228,8 @@ entries:
   source_nid: 1414194465
 - id: tense
   pos: adjective
-  hebrew: ַמָתוּח
+  hebrew: מָתוּחַ
   english: tense
-  needs_review: true
-  review_notes:
-  - a pointing mark precedes the first letter — the nikud is misplaced
   source_nid: 1414194466
 - id: whole
   pos: adjective
