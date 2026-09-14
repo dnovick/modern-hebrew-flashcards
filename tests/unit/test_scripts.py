@@ -99,11 +99,13 @@ def test_build_decks_reports_an_empty_directory(
 def test_extract_refuses_to_overwrite_existing_decks(
     decks_dir: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    """Extraction is a one-time migration; a stray re-run would revert hand edits."""
-    extract = load_script("extract_collection.py")
-    from hebrew_cards.anki.collection import DEFAULT_COLLECTION
+    """Extraction is a one-time migration; a stray re-run would revert hand edits.
 
-    if not DEFAULT_COLLECTION.exists():
-        pytest.skip("no local Anki collection")
+    Deliberately does not require an Anki collection: the overwrite check runs before
+    the collection is read, so guarding this on local data would make it skip in CI —
+    which is how the coverage floor came to be measured a point higher than CI could
+    ever reach.
+    """
+    extract = load_script("extract_collection.py")
     assert run(extract, ["--out", str(decks_dir)], monkeypatch) == 1
     assert "already contains" in capsys.readouterr().err
