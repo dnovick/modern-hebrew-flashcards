@@ -31,6 +31,12 @@ if a card can be made to train the ear rather than the eye, it should be.
 
 ## Note GUIDs
 
+> **Current allowance (2026-09-13):** the owner is not yet studying these decks and
+> has no review history worth protecting, so a change that alters GUIDs — renaming an
+> entry id, moving an entry to a different deck file — is acceptable for now. Confirm
+> before relying on this; it stops being true the moment they start practising.
+
+
 Anki matches notes on import by GUID. Review history is explicitly **not**
 preserved — the existing Modern Hebrew cards are being rebuilt from scratch — so
 every entry gets a deterministic GUID derived from a stable key:
