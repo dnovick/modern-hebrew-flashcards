@@ -6,8 +6,8 @@ Review flagged cards in Anki, then mark each one:
     green (Ctrl+3)  correct as it now stands — clears the review flag
     red   (Ctrl+1)  still wrong — keeps it flagged for another pass
 
-Edit the Hebrew field directly in Anki if it needs changing; this picks the edit up
-along with the flag. Unflagged cards are left completely alone.
+Edit the Hebrew or the English directly in Anki if either needs changing; this picks
+both up along with the flag. Unflagged cards are left completely alone.
 
 Reports what it would do by default. Pass --apply to write the YAML.
 
@@ -59,10 +59,11 @@ def main() -> int:
     print(f"\n{result.approved} approved, {result.edits} with edited Hebrew:\n")
     for change in result.changes:
         mark = "approved " if change.verdict == "approved" else "flagged  "
-        line = f"  {mark} {change.deck}/{change.entry_id}"
-        if change.edited:
-            line += f"   {change.old_hebrew}  ->  {change.new_hebrew}"
-        print(line)
+        print(f"  {mark} {change.deck}/{change.entry_id}")
+        if change.hebrew_edited:
+            print(f"             hebrew:  {change.old_hebrew}  ->  {change.new_hebrew}")
+        if change.english_edited:
+            print(f"             english: {change.old_english!r}  ->  {change.new_english!r}")
 
     for problem in result.unmatched:
         print(f"  UNMATCHED {problem}")

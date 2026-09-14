@@ -35,10 +35,20 @@ class Change:
     verdict: str
     old_hebrew: str | None = None
     new_hebrew: str | None = None
+    old_english: str | None = None
+    new_english: str | None = None
+
+    @property
+    def hebrew_edited(self) -> bool:
+        return bool(self.new_hebrew) and self.new_hebrew != self.old_hebrew
+
+    @property
+    def english_edited(self) -> bool:
+        return bool(self.new_english) and self.new_english != self.old_english
 
     @property
     def edited(self) -> bool:
-        return self.new_hebrew is not None and self.new_hebrew != self.old_hebrew
+        return self.hebrew_edited or self.english_edited
 
 
 @dataclass
@@ -77,10 +87,20 @@ def index_by_guid(decks: list[tuple[Path, DeckFile]]) -> dict[str, tuple[Path, D
     return index
 
 
+# Field positions shared by every MHF note type: the citation form first, the gloss
+# second. Both are harvested, because a flagged entry is as likely to have a wrong
+# gloss as wrong pointing — several are flagged precisely for a gloss collision.
+CITATION_FIELD = 0
+ENGLISH_FIELD = 1
+
+
+def _field(note: RawNote, index: int) -> str:
+    return note.fields[index].strip() if len(note.fields) > index else ""
+
+
 def harvest(
     decks: list[tuple[Path, DeckFile]],
     notes: list[RawNote],
-    citation_field: int = 0,
 ) -> HarvestResult:
     """Apply flag verdicts and field edits from `notes` onto `decks`, in place."""
     index = index_by_guid(decks)
@@ -95,18 +115,22 @@ def harvest(
             continue
         _, deck, entry = found
 
-        old = _citation(entry)
-        new = note.fields[citation_field].strip() if len(note.fields) > citation_field else ""
         change = Change(
             deck=deck.meta.name,
             entry_id=entry.id,
             verdict="approved" if note.flag == FLAG_GREEN else "still flagged",
-            old_hebrew=old,
-            new_hebrew=new or None,
+            old_hebrew=_citation(entry),
+            new_hebrew=_field(note, CITATION_FIELD) or None,
+            old_english=entry.english,
+            new_english=_field(note, ENGLISH_FIELD) or None,
         )
 
-        if change.edited and new:
-            _set_citation(entry, new)
+        # An empty field is far more likely a slip than an intended deletion, so a
+        # blank never overwrites content — hence the `and new_*` guards.
+        if change.hebrew_edited and change.new_hebrew:
+            _set_citation(entry, change.new_hebrew)
+        if change.english_edited and change.new_english:
+            entry.english = change.new_english
 
         if note.flag == FLAG_GREEN:
             entry.needs_review = False

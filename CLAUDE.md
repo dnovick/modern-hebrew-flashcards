@@ -186,7 +186,7 @@ card flag:
 
 | Flag | Means | Effect on the YAML |
 |---|---|---|
-| **Green** (`Ctrl+3`) | correct as it now stands in Anki | adopt any edit, clear `needs_review` |
+| **Green** (`Ctrl+3`) | correct as it now stands in Anki | adopt any Hebrew or English edit, clear `needs_review` |
 | **Red** (`Ctrl+1`) | still wrong, or edited but unfinished | adopt any edit, keep `needs_review` |
 | none | untouched | nothing at all |
 
@@ -198,8 +198,11 @@ Rules this depends on:
 
 - **Only an explicit flag may change the source of truth.** An edit on an unflagged
   card is ignored, so a stray keystroke in the browser cannot rewrite the data.
-- **A blank field never wipes the Hebrew.** Far more likely a mistake than an
-  intended deletion.
+- **A blank field never wipes content.** Far more likely a mistake than an intended
+  deletion. Applies to both the Hebrew and the gloss.
+- **Both the citation form and the gloss are harvested.** Several entries are flagged
+  for a gloss problem rather than a pointing one, so picking up only the Hebrew would
+  silently discard the fix.
 - Harvest reads *generated* notes — the inverse of extraction, which skips them. Both
   use `collection.is_generated()`, so the two directions cannot overlap.
 

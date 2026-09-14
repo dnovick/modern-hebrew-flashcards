@@ -185,8 +185,8 @@ Review them in Anki and record each verdict with a flag:
 | **Green** (`Ctrl+3`) | correct as it stands — clears the flag |
 | **Red** (`Ctrl+1`) | still wrong — keeps it flagged for another pass |
 
-Fix the Hebrew directly in the Anki editor where it needs changing; the harvest picks
-up the edit along with the flag. Then:
+Fix the Hebrew or the English directly in the Anki editor where either needs changing;
+the harvest picks both up along with the flag. Then:
 
 ```bash
 .venv/bin/python scripts/harvest_review.py            # show what it would do

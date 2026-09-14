@@ -143,3 +143,33 @@ def test_harvest_against_the_real_deck_data() -> None:
     assert result.approved == 1
     after = sum(1 for _, d in decks for e in d.entries if e.needs_review)
     assert after == before - 1, "exactly one entry should have changed"
+
+
+def test_an_english_edit_is_adopted() -> None:
+    """Several entries are flagged for a gloss problem, not a pointing one."""
+    entry = an_entry(english="decoration")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "קִישׁוּטִי", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("קִישׁוּטִי", "decorative", "", "", "", "", "")})
+    result = harvest(decks, [note])
+    assert entry.english == "decorative"
+    assert result.changes[0].english_edited
+
+
+def test_an_empty_english_field_never_wipes_the_gloss() -> None:
+    entry = an_entry(english="ball")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "כָּדוּר", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("כָּדוּר", "  ", "", "", "", "", "")})
+    harvest(decks, [note])
+    assert entry.english == "ball"
+
+
+def test_both_fields_can_change_at_once() -> None:
+    entry = an_entry(hebrew="עשה", english="do")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "עָשָׂה", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("עָשָׂה", "do, make", "", "", "", "", "")})
+    harvest(decks, [note])
+    assert entry.hebrew == "עָשָׂה"
+    assert entry.english == "do, make"
