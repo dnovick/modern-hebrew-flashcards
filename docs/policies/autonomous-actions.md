@@ -45,10 +45,10 @@ discretion.
 | 2 | **Source code writes** | 2 | `src/hebrew_cards/`, `scripts/`, `tests/` | flake8 + mypy must pass before commit |
 | 3 | **Script execution** | 2 | Build, validate, and lint scripts run as part of the assigned task | Scripts that spend money (TTS) or write to Anki are separate domains below |
 | 4 | **Git staging + commit** | 2 | `git add <specific paths>`, `git commit` on the current feature branch | Never `git add -A` / `git add .`. Destructive ops (`reset --hard`, `clean -f`, `checkout --`) are Phase 1. Message must describe the *why* |
-| 5 | **Git push (feature branch)** | 2 | `git push` to the current feature branch | Pushing to `main` is never permitted |
+| 5 | **Git push** | 2 | `git push` to `main` or to a feature branch | No branch protection is configured and there is one contributor. Substantial or reviewable-as-a-unit work should still use a branch — see the note below |
 | 6 | **Branch creation** | 2 | `git checkout -b` + `git push -u` | Deleting branches is Phase 1 |
 | 7 | **GitHub — issue creation** | 2 | `gh issue create --assignee dnovick` | Body must accurately describe the work |
-| 8 | **GitHub — PR creation** | 1 | `gh pr create` | Owner asks; Claude creates and reports back |
+| 8 | **GitHub — PR creation** | 1 | `gh pr create` | Owner asks; Claude creates and reports back. PRs are optional here, not the mandatory path |
 | 9 | **GitHub — PR merge** | 1 | `gh pr merge` | Owner requests explicitly |
 | 10 | **TTS generation (paid API)** | 1 | Any call to a cloud TTS provider | Costs money per character. Owner approves a generation run; the media cache exists so an approved run is never repeated needlessly |
 | 11 | **Reading the Anki collection** | 2 | Copying `collection.anki2` to scratchpad and querying the copy read-only | `Modern Hebrew::*` only. Never open the live file directly |
@@ -56,11 +56,27 @@ discretion.
 
 ---
 
+## On pushing to `main`
+
+The reference project forbids this absolutely, enforced by branch protection. **This
+project permits it** (owner decision, 2026-09-13): the repo has no protection
+configured and a single contributor, so a mandatory PR round-trip would be ceremony
+without a reviewer.
+
+This is a deliberate, revisitable relaxation rather than an oversight. If branch
+protection is ever enabled here, this domain reverts to the reference project's rule
+and this section should be deleted.
+
+The underlying discipline does not change: commits are still scoped to specific paths,
+still explain *why*, and work worth reading as a coherent diff still belongs on a
+branch.
+
+---
+
 ## Actions That Are Always Phase 1
 
 Regardless of future promotions:
 
-- Pushing to `main` directly
 - Merging a PR
 - Deleting branches, tags, or releases
 - Any action affecting billing, secrets, or repository access

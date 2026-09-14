@@ -124,7 +124,14 @@ producing correct output on a real, known case.
 
 ## Git workflow
 
-- **All changes go on a feature branch + PR.** Never push directly to `main`.
+- **Direct pushes to `main` are permitted.** This repo has no branch protection and
+  a single contributor, so the reference project's mandatory feature-branch + PR
+  workflow is not in force here. Owner decision, 2026-09-13 — revisitable.
+- **Feature branches are still the right choice** for anything substantial, risky, or
+  worth reviewing as a unit (a migration run, a schema change, anything touching many
+  decks at once). Use judgment: small, self-contained, obviously-correct changes go
+  straight to `main`; anything the owner would want to read as a coherent diff gets a
+  branch.
 - **After non-trivial changes: commit and push automatically** — do not ask first.
   This is a standing Phase 2 approval (see the autonomous action policy).
 - Never `git add -A` or `git add .` — stage specific paths.
@@ -147,6 +154,9 @@ Summary of what matters most here:
   packages, anything that spends TTS credit or touches secrets, and **anything that
   writes to the live Anki collection** (which is additionally forbidden outright by
   rule 1 above).
+
+Note that pushing to `main` is a Phase 2 action in this project, unlike the reference
+project where branch protection makes it impossible.
 
 ## Conventions
 
