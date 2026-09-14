@@ -46,34 +46,27 @@ alongside the old ones produces duplicates. The migration therefore ends with th
 owner deleting the old `Modern Hebrew::*` decks — that deletion is theirs to
 perform, never automated from here.
 
-## Migration and deck separation
+## Migration status
 
-The rebuilt notes will not match the existing ones, so both sets can coexist in
-the collection. Three independent markers keep them distinguishable, so the owner
-never has to identify cards by eye:
+**Complete.** The owner backed up the collection, deleted both the legacy
+`Modern Hebrew` decks and the staging `Modern Hebrew (rebuild)` tree, and asked for
+generated decks to take the real name (2026-09-13). `DEFAULT_DECK_ROOT` is now
+`Modern Hebrew`, and generated decks are the only Modern Hebrew decks in the
+collection.
 
-1. **Deck root.** Migration builds target `Modern Hebrew (rebuild)::<Topic>`, not
-   `Modern Hebrew::<Topic>`. The deck root is configurable, never hardcoded.
-2. **Note types.** Every generated note type is named with an `MHF ` prefix
-   (`MHF Vocab`, `MHF Listening`, `MHF Cloze`). Every legacy note is `Basic`,
-   `Basic_2_fields`, or `Basic (and reversed card)`. Search `note:MHF*` partitions
-   them regardless of deck.
-3. **Provenance tag.** Every generated note carries `src::mhf`. Nothing else in the
-   collection has it.
+That retires the deck-name marker. Two remain, and they are what extraction relies
+on to avoid reading its own output back in as source data:
 
-Documented procedure, in order:
+1. **Note type.** Every generated note type is `MHF `-prefixed.
+2. **Provenance tag.** Every generated note carries `src::mhf`.
 
-1. Export the current `Modern Hebrew::*` decks to `archive/modern-hebrew-<date>.apkg`
-   so the deletion is reversible. Do this before anything else.
-2. Build and import under the `Modern Hebrew (rebuild)` root.
-3. Owner reviews the new decks against the old.
-4. **Owner** deletes the `Modern Hebrew` tree and renames `Modern Hebrew (rebuild)`
-   to `Modern Hebrew`. Both steps happen in the Anki UI, by hand. Never automate
-   deck deletion from this project.
-5. Flip the configured deck root back to `Modern Hebrew` for subsequent builds.
+`collection.is_generated()` checks both, and `read_notes()` skips anything matching.
+Deck name cannot carry this distinction any more — generated decks sit exactly where
+the source decks used to. A re-extraction without that guard would treat derived data
+as source and double every deck.
 
-Until step 5 is done, do not build to the `Modern Hebrew` root — a build that
-lands in the live tree destroys the separation the whole procedure depends on.
+Extraction also refuses to overwrite `data/decks/` without `--force`. It was a
+one-time migration; the YAML is the source of truth now.
 
 ## Python policy
 

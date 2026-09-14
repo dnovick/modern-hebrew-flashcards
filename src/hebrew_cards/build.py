@@ -18,10 +18,10 @@ from .ids import note_guid, stable_id
 from .models import DeckFile, Entry
 from .notetypes import model_for
 
-# Migration builds land here, not in the live `Modern Hebrew` tree, so the originals
-# stay reviewable until the owner deletes them by hand.
-# See docs/policies/autonomous-actions.md.
-DEFAULT_DECK_ROOT = "Modern Hebrew (rebuild)"
+# The migration is complete: the owner backed up, deleted both the legacy tree and
+# the staging tree, and asked for the real name (2026-09-13). Generated decks are now
+# the only `Modern Hebrew` decks in the collection.
+DEFAULT_DECK_ROOT = "Modern Hebrew"
 
 PROVENANCE_TAG = "src::mhf"
 

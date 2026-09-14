@@ -93,8 +93,12 @@ Beyond the phase matrix, these are absolute:
 - **Never touch non-Modern-Hebrew decks.** `BBH::*`, `BBG::*`, `Biblical Hebrew::*`,
   and `Psalm 119::*` belong to a separate area of study and are out of scope for
   every operation, including read-only extraction.
-- **Never delete an Anki deck.** Deck deletion during migration is the owner's
-  action, performed by hand in the Anki UI.
+- **Never delete an Anki deck.** Deck deletion is the owner's action, performed by
+  hand in the Anki UI. (The migration deletion was carried out by the owner on
+  2026-09-13, after taking a backup.)
+- **Never let generated notes be read back as source.** Generated decks now share
+  the source decks' names, so `MHF `-prefixed note types and the `src::mhf` tag are
+  the only things separating them.
 
 ---
 

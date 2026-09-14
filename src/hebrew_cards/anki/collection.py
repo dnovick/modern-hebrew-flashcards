@@ -20,10 +20,16 @@ DEFAULT_COLLECTION = (
     Path.home() / "Library" / "Application Support" / "Anki2" / "User 1" / "collection.anki2"
 )
 
-# The legacy tree this project migrates from. Matched exactly or as a "::" parent, so
-# that "Modern Hebrew (rebuild)" — this pipeline's own output, which lives in the same
-# collection once imported — is NOT swept back up as if it were source data.
+# The tree this project reads from. Matched exactly or as a "::" parent.
 IN_SCOPE_ROOT = "Modern Hebrew"
+
+# Generated notes must never be read back as source data. Deck name cannot carry that
+# distinction any more: the staging root was retired once the owner deleted the legacy
+# decks, so this pipeline's own output now lives at `Modern Hebrew::*` — exactly where
+# the source used to be. These two markers travel with the note itself and survive any
+# deck rename or move.
+GENERATED_NOTETYPE_PREFIX = "MHF "
+GENERATED_TAG = "src::mhf"
 
 # Anki separates a note's fields with this character.
 FIELD_SEP = "\x1f"
@@ -54,14 +60,18 @@ def copy_collection(destination: Path, source: Path = DEFAULT_COLLECTION) -> Pat
 
 
 def in_scope(deck: str) -> bool:
-    """True if `deck` belongs to the legacy tree this project reads from.
-
-    Prefix matching alone is wrong here: once a generated package is imported, the
-    collection also holds `Modern Hebrew (rebuild)::*`, and a naive prefix would pull
-    the pipeline's own output back in as source data — silently doubling the deck on
-    the next extraction.
-    """
+    """True if `deck` belongs to the tree this project reads from."""
     return deck == IN_SCOPE_ROOT or deck.startswith(f"{IN_SCOPE_ROOT}::")
+
+
+def is_generated(notetype: str, tags: str) -> bool:
+    """True if this note was produced by this pipeline.
+
+    Extraction must skip these. Reading generated notes back in would treat derived
+    data as source and double every deck — and because generated decks now carry the
+    same names the source did, the deck name cannot be what tells them apart.
+    """
+    return notetype.startswith(GENERATED_NOTETYPE_PREFIX) or GENERATED_TAG in tags.split()
 
 
 def read_notes(collection_copy: Path) -> list[RawNote]:
@@ -86,11 +96,14 @@ def read_notes(collection_copy: Path) -> list[RawNote]:
             deck = note_deck.get(nid, "?")
             if not in_scope(deck):
                 continue
+            notetype = notetypes.get(mid, "?")
+            if is_generated(notetype, tags):
+                continue
             notes.append(
                 RawNote(
                     nid=nid,
                     deck=deck,
-                    notetype=notetypes.get(mid, "?"),
+                    notetype=notetype,
                     fields=tuple(flds.split(FIELD_SEP)),
                     tags=tags,
                 )

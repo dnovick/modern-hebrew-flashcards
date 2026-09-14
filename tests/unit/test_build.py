@@ -135,10 +135,11 @@ def test_building_the_real_decks(tmp_path: Path) -> None:
     # legacy Basic/Basic_2_fields notes during migration.
     assert all(m["name"].startswith("MHF ") for m in models.values())
 
-    # Builds land under the rebuild root, never in the live Modern Hebrew tree.
+    # Builds land under the Modern Hebrew root — the migration is complete and the
+    # staging root retired, so these are the only Modern Hebrew decks that exist.
     generated = [d["name"] for d in decks.values() if d["name"] != "Default"]
     assert generated, "no decks were written"
-    assert all(name.startswith("Modern Hebrew (rebuild)::") for name in generated)
+    assert all(name.startswith("Modern Hebrew::") for name in generated)
 
     assert conn.execute("select count(*) from notes").fetchone()[0] == 400
     # One card per note for now: the Hebrew front. The audio card's front is

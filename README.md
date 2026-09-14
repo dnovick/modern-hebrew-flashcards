@@ -135,9 +135,8 @@ python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scripts/check_coverage.py       # coverage ratchet
 ```
 
-`build_decks.py` writes `dist/modern-hebrew.apkg` under the
-`Modern Hebrew (rebuild)` deck root. Import it by hand — nothing here ever writes
-to your live collection.
+`build_decks.py` writes `dist/modern-hebrew.apkg` under the `Modern Hebrew` deck
+root. Import it by hand — nothing here ever writes to your live collection.
 
 > **Audio is not generated yet**, so only the Hebrew-front cards exist today. The
 > audio-front template is already in place and gated on the `Audio` field, so those
@@ -155,44 +154,23 @@ Milestones:
 4. Add audio-fronted note types and rebuild.
 5. Start authoring new topic decks.
 
-## Migrating the existing decks
+## Migration
 
-The rebuilt notes do not match the current ones, so importing puts both sets in
-the collection at once. Three markers keep them apart, any one of which is
-sufficient to select exactly the right cards:
+Done. The legacy decks were extracted to YAML, rebuilt, verified, and deleted; the
+generated decks now live at `Modern Hebrew::*` and are the only Modern Hebrew decks
+in the collection.
 
-| Marker | Old cards | New cards |
-|---|---|---|
-| Deck | `Modern Hebrew::*` | `Modern Hebrew (rebuild)::*` |
-| Note type | `Basic`, `Basic_2_fields`, `Basic (and reversed card)` | `MHF *` |
-| Tag | — | `src::mhf` |
+Because generated decks now carry the names the source decks had, deck name no longer
+distinguishes them. Two markers do, and extraction depends on them:
 
-The procedure:
-
-1. The old decks are exported to `archive/modern-hebrew-<date>.apkg` first, so
-   deleting them is reversible.
-2. New decks import under `Modern Hebrew (rebuild)`, leaving the originals alone.
-3. Review the two side by side.
-4. Delete the `Modern Hebrew` tree and rename `Modern Hebrew (rebuild)` to
-   `Modern Hebrew`. Renaming a deck does not affect its cards.
-5. Flip the configured deck root back to `Modern Hebrew` for future builds.
-
-Steps 1 and 4 happen by hand in the Anki UI. This project never deletes decks.
-
-## Fixing a card you spot mid-review
-
-YAML is the source of truth, so an edit made in Anki's editor is overwritten by the
-next rebuild. Instead:
-
-| Step | Where |
+| Marker | Generated notes |
 |---|---|
-| 1. Flag the card **red** (`Ctrl+1`), keep reviewing | Anki |
-| 2. `scripts/report_flagged.py` maps red flags back to source entries by GUID | terminal |
-| 3. Fix the entry, rebuild, re-import | `data/decks/*.yaml` |
-| 4. Clear the flag | Anki |
+| Note type | `MHF Noun`, `MHF Adjective`, `MHF Verb`, `MHF Particle` |
+| Tag | `src::mhf` |
 
-Red means *content bug, fix in source* — nothing else. No flag was in use anywhere in
-the collection when this was adopted, so the meaning is unambiguous.
+`scripts/extract_collection.py` skips any note matching either, so re-running it can
+never fold the pipeline's own output back into its source data. It also refuses to
+overwrite `data/decks/` without `--force`.
 
 ## Development
 
@@ -223,4 +201,4 @@ a real `.apkg` with correct contents, not merely reviewed.
 | Language | Python 3.12 | project policy |
 | Conventions | inherited from `berean-bible-bots` | consistency across the owner's projects |
 | Scope | `Modern Hebrew::*` only | other decks are a separate area of study |
-| Migration | staged under a separate deck root | originals stay reviewable until you delete them yourself |
+| Migration | staged under a separate root, then renamed | originals stayed reviewable until deleted; complete as of 2026-09-13 |

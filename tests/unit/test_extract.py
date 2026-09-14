@@ -177,18 +177,31 @@ def test_extraction_against_the_real_collection(tmp_path) -> None:  # type: igno
     assert not ball.needs_review
 
 
-def test_generated_decks_are_not_in_scope() -> None:
-    """The rebuild tree shares a name prefix with the legacy tree it replaces.
-
-    Once a built package is imported, both live in the same collection. Matching on
-    the bare prefix would feed the pipeline's own output back in as source data.
-    """
+def test_only_the_modern_hebrew_tree_is_in_scope() -> None:
     from hebrew_cards.anki.collection import in_scope
 
     assert in_scope("Modern Hebrew")
     assert in_scope("Modern Hebrew::Nouns")
     assert in_scope("Modern Hebrew::Verbs::Paal")
-    assert not in_scope("Modern Hebrew (rebuild)")
-    assert not in_scope("Modern Hebrew (rebuild)::Nouns")
     assert not in_scope("BBH::Vocabulary::Chapter 26")
     assert not in_scope("Psalm 119::01 Alef — Vocabulary")
+    assert not in_scope("Biblical Hebrew::Root Deck")
+
+
+def test_generated_notes_are_never_read_back_as_source() -> None:
+    """Generated decks now carry the same names the source decks did.
+
+    The staging root was retired when the owner deleted the legacy tree, so deck name
+    can no longer separate source from output. These markers ride on the note itself
+    and survive any rename or move; without them, a re-extraction would treat derived
+    data as source and double every deck.
+    """
+    from hebrew_cards.anki.collection import is_generated
+
+    assert is_generated("MHF Noun", "pos::noun src::mhf")
+    assert is_generated("MHF Verb", "")
+    assert is_generated("Basic", "src::mhf other")      # tag alone is enough
+    assert not is_generated("Basic_2_fields", "adjectives character positive")
+    assert not is_generated("Basic", "")
+    # A tag that merely contains the marker as a substring is not the marker.
+    assert not is_generated("Basic", "src::mhfx")
