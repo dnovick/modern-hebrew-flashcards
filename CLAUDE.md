@@ -150,10 +150,16 @@ Summary of what matters most here:
 
 ## Conventions
 
-- Hebrew is stored in NFC-normalized Unicode, with nikud, in the `hebrew` field.
-  A `hebrew_plain` (nikud-stripped) form is derived at build time, never stored.
-- Transliteration is generated, not hand-written, and follows a single documented
-  scheme (see `docs/transliteration.md` when it exists).
+- Hebrew is stored in NFC-normalized Unicode, **fully pointed**, in the `hebrew`
+  field, and is displayed pointed on cards. A `hebrew_plain` (nikud-stripped) form is
+  derived at build time where needed, never stored — the build can strip nikud but
+  can never add it, so the source must always carry it.
+  An entry whose pointing is uncertain gets `needs_review: true` rather than a guess.
+- **No transliteration anywhere.** Hebrew appears as Hebrew script with nikud, on
+  every field of every card. This carries over the reference project's language
+  standard; see `docs/standards/language.md` for the rationale and the one narrow
+  exception. Existing transliterations (the Human Attributes deck's `tov — good`
+  style) are dropped during migration, not preserved.
 - Deck names in Anki use `Modern Hebrew::<Topic>` and mirror the YAML filename.
 - Tags are lowercase, hyphenated, and namespaced: `pos::verb`, `binyan::piel`,
   `topic::kitchen`, `level::intermediate`.

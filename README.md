@@ -15,7 +15,7 @@ before.
 
 Existing Anki decks do not help with that, because they have no audio and are
 mostly English→Hebrew recognition. Reading `כָּדוּר` and recalling "ball" is a
-different skill from hearing *kadúr* in a sentence and not stalling.
+different skill from hearing that word in a sentence and not stalling.
 
 So this project inverts the default: **audio is the front of the card**, text is
 the answer.
@@ -42,7 +42,7 @@ data/decks/*.yaml   →   validate   →   TTS (cached)   →   genanki   →   
 src/hebrew_cards/
   models.py       Pydantic models for entries, decks, note types
   loader.py       YAML load + validation with useful error locations
-  hebrew.py       nikud normalization, plain-form derivation, transliteration
+  hebrew.py       nikud normalization, plain-form derivation, validation
   notetypes.py    Anki note type definitions (stable IDs, HTML templates, CSS)
   tts/            provider interface + cloud backend + fake for tests
   build.py        genanki deck assembly
@@ -60,7 +60,7 @@ Beyond plain vocabulary, these are the formats that actually target the stated g
 
 | Type | Front | Back | Trains |
 |---|---|---|---|
-| **Audio → meaning** | audio only | Hebrew + nikud + translit + English | core listening recognition |
+| **Audio → meaning** | audio only | Hebrew (pointed) + English | core listening recognition |
 | Meaning → Hebrew | English | Hebrew + audio | production / recall |
 | **Sentence dictation** | sentence audio | full sentence text | parsing connected speech |
 | **Audio cloze** | sentence audio, one word blanked | the missing word | hearing a word in context |
@@ -147,6 +147,8 @@ Conventions follow [`berean-bible-bots`](https://github.com/dnovick/berean-bible
   the default run makes no network calls and spends no credit
 - Coverage tracked by a **must-not-decrease ratchet** against `coverage-baseline.json`
 - Feature branch + PR for every change; never a direct push to `main`
+- Content rules in [`docs/standards/language.md`](docs/standards/language.md) —
+  notably: Hebrew script with nikud everywhere, no transliteration
 - Agent autonomy is governed by [`docs/policies/autonomous-actions.md`](docs/policies/autonomous-actions.md)
 
 Behavioral tests are the bar for "done": a build capability must be observed producing
