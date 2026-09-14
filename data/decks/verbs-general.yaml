@@ -233,11 +233,12 @@ entries:
   source_nid: 1414194428
 - id: look
   pos: verb
-  lemma: מִתְבּוֹנֵן
+  lemma: הִתְבּוֹנֵן
   english: look, contemplate
+  binyan: hitpael
   needs_review: true
   review_notes:
-  - pointing proposed, not verified — confirm or correct this form in Anki
+  - lemma corrected from the present participle מִתְבּוֹנֵן to the 3ms past — confirm
   source_nid: 1414194429
 - id: cough
   pos: verb
