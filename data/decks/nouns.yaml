@@ -77,19 +77,19 @@ entries:
   source_nid: 1414194188
 - id: decoration
   pos: noun
-  hebrew: קישוטי
+  hebrew: קִישׁוּטִי
   english: decoration
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194189
 - id: drive
   pos: noun
-  hebrew: נהיגה
+  hebrew: נְהִיגָה
   english: drive
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194190
 - id: obstacle
   pos: noun
@@ -288,11 +288,11 @@ entries:
   source_nid: 1414194237
 - id: savings
   pos: noun
-  hebrew: חסכונות
+  hebrew: חִסְכוֹנוֹת
   english: savings
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194238
 - id: expiry
   pos: noun
@@ -396,11 +396,11 @@ entries:
   source_nid: 1414194582
 - id: offer
   pos: noun
-  hebrew: הצעה
+  hebrew: הַצָּעָה
   english: offer
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194583
 - id: dish
   pos: noun

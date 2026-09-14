@@ -24,11 +24,11 @@ entries:
   source_nid: 1414194309
 - id: do
   pos: verb
-  lemma: עשה
+  lemma: עָשָׂה
   english: do, make
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194337
 - id: organize
   pos: verb
@@ -87,11 +87,11 @@ entries:
   source_nid: 1414194375
 - id: promise
   pos: verb
-  lemma: הבטיח
+  lemma: הִבְטִיחַ
   english: promise
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194391
 - id: disturb
   pos: verb
@@ -133,11 +133,11 @@ entries:
   source_nid: 1414194398
 - id: neglect
   pos: verb
-  lemma: הזניח
+  lemma: הִזְנִיחַ
   english: neglect
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194399
 - id: impress
   pos: verb
@@ -154,19 +154,19 @@ entries:
   source_nid: 1414194401
 - id: defile
   pos: verb
-  lemma: הכתים
+  lemma: הִכְתִּים
   english: defile, stain
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194402
 - id: persist-2
   pos: verb
-  lemma: התמיד
+  lemma: הִתְמִיד
   english: persist, persevere
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194403
 - id: disobey
   pos: verb
@@ -190,11 +190,11 @@ entries:
   source_nid: 1414194407
 - id: deposit
   pos: verb
-  lemma: הפְקִיד
+  lemma: הִפְקִיד
   english: deposit
   needs_review: true
   review_notes:
-  - a consonant appears to be missing its vowel point
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194408
 - id: interfere
   pos: verb
@@ -211,68 +211,68 @@ entries:
   source_nid: 1414194424
 - id: breathe-heavily
   pos: verb
-  lemma: התנשם
+  lemma: הִתְנַשֵּׁם
   english: breathe heavily
   needs_review: true
   review_notes:
-  - unpointed
   - gloss looks adverbial; this source deck mixes parts of speech
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194425
 - id: participate
   pos: verb
-  lemma: השתתף
+  lemma: הִשְׁתַּתֵּף
   english: participate
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194426
 - id: workout
   pos: verb
-  lemma: התעמל
+  lemma: הִתְעַמֵּל
   english: workout
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194427
 - id: train
   pos: verb
-  lemma: התאמן
+  lemma: הִתְאַמֵּן
   english: train, practice
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194428
 - id: look
   pos: verb
-  lemma: מתבונן
+  lemma: מִתְבּוֹנֵן
   english: look, contemplate
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194429
 - id: cough
   pos: verb
-  lemma: השתעל
+  lemma: הִשְׁתַּעֵל
   english: cough
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194430
 - id: compete
   pos: verb
-  lemma: התמודד
+  lemma: הִתְמוֹדֵד
   english: compete
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194431
 - id: renounce
   pos: verb
-  lemma: התכחש
+  lemma: הִתְכַּחֵשׁ
   english: renounce, deny
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194432
 - id: stretch-oneself
   pos: verb

@@ -36,11 +36,11 @@ entries:
   source_nid: 1414194261
 - id: lukewarm
   pos: adjective
-  hebrew: פושר
+  hebrew: פּוֹשֵׁר
   english: lukewarm
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194262
 - id: ridiculous
   pos: adjective
@@ -49,11 +49,11 @@ entries:
   source_nid: 1414194263
 - id: fluent
   pos: adjective
-  hebrew: שׁוטֵף
+  hebrew: שׁוֹטֵף
   english: fluent
   needs_review: true
   review_notes:
-  - a consonant appears to be missing its vowel point
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194264
 - id: naughty
   pos: adjective
@@ -192,11 +192,11 @@ entries:
   source_nid: 1414194302
 - id: clueless
   pos: adjective
-  hebrew: חסר מושג
+  hebrew: חֲסַר מוּשָּׂג
   english: clueless
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194303
 - id: disgraceful
   pos: adjective
@@ -220,11 +220,11 @@ entries:
   source_nid: 1414194464
 - id: naked
   pos: adjective
-  hebrew: עירום
+  hebrew: עֵירוֹם
   english: naked
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194465
 - id: tense
   pos: adjective

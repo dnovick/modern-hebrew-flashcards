@@ -6,12 +6,12 @@ meta:
 entries:
 - id: abstain
   pos: verb
-  lemma: נמנע
+  lemma: נִמְנַע
   english: abstain
   binyan: niphal
   needs_review: true
   review_notes:
-  - unpointed
+  - pointing proposed, not verified — confirm or correct this form in Anki
   source_nid: 1414194365
 - id: be-obliged
   pos: verb
