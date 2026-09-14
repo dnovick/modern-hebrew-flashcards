@@ -8,18 +8,19 @@ this file holds the plan.
 
 ## Why this exists
 
-The goal is not "more vocabulary." Vocabulary and grammar are already in decent
-shape. The gap is **listening comprehension** — recognizing known words at
-conversational speed, in connected speech, spoken by a voice you have not heard
-before.
+A toolchain for learning Modern Hebrew: vocabulary, grammar, morphology, reading, and
+listening. The owner already has a decent vocabulary and solid grammar, so the decks
+are built to extend and exercise that rather than to start over.
 
-Existing Anki decks do not help with that, because they have no audio and are
-mostly English→Hebrew recognition. Reading `כָּדוּר` and recalling "ball" is a
-different skill from hearing that word in a sentence and not stalling.
+The existing Anki decks were two-field English→Hebrew notes with no structure and no
+audio. This project replaces them with version-controlled source data carrying real
+linguistic metadata — gender, plurals, agreement forms, roots, binyanim — so that many
+kinds of card can be generated from one authoritative entry, and so the content can be
+reviewed, corrected, and rebuilt rather than hand-edited card by card.
 
-So the project adds a card type the old decks never had: **audio on the front, with
-nothing to read**. It sits alongside the written-Hebrew cards rather than replacing
-them — reading and listening are different skills, and only one of them is the gap.
+Listening comprehension is the weakest skill of the set, so audio-fronted cards are
+among the card types generated. They sit alongside the written-Hebrew cards rather
+than replacing them.
 
 ## Architecture
 

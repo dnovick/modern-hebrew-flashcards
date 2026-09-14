@@ -4,12 +4,18 @@ Guidance for Claude Code working in this repository.
 
 ## What this project is
 
-A build pipeline that turns version-controlled YAML vocabulary/sentence data into
-Anki `.apkg` decks for Modern Hebrew, with generated Hebrew audio on every card.
+A build pipeline that turns version-controlled YAML deck data into Anki `.apkg`
+decks for Modern Hebrew, with linguistic metadata rich enough to generate several
+card types from one entry.
 
-The owner already has solid Hebrew vocabulary and grammar. **The bottleneck is
-listening comprehension.** Every design decision should be weighed against that:
-if a card can be made to train the ear rather than the eye, it should be.
+This project exists to help the owner learn Modern Hebrew. That is the whole of it —
+vocabulary, grammar, morphology, reading, and listening all count, and a card type
+earns its place by being useful, not by which skill it exercises.
+
+Listening comprehension is the owner's weakest area and worth specific support, so
+audio-fronted cards are a deliberate addition. They are an addition. Do not treat
+"trains the ear" as a tiebreaker that outranks other kinds of usefulness, and do not
+describe audio as the purpose of the project — it is one feature among several.
 
 ## Hard rules
 
@@ -270,8 +276,8 @@ Key rules (always enforced):
 - `gender` is required on every noun. Unknown gender is `needs_review`, never a guess.
 - **Card generation is staged per deck** via `meta.card_types`. Notes are always built
   with full metadata; enabling a card type is a config flip, not a data change. The
-  full matrix over the 400 extracted entries is ~1,800 cards — roughly 3.5× the
-  current review load — so default new decks to `[audio_meaning]` and let the owner opt in.
+  full matrix over the 396 reviewed entries is ~1,800 cards — several times the current
+  review load — so add card types deliberately rather than all at once.
 
 ## Card design
 
@@ -297,52 +303,3 @@ substitutes for the other.
 
 Adding audio to a deck therefore doubles its card count. That is the intended
 behaviour, but it is worth stating when a deck is about to gain audio.
-
-## Data model
-
-Full specification: **[`docs/standards/data-model.md`](docs/standards/data-model.md)**
-
-Key rules (always enforced):
-
-- **One note per lexeme**, with per-POS note types (`MHF Noun`, `MHF Adjective`,
-  `MHF Verb`, `MHF Root`). The one exception is `MHF Verb Form`, one note per
-  conjugated form — each form is independently scheduled, since knowing כּוֹתֶבֶת says
-  little about whether you know כָּתַבְתִּי.
-- **Store everything, drill a subset.** Full paradigms live in YAML whether or not they
-  currently produce cards. A verb's `drill:` list controls which forms become cards;
-  the project default is `[present, past.1s, past.3ms]`.
-- **Never generate Hebrew forms algorithmically.** Weak verbs break the rules and
-  `gizra` only partly predicts how. A script may *propose* regular forms; they land
-  with `needs_review: true` and stay flagged until a human confirms.
-- **Guard conditional card templates on the field that makes the card meaningful**
-  (`{{#Plural}}...{{/Plural}}`), never on one that is always populated — that
-  generates junk cards for entries lacking the real content.
-- **Fields display, tags select.** Mirror linguistic properties into both.
-- `gender` is required on every noun. Unknown gender is `needs_review`, never a guess.
-- **Card generation is staged per deck** via `meta.card_types`. Notes are always built
-  with full metadata; enabling a card type is a config flip, not a data change. The
-  full matrix over the 400 extracted entries is ~1,800 cards — roughly 3.5× the
-  current review load — so default new decks to `[audio_meaning]` and let the owner opt in.
-
-## Card design
-
-### Vocabulary (the primary card type)
-
-One card per entry. No reverse card.
-
-| Side | Content |
-|---|---|
-| **Front** | Audio only. No Hebrew text, no English, no hint. |
-| **Back** | English translation, plus the pointed Hebrew, plus a replay control. |
-
-The front must contain **nothing but the audio**. Any visible text turns a listening
-exercise into a reading exercise, which is the failure mode this whole project exists
-to avoid. This is the owner's explicit design (2026-09-13), not an inference.
-
-The Hebrew on the back is answer content, not a second card — the answer is already
-committed by the time it is visible, so it cannot short-circuit the exercise, and it
-reinforces spelling and nikud at no extra review cost.
-
-Production cards (English → Hebrew) are **not** generated. The owner's gap is
-recognition, not production.
-
