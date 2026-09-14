@@ -121,6 +121,11 @@ producing correct output on a real, known case.
   percentages.
 - When reporting that something works, say what was actually run and what the evidence
   was. "Should work" and "the code looks right" are not testing claims.
+- **Never quote coverage percentages in a commit message.** `coverage-baseline.json`
+  is the record, it is written by the measuring tool, and it is in the same commit.
+  A number typed into prose is written before the measurement runs and has been wrong
+  every time it has been tried here. If a commit needs to say something about
+  coverage, say *why* it moved, not what it is.
 
 ## Git workflow
 
