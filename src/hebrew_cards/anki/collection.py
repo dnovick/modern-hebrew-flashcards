@@ -35,6 +35,14 @@ GENERATED_TAG = "src::mhf"
 FIELD_SEP = "\x1f"
 
 
+# Anki stores a card's flag in the low three bits of `cards.flags`.
+FLAG_NONE = 0
+FLAG_RED = 1
+FLAG_GREEN = 3
+
+FLAG_NAMES = {FLAG_NONE: "none", FLAG_RED: "red", FLAG_GREEN: "green"}
+
+
 @dataclass(frozen=True)
 class RawNote:
     """One note as stored, before any interpretation."""
@@ -44,6 +52,10 @@ class RawNote:
     notetype: str
     fields: tuple[str, ...]
     tags: str
+    guid: str = ""
+    # Flags live on cards, not notes. A note's flag is the first non-zero flag among
+    # its cards, since the owner flags whichever card surfaced the problem.
+    flag: int = FLAG_NONE
 
 
 def copy_collection(destination: Path, source: Path = DEFAULT_COLLECTION) -> Path:
@@ -74,8 +86,13 @@ def is_generated(notetype: str, tags: str) -> bool:
     return notetype.startswith(GENERATED_NOTETYPE_PREFIX) or GENERATED_TAG in tags.split()
 
 
-def read_notes(collection_copy: Path) -> list[RawNote]:
-    """Return every `Modern Hebrew::*` note in the collection copy."""
+def read_notes(collection_copy: Path, *, generated: bool = False) -> list[RawNote]:
+    """Return `Modern Hebrew::*` notes from the collection copy.
+
+    By default this yields only *source* notes — the legacy ones extraction reads.
+    Pass `generated=True` to read the notes this pipeline produced instead, which is
+    what the review-harvest flow needs.
+    """
     conn = sqlite3.connect(f"file:{collection_copy}?mode=ro", uri=True)
     try:
         # Deck and notetype names are read into dicts rather than joined in SQL:
@@ -88,16 +105,21 @@ def read_notes(collection_copy: Path) -> list[RawNote]:
         # do not occur in this collection; if they ever do, the first wins and the
         # duplicate report will surface it.
         note_deck: dict[int, str] = {}
-        for did, nid in conn.execute("select did, nid from cards"):
+        note_flag: dict[int, int] = {}
+        for did, nid, flags in conn.execute("select did, nid, flags from cards"):
             note_deck.setdefault(nid, decks.get(did, "?"))
+            flag = flags & 7
+            if flag and not note_flag.get(nid):
+                note_flag[nid] = flag
 
         notes: list[RawNote] = []
-        for nid, mid, flds, tags in conn.execute("select id, mid, flds, tags from notes"):
+        query = "select id, mid, flds, tags, guid from notes"
+        for nid, mid, flds, tags, guid in conn.execute(query):
             deck = note_deck.get(nid, "?")
             if not in_scope(deck):
                 continue
             notetype = notetypes.get(mid, "?")
-            if is_generated(notetype, tags):
+            if is_generated(notetype, tags) != generated:
                 continue
             notes.append(
                 RawNote(
@@ -106,6 +128,8 @@ def read_notes(collection_copy: Path) -> list[RawNote]:
                     notetype=notetype,
                     fields=tuple(flds.split(FIELD_SEP)),
                     tags=tags,
+                    guid=guid,
+                    flag=note_flag.get(nid, FLAG_NONE),
                 )
             )
         return notes

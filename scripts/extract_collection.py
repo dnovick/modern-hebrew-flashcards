@@ -37,6 +37,8 @@ def main() -> int:
                              "(default: collapse them to one)")
     parser.add_argument("--dry-run", action="store_true",
                         help="report what would be written without writing it")
+    parser.add_argument("--force", action="store_true",
+                        help="overwrite existing deck files (discards hand edits)")
     args = parser.parse_args()
 
     scratch = args.scratch or Path(tempfile.mkdtemp(prefix="hebrew-cards-"))
@@ -86,6 +88,17 @@ def main() -> int:
     if args.dry_run:
         print("\n(dry run — nothing written)")
         return 0
+
+    existing = sorted(p.name for p in args.out.glob("*.yaml"))
+    if existing and not args.force:
+        print(
+            f"\nERROR: {args.out} already contains {len(existing)} deck files.\n"
+            "Extraction is a one-time migration — data/decks/ is the source of truth now,\n"
+            "and re-running would discard any hand edits made since. Pass --force if that\n"
+            "is genuinely what you want.",
+            file=sys.stderr,
+        )
+        return 1
 
     args.out.mkdir(parents=True, exist_ok=True)
     for deck in decks:

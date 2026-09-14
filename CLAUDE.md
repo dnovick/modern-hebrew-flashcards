@@ -174,24 +174,37 @@ project where branch protection makes it impossible.
 - The existing collection contains corrupted tags leaked from Apple Notes
   (`<MCTag: <x-coredata://...`). Strip these during extraction; never propagate them.
 
-## The red-flag workflow
+## The review workflow
 
-Edits made in Anki's own editor are destroyed by the next rebuild, because YAML is the
-source of truth for content. The defined path for a content bug found mid-review:
+Edits made in Anki's own editor are destroyed by the next rebuild, because YAML is
+the source of truth for content. Rather than forbidding those edits, the project
+harvests them on demand.
 
-1. **Owner flags the card red** (flag 1, `Ctrl+1`) and keeps reviewing. Red means
-   exactly one thing in this collection: *content bug — fix in source*. It carries no
-   difficulty or priority meaning. Verified unused across all 2,040 cards at the time
-   this convention was adopted, so it is unambiguous.
-2. Later, `scripts/report_flagged.py` reads the collection (read-only, scratchpad copy)
-   and maps each red-flagged card back to its `data/decks/*.yaml` entry by GUID,
-   reporting file and entry id.
-3. The fix is made **in YAML**, the deck is rebuilt and re-imported.
-4. The owner clears the flag in Anki once the fix lands.
+Entries the extractor could not vouch for carry `needs_review: true` in YAML and a
+`needs-review` tag in Anki. The owner reviews them in Anki and records a verdict as a
+card flag:
 
-Never instruct the owner to fix content in the Anki editor, and never treat an
-in-Anki edit as authoritative — if YAML and Anki disagree about content, YAML wins by
-definition.
+| Flag | Means | Effect on the YAML |
+|---|---|---|
+| **Green** (`Ctrl+3`) | correct as it now stands in Anki | adopt any edit, clear `needs_review` |
+| **Red** (`Ctrl+1`) | still wrong, or edited but unfinished | adopt any edit, keep `needs_review` |
+| none | untouched | nothing at all |
+
+`scripts/harvest_review.py` reads the collection (read-only, scratchpad copy), matches
+notes to entries by GUID, and applies those verdicts. It reports by default and writes
+only with `--apply`.
+
+Rules this depends on:
+
+- **Only an explicit flag may change the source of truth.** An edit on an unflagged
+  card is ignored, so a stray keystroke in the browser cannot rewrite the data.
+- **A blank field never wipes the Hebrew.** Far more likely a mistake than an
+  intended deletion.
+- Harvest reads *generated* notes — the inverse of extraction, which skips them. Both
+  use `collection.is_generated()`, so the two directions cannot overlap.
+
+Anki is still not the source of truth. It is an input to a deliberate, reported,
+reviewable harvest, and the YAML remains what builds the decks.
 
 ## Audio
 
