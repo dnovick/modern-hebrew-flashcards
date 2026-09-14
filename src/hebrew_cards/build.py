@@ -9,6 +9,7 @@ Output is always a `.apkg` file. This module never touches the live collection.
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -108,12 +109,32 @@ def build_deck(deck: DeckFile, deck_slug: str, deck_root: str) -> tuple[genanki.
     return anki_deck, len(deck.entries)
 
 
+# Tracked in git rather than left in dist/: this is accumulated history, not a build
+# artifact, and it cannot be regenerated once lost.
+BUILD_STATE = Path("data") / "build-state.json"
+
+
+def build_state_path(repo_root: Path) -> Path:
+    """Where the record of past builds lives."""
+    return repo_root / BUILD_STATE
+
+
 def build_package(
     decks: list[tuple[Path, DeckFile]],
     output: Path,
     deck_root: str = DEFAULT_DECK_ROOT,
+    state_path: Path | None = None,
 ) -> BuildStats:
-    """Build every deck into a single `.apkg` at `output`."""
+    """Build every deck into a single `.apkg` at `output`.
+
+    Also appends to data/build-state.json, which records every value each note has
+    ever been built with. The review harvest needs that history to tell two
+    identical-looking situations apart: a field differing because the owner edited it
+    in Anki (adopt it) and one differing because the YAML moved on while the
+    collection still holds an older build (adopting it would revert the newer source
+    edit). Content alone cannot distinguish them, and a single snapshot cannot either
+    — the owner may be running any previous build, not necessarily the last one.
+    """
     stats = BuildStats()
     anki_decks: list[genanki.Deck] = []
     for path, deck in decks:
@@ -127,4 +148,31 @@ def build_package(
 
     output.parent.mkdir(parents=True, exist_ok=True)
     genanki.Package(anki_decks).write_to_file(str(output))
+
+    record_build(decks, state_path or build_state_path(Path.cwd()))
     return stats
+
+
+# How many past values to remember per note. Long enough to cover any build the owner
+# might still be running, short enough that the file stays small.
+_HISTORY_LIMIT = 12
+
+
+def record_build(decks: list[tuple[Path, DeckFile]], path: Path) -> None:
+    """Append this build's field values to the per-note history."""
+    history: dict[str, list[list[str]]] = {}
+    if path.exists():
+        history = json.loads(path.read_text(encoding="utf-8"))
+
+    for deck_path, deck in decks:
+        for entry in deck.entries:
+            guid = note_guid(deck_path.stem, entry.id)
+            values = [entry.hebrew or entry.lemma or "", entry.english]
+            seen = history.setdefault(guid, [])
+            if values in seen:
+                seen.remove(values)
+            seen.append(values)
+            del seen[:-_HISTORY_LIMIT]
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(history, ensure_ascii=False, indent=0), encoding="utf-8")

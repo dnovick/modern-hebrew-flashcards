@@ -24,6 +24,7 @@ orange flag is for.
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -140,11 +141,83 @@ def find_orphans(
     ]
 
 
+def find_stale(
+    decks: list[tuple[Path, DeckFile]],
+    notes: list[RawNote],
+    built: dict[str, list[list[str]]] | None = None,
+) -> list[Orphan]:
+    """Generated notes whose fields disagree with the YAML, ignoring flagged ones.
+
+    Harvest reads verdicts *out of* Anki, so Anki must already agree with the source
+    before it runs. If the YAML has moved on — an entry edited or merged here since
+    the last import — then an unflagged note still shows the old text, and harvesting
+    a flag on it silently reverts the source edit.
+
+    With a `built` fingerprint (dist/build-state.json) this also covers *flagged*
+    notes, which is where the dangerous case lives. On a flagged note a difference
+    might be the owner's edit or might be the collection lagging, and the text alone
+    cannot say which. Comparing against what the last build actually produced settles
+    it: if Anki still matches the build, the owner did not touch it and the YAML is
+    what moved.
+
+    Without a fingerprint only unflagged notes can be checked, since there a
+    difference can only mean the collection is behind.
+    """
+    index = index_by_guid(decks)
+    stale: list[Orphan] = []
+    for note in notes:
+        if note.flag != FLAG_NONE:
+            if built is None:
+                continue
+            # Anki matching no build the project ever produced → the owner edited it.
+            if not _matches_a_build(note, built):
+                continue
+        found = index.get(note.guid)
+        if found is None:
+            continue
+        _, deck, entry = found
+        if (_field(note, CITATION_FIELD) != _citation(entry)
+                or _field(note, ENGLISH_FIELD) != entry.english):
+            stale.append(
+                Orphan(
+                    deck=deck.meta.name,
+                    nid=note.nid,
+                    hebrew=_citation(entry),
+                    english=entry.english,
+                )
+            )
+    return stale
+
+
+def _matches_a_build(note: RawNote, built: dict[str, list[list[str]]]) -> bool:
+    """True if this note still holds a value some build produced.
+
+    Then the owner has not edited it — whichever build they happen to be running —
+    and any difference from the YAML is the source having moved on.
+    """
+    current = [_field(note, CITATION_FIELD), _field(note, ENGLISH_FIELD)]
+    return current in built.get(note.guid, [])
+
+
+def load_build_state(path: Path) -> dict[str, list[list[str]]] | None:
+    """Read the history of past builds, if there is one."""
+    if not path.exists():
+        return None
+    loaded: dict[str, list[list[str]]] = json.loads(path.read_text(encoding="utf-8"))
+    return loaded
+
+
 def harvest(
     decks: list[tuple[Path, DeckFile]],
     notes: list[RawNote],
+    built: dict[str, list[list[str]]] | None = None,
 ) -> HarvestResult:
-    """Apply flag verdicts and field edits from `notes` onto `decks`, in place."""
+    """Apply flag verdicts and field edits from `notes` onto `decks`, in place.
+
+    An edit is adopted only when Anki differs from what the last build produced. If
+    `built` says the note is untouched since the build, any difference is the YAML
+    having moved on, and adopting it would revert the newer source edit.
+    """
     index = index_by_guid(decks)
     result = HarvestResult()
     to_delete: list[tuple[DeckFile, Entry]] = []
@@ -168,12 +241,18 @@ def harvest(
             new_english=_field(note, ENGLISH_FIELD) or None,
         )
 
+        untouched_since_build = built is not None and _matches_a_build(note, built)
+
         # An empty field is far more likely a slip than an intended deletion, so a
         # blank never overwrites content — hence the `and new_*` guards.
-        if change.hebrew_edited and change.new_hebrew:
-            _set_citation(entry, change.new_hebrew)
-        if change.english_edited and change.new_english:
-            entry.english = change.new_english
+        if not untouched_since_build:
+            if change.hebrew_edited and change.new_hebrew:
+                _set_citation(entry, change.new_hebrew)
+            if change.english_edited and change.new_english:
+                entry.english = change.new_english
+        else:
+            change.new_hebrew = change.old_hebrew
+            change.new_english = change.old_english
 
         if note.flag == FLAG_ORANGE:
             change.verdict = "delete"

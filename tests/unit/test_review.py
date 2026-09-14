@@ -222,3 +222,114 @@ def test_a_deleted_entry_is_not_also_counted_as_approved() -> None:
     result = harvest(decks, [flagged_note("ball", "כָּדוּר", FLAG_ORANGE)])
     assert result.approved == 0
     assert result.changes == []
+
+
+def test_stale_notes_are_detected() -> None:
+    """A note behind the YAML would revert the source edit if harvested."""
+    from hebrew_cards.review import find_stale
+
+    entry = an_entry(english="disturb, interrupt, interfere")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "כָּדוּר", FLAG_NONE)
+    note = RawNote(**{**note.__dict__, "fields": ("כָּדוּר", "disturb", "", "", "", "", "")})
+    stale = find_stale(decks, [note])
+    assert len(stale) == 1
+
+
+def test_a_flagged_difference_is_not_stale() -> None:
+    """On a flagged note a difference is the owner's edit, which is the whole point."""
+    from hebrew_cards.review import find_stale
+
+    entry = an_entry(english="disturb")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "כָּדוּר", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("כָּדוּר", "disturb, interfere", "", "", "", "", "")})
+    assert find_stale(decks, [note]) == []
+
+
+def test_matching_notes_are_not_stale() -> None:
+    from hebrew_cards.review import find_stale
+
+    entry = an_entry(english="ball")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "כָּדוּר", FLAG_NONE)
+    note = RawNote(**{**note.__dict__, "fields": ("כָּדוּר", "ball", "", "", "", "", "")})
+    assert find_stale(decks, [note]) == []
+
+
+def test_a_flagged_note_untouched_since_the_build_does_not_revert_the_yaml() -> None:
+    """The merge-revert case: YAML moved on, Anki was never re-imported.
+
+    The note is flagged green and its gloss differs from the YAML — which looks
+    exactly like an edit to adopt. The build fingerprint says otherwise: Anki still
+    holds precisely what the last build produced, so the owner never touched it, and
+    the difference is the newer source edit. Adopting it would silently undo a merge.
+    """
+    entry = an_entry(english="disturb, interrupt, interfere")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "כָּדוּר", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("כָּדוּר", "disturb", "", "", "", "", "")})
+    built = {note.guid: [["כָּדוּר", "disturb"]]}
+
+    harvest(decks, [note], built)
+    assert entry.english == "disturb, interrupt, interfere", "the merge was reverted"
+    assert entry.needs_review is False, "the green verdict should still apply"
+
+
+def test_a_genuine_anki_edit_is_still_adopted_with_a_build_state() -> None:
+    """The fingerprint must not block real edits — only reverts."""
+    entry = an_entry(english="do")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "עָשָׂה", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("עָשָׂה", "do, make", "", "", "", "", "")})
+    built = {note.guid: [["עשה", "do"]]}   # what the build produced; Anki has moved on
+
+    harvest(decks, [note], built)
+    assert entry.english == "do, make"
+    assert entry.hebrew == "עָשָׂה"
+
+
+def test_stale_detection_covers_flagged_notes_when_a_build_state_exists() -> None:
+    from hebrew_cards.review import find_stale
+
+    entry = an_entry(english="disturb, interrupt, interfere")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "כָּדוּר", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("כָּדוּר", "disturb", "", "", "", "", "")})
+    built = {note.guid: [["כָּדוּר", "disturb"]]}
+    assert len(find_stale(decks, [note], built)) == 1
+
+
+def test_any_past_build_value_counts_as_untouched() -> None:
+    """The owner may be running an older build, not necessarily the latest.
+
+    A single snapshot of the last build is not enough: rebuilding after a source edit
+    moves the snapshot ahead of whatever the owner actually imported, and their
+    unedited note then looks like an edit again. The history covers every build.
+    """
+    entry = an_entry(english="disturb, interrupt, interfere")
+    decks = a_deck(entry)
+    note = flagged_note("ball", "כָּדוּר", FLAG_GREEN)
+    note = RawNote(**{**note.__dict__, "fields": ("כָּדוּר", "disturb", "", "", "", "", "")})
+    built = {note.guid: [
+        ["כָּדוּר", "disturb"],                            # an older build
+        ["כָּדוּר", "disturb, interrupt, interfere"],      # the current one
+    ]}
+    harvest(decks, [note], built)
+    assert entry.english == "disturb, interrupt, interfere"
+
+
+def test_build_history_accumulates_and_is_capped(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    from hebrew_cards.build import record_build
+
+    state = tmp_path / "build-state.json"
+    entry = an_entry()
+    decks = a_deck(entry)
+    for gloss in ("one", "two", "three"):
+        entry.english = gloss
+        record_build(decks, state)
+
+    import json
+    history = json.loads(state.read_text(encoding="utf-8"))
+    values = [v[1] for v in next(iter(history.values()))]
+    assert values == ["one", "two", "three"], "every past build value is remembered"

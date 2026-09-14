@@ -31,7 +31,10 @@ sys.path.insert(0, str(_REPO / "src"))
 
 from hebrew_cards.anki import collection as col       # noqa: E402
 from hebrew_cards.loader import DeckLoadError, load_all  # noqa: E402
-from hebrew_cards.review import find_orphans, harvest  # noqa: E402
+from hebrew_cards.build import build_state_path                    # noqa: E402
+from hebrew_cards.review import (                                  # noqa: E402
+    find_orphans, find_stale, harvest, load_build_state,
+)
 from hebrew_cards.yamlio import dump_deck             # noqa: E402
 
 
@@ -55,6 +58,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--decks", type=Path, default=_REPO / "data" / "decks")
     parser.add_argument("--apply", action="store_true", help="write the changes")
+    parser.add_argument("--force", action="store_true",
+                        help="apply even when the collection is behind the deck data")
     args = parser.parse_args()
 
     try:
@@ -68,6 +73,21 @@ def main() -> int:
     notes = col.read_notes(copy, generated=True)
     _print_status(notes)
 
+    built = load_build_state(build_state_path(_REPO))
+    if built is None:
+        print("\nNote: no data/build-state.json, so an edit cannot be told apart from a\n"
+              "stale collection on flagged notes. Run build_decks.py to create it.")
+    stale = find_stale(decks, notes, built)
+    if stale:
+        print(f"\nWARNING: {len(stale)} note(s) in Anki are behind the deck data.")
+        print("Harvest reads verdicts out of Anki, so a flag on a stale note would write")
+        print("the old text back over the newer source. Import dist/modern-hebrew.apkg")
+        print("first, then re-run. Affected entries (showing the newer YAML values):")
+        for item in stale[:10]:
+            print(f'   {item.deck}/{item.nid}   {item.hebrew}  "{item.english}"')
+        if len(stale) > 10:
+            print(f"   ... and {len(stale) - 10} more")
+
     orphans = find_orphans(decks, notes)
     if orphans:
         print(f"\n{len(orphans)} note(s) in Anki no longer have an entry in the deck data.")
@@ -76,7 +96,7 @@ def main() -> int:
             print(f'   {orphan.deck}   {orphan.hebrew}  "{orphan.english}"')
         print("Find them in the browser by their text and delete them.")
 
-    result = harvest(decks, notes)
+    result = harvest(decks, notes, built)
 
     if not result.changes:
         print("\nNothing flagged yet. In the Anki browser, search tag:needs-review and mark\n"
@@ -105,6 +125,13 @@ def main() -> int:
     if not args.apply:
         print("\n(dry run — pass --apply to write)")
         return 0
+
+    if stale and not args.force:
+        print("\nREFUSING to apply: the collection is behind the deck data (see above).",
+              file=sys.stderr)
+        print("Import dist/modern-hebrew.apkg first, or pass --force to apply anyway.",
+              file=sys.stderr)
+        return 1
 
     for path, deck in decks:
         path.write_text(dump_deck(deck), encoding="utf-8")

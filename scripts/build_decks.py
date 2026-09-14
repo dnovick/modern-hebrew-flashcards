@@ -18,7 +18,9 @@ from pathlib import Path
 _REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_REPO / "src"))
 
-from hebrew_cards.build import DEFAULT_DECK_ROOT, build_package  # noqa: E402
+from hebrew_cards.build import (  # noqa: E402
+    DEFAULT_DECK_ROOT, build_package, build_state_path,
+)
 from hebrew_cards.loader import DeckLoadError, load_all          # noqa: E402
 
 
@@ -35,7 +37,7 @@ def main() -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
-    stats = build_package(decks, args.out, args.deck_root)
+    stats = build_package(decks, args.out, args.deck_root, build_state_path(_REPO))
     print(f"built {stats.notes} notes across {stats.decks} decks")
     for skipped in stats.skipped:
         print(f"  skipped {skipped}")
