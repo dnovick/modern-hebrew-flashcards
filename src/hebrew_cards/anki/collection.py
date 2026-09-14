@@ -38,9 +38,10 @@ FIELD_SEP = "\x1f"
 # Anki stores a card's flag in the low three bits of `cards.flags`.
 FLAG_NONE = 0
 FLAG_RED = 1
+FLAG_ORANGE = 2
 FLAG_GREEN = 3
 
-FLAG_NAMES = {FLAG_NONE: "none", FLAG_RED: "red", FLAG_GREEN: "green"}
+FLAG_NAMES = {FLAG_NONE: "none", FLAG_RED: "red", FLAG_ORANGE: "orange", FLAG_GREEN: "green"}
 
 
 @dataclass(frozen=True)

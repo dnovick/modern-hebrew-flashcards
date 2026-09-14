@@ -183,6 +183,7 @@ Review them in Anki and record each verdict with a flag:
 | Flag | Means |
 |---|---|
 | **Green** (`⌘3` on macOS, `Ctrl+3` elsewhere) | correct as it stands — clears the flag |
+| **Orange** (`⌘2` / `Ctrl+2`) | this entry should not exist — deletes it from the YAML |
 | **Red** (`⌘1` / `Ctrl+1`) | still wrong — keeps it flagged for another pass |
 
 Anki is a Qt application, so every shortcut its docs spell `Ctrl+N` is `⌘N` on macOS.

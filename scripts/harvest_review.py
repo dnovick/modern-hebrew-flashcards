@@ -3,8 +3,9 @@
 
 Review flagged cards in Anki, then mark each one:
 
-    green (Cmd+3 on macOS, Ctrl+3 elsewhere)  correct as it stands — clears the flag
-    red   (Cmd+1 / Ctrl+1)                    still wrong — keeps it flagged
+    green  (Cmd+3 on macOS, Ctrl+3 elsewhere)  correct as it stands — clears the flag
+    orange (Cmd+2 / Ctrl+2)                    delete this entry from the source
+    red    (Cmd+1 / Ctrl+1)                    still wrong — keeps it flagged
 
 The menu route always works too: select rows, right-click -> Flag, or Cards -> Flag.
 
@@ -44,6 +45,8 @@ def _print_status(notes: list[col.RawNote]) -> None:
     print(f"{len(notes)} generated notes in the collection")
     print(f"  {len(awaiting):4d} tagged needs-review")
     print(f"  {len(green):4d} flagged green  (correct)        [search: flag:3]")
+    orange = [n for n in notes if n.flag == col.FLAG_ORANGE]
+    print(f"  {len(orange):4d} flagged orange (delete)         [search: flag:2]")
     print(f"  {len(red):4d} flagged red    (still wrong)    [search: flag:1]")
     print(f"  {len(undecided):4d} still undecided                [search: tag:needs-review flag:0]")
 
@@ -81,7 +84,13 @@ def main() -> int:
               "Ctrl+3 / Ctrl+1 elsewhere, or right-click -> Flag.")
         return 0
 
-    print(f"\n{result.approved} approved, {result.edits} with edited Hebrew:\n")
+    if result.deleted:
+        print(f"\n{len(result.deleted)} entr(ies) will be DELETED from the deck data:")
+        for change in result.deleted:
+            print(f'   {change.deck}/{change.entry_id}   {change.old_hebrew}  "{change.old_english}"')
+        print("   Delete the matching notes in Anki afterwards — imports never remove notes.")
+
+    print(f"\n{result.approved} approved, {result.edits} edited:\n")
     for change in result.changes:
         mark = "approved " if change.verdict == "approved" else "flagged  "
         print(f"  {mark} {change.deck}/{change.entry_id}")
@@ -100,6 +109,8 @@ def main() -> int:
     for path, deck in decks:
         path.write_text(dump_deck(deck), encoding="utf-8")
     print(f"\nwrote {len(decks)} deck files")
+    if result.deleted:
+        print(f"{len(result.deleted)} entr(ies) removed — now delete those notes in Anki.")
     print("Clear the flags in Anki, then rebuild:  python scripts/build_decks.py")
     return 0
 

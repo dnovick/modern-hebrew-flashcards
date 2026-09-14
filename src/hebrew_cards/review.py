@@ -9,11 +9,17 @@ card flag; this reads those verdicts, along with any edits made alongside them, 
 writes them into the YAML. Anki is still not the source of truth — it is an input to
 a deliberate, reported, reviewable harvest.
 
-    green flag  the entry is correct as it now stands in Anki
-                -> adopt any edit, clear needs_review
-    red flag    still wrong, or edited but not finished
-                -> adopt any edit, keep needs_review
-    no flag     untouched; left exactly as it is
+    green flag   the entry is correct as it now stands in Anki
+                 -> adopt any edit, clear needs_review
+    orange flag  this entry should not exist — a duplicate, or misfiled
+                 -> delete it from the YAML
+    red flag     still wrong, or edited but not finished
+                 -> adopt any edit, keep needs_review
+    no flag      untouched; left exactly as it is
+
+Deleting a note in Anki alone does not work: the YAML is what builds the deck, so the
+next import recreates it. Deletion has to happen in the source, which is what the
+orange flag is for.
 """
 
 from __future__ import annotations
@@ -21,7 +27,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from .anki.collection import FLAG_GREEN, FLAG_NONE, FLAG_RED, RawNote
+from .anki.collection import FLAG_GREEN, FLAG_NONE, FLAG_ORANGE, FLAG_RED, RawNote
 from .ids import note_guid
 from .models import DeckFile, Entry
 
@@ -65,6 +71,7 @@ class Orphan:
 class HarvestResult:
     changes: list[Change] = field(default_factory=list)
     unmatched: list[str] = field(default_factory=list)
+    deleted: list[Change] = field(default_factory=list)
 
     @property
     def approved(self) -> int:
@@ -140,6 +147,7 @@ def harvest(
     """Apply flag verdicts and field edits from `notes` onto `decks`, in place."""
     index = index_by_guid(decks)
     result = HarvestResult()
+    to_delete: list[tuple[DeckFile, Entry]] = []
 
     for note in notes:
         if note.flag == FLAG_NONE:
@@ -167,6 +175,12 @@ def harvest(
         if change.english_edited and change.new_english:
             entry.english = change.new_english
 
+        if note.flag == FLAG_ORANGE:
+            change.verdict = "delete"
+            to_delete.append((deck, entry))
+            result.deleted.append(change)
+            continue
+
         if note.flag == FLAG_GREEN:
             entry.needs_review = False
             entry.review_notes = []
@@ -174,5 +188,9 @@ def harvest(
             entry.needs_review = True
 
         result.changes.append(change)
+
+    # Removal happens after the walk so the deck lists are not mutated mid-iteration.
+    for deck, entry in to_delete:
+        deck.entries.remove(entry)
 
     return result

@@ -187,6 +187,7 @@ card flag:
 | Flag | Means | Effect on the YAML |
 |---|---|---|
 | **Green** (`⌘3` on macOS, `Ctrl+3` elsewhere) | correct as it now stands in Anki | adopt any Hebrew or English edit, clear `needs_review` |
+| **Orange** (`⌘2` / `Ctrl+2`) | this entry should not exist — duplicate or misfiled | delete it from the YAML |
 | **Red** (`⌘1` / `Ctrl+1`) | still wrong, or edited but unfinished | adopt any edit, keep `needs_review` |
 | none | untouched | nothing at all |
 
@@ -198,6 +199,10 @@ Rules this depends on:
 
 - **Only an explicit flag may change the source of truth.** An edit on an unflagged
   card is ignored, so a stray keystroke in the browser cannot rewrite the data.
+- **Deleting a note in Anki does not delete anything.** The YAML builds the deck, so
+  the next import recreates it. Deletion has to happen in the source — that is what
+  the orange flag is for. The reverse also holds: removing an entry from the YAML
+  leaves its note behind in Anki, which `find_orphans()` reports.
 - **A blank field never wipes content.** Far more likely a mistake than an intended
   deletion. Applies to both the Hebrew and the gloss.
 - **Both the citation form and the gloss are harvested.** Several entries are flagged

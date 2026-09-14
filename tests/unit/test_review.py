@@ -191,3 +191,34 @@ def test_no_orphans_when_everything_matches() -> None:
     decks = a_deck(an_entry())
     orphans_fn = __import__("hebrew_cards.review", fromlist=["find_orphans"]).find_orphans
     assert orphans_fn(decks, [flagged_note("ball", "כָּדוּר", FLAG_NONE)]) == []
+
+
+def test_orange_flag_deletes_the_entry() -> None:
+    """Deleting in Anki alone does not stick — the next import recreates the note."""
+    from hebrew_cards.anki.collection import FLAG_ORANGE
+
+    keep, drop = an_entry(id="interfere"), an_entry(id="interrupt-2")
+    decks = a_deck(keep, drop)
+    result = harvest(decks, [flagged_note("interrupt-2", "הִתְעָרֵב", FLAG_ORANGE)])
+
+    assert [e.id for e in decks[0][1].entries] == ["interfere"]
+    assert len(result.deleted) == 1
+    assert result.deleted[0].entry_id == "interrupt-2"
+
+
+def test_deleting_one_entry_leaves_its_neighbours_alone() -> None:
+    from hebrew_cards.anki.collection import FLAG_ORANGE
+
+    a, b, c = an_entry(id="a"), an_entry(id="b"), an_entry(id="c")
+    decks = a_deck(a, b, c)
+    harvest(decks, [flagged_note("b", "כָּדוּר", FLAG_ORANGE)])
+    assert [e.id for e in decks[0][1].entries] == ["a", "c"]
+
+
+def test_a_deleted_entry_is_not_also_counted_as_approved() -> None:
+    from hebrew_cards.anki.collection import FLAG_ORANGE
+
+    decks = a_deck(an_entry())
+    result = harvest(decks, [flagged_note("ball", "כָּדוּר", FLAG_ORANGE)])
+    assert result.approved == 0
+    assert result.changes == []
