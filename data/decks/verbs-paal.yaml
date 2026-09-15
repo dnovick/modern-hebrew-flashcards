@@ -8,161 +8,188 @@ entries:
   pos: verb
   lemma: קָטַף
   english: pluck, pick (fruit)
+  root: ק־ט־ף
   binyan: paal
   source_nid: 1414194344
 - id: save-money
   pos: verb
   lemma: חָסַךְ
   english: save (money)
+  root: ח־ס־כ
   binyan: paal
   source_nid: 1414194345
 - id: invade
   pos: verb
   lemma: פָּלַשׁ
   english: invade
+  root: פ־ל־שׁ
   binyan: paal
   source_nid: 1414194346
 - id: opine
   pos: verb
   lemma: סָבַר
   english: opine, believe, assume
+  root: ס־ב־ר
   binyan: paal
   source_nid: 1414194347
 - id: hang
   pos: verb
   lemma: תָלַה
   english: hang
+  root: ת־ל־ה
   binyan: paal
   source_nid: 1414194348
 - id: discuss
   pos: verb
   lemma: דָן
   english: discuss, judge, sentence
+  root: ד־ו־ן
   binyan: paal
   source_nid: 1414194349
 - id: boil
   pos: verb
   lemma: רָתַח
   english: boil
+  root: ר־ת־ח
   binyan: paal
   source_nid: 1414194350
 - id: grill
   pos: verb
   lemma: צָלָה
   english: grill, toast, roast
+  root: צ־ל־ה
   binyan: paal
   source_nid: 1414194351
 - id: crack
   pos: verb
   lemma: סָדַק
   english: crack, cause to crack
+  root: ס־ד־ק
   binyan: paal
   source_nid: 1414194352
 - id: pronounce
   pos: verb
   lemma: הָגָה
   english: pronounce, utter
+  root: ה־ג־ה
   binyan: paal
   source_nid: 1414194353
 - id: abandon
   pos: verb
-  lemma: זָנַךְ
+  lemma: זָנַח
   english: abandon
+  root: ז־נ־ח
   binyan: paal
   source_nid: 1414194354
 - id: flow
   pos: verb
   lemma: זָרַם
   english: flow
+  root: ז־ר־ם
   binyan: paal
   source_nid: 1414194355
 - id: postpone
   pos: verb
   lemma: דָחָה
   english: postpone, reject, push away
+  root: ד־ח־ה
   binyan: paal
   source_nid: 1414194356
 - id: extract
   pos: verb
   lemma: שָׁלַף
   english: extract, draw (a weapon)
+  root: שׁ־ל־ף
   binyan: paal
   source_nid: 1414194357
 - id: wear
   pos: verb
   lemma: עָנַד
   english: wear, put on (jewelry, watch)
+  root: ע־נ־ד
   binyan: paal
   source_nid: 1414194358
 - id: rely-on
   pos: verb
   lemma: סָמַךְ
   english: rely on, rest upon, depend on (על)
+  root: ס־מ־כ
   binyan: paal
   source_nid: 1414194359
 - id: land-e-g
   pos: verb
   lemma: נָחַת
   english: land (e.g., plane)
+  root: נ־ח־ת
   binyan: paal
   source_nid: 1414194360
 - id: roast
   pos: verb
   lemma: קָלָה
   english: roast, toast
+  root: ק־ל־ה
   binyan: paal
   source_nid: 1414194361
 - id: sip
   pos: verb
   lemma: לָגַם
   english: sip, gulp, swallow (liquid)
+  root: ל־ג־ם
   binyan: paal
   source_nid: 1414194362
 - id: sip-2
   pos: verb
   lemma: גָמָא
   english: sip, gulp
+  root: ג־מ־א
   binyan: paal
   source_nid: 1414194363
 - id: do
   pos: verb
   lemma: עָשָׂה
   english: do, make
+  root: ע־שׂ־ה
   binyan: paal
   source_nid: 1414194337
 - id: organize
   pos: verb
   lemma: עָרַך
   english: organize, edit, handle
+  root: ע־ר־כ
   binyan: paal
   source_nid: 1414194338
 - id: burn
   pos: verb
   lemma: שָׂרָף
   english: burn
+  root: שׂ־ר־ף
   binyan: paal
   source_nid: 1414194339
 - id: clap
   pos: verb
   lemma: מָחָא
   english: clap
+  root: מ־ח־א
   binyan: paal
   source_nid: 1414194340
 - id: shake-hands
   pos: verb
   lemma: לָחָץ יָדַיִים
   english: shake hands
+  root: ל־ח־ץ
   binyan: paal
   source_nid: 1414194341
 - id: reveal
   pos: verb
   lemma: חָשַׂף
   english: reveal, expose
+  root: ח־שׂ־ף
   binyan: paal
   source_nid: 1414194342
 - id: attack
   pos: verb
   lemma: תָקַף
   english: attack
+  root: ת־ק־ף
   binyan: paal
   source_nid: 1414194343
