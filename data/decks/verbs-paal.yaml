@@ -124,3 +124,45 @@ entries:
   english: sip, gulp
   binyan: paal
   source_nid: 1414194363
+- id: do
+  pos: verb
+  lemma: עָשָׂה
+  english: do, make
+  binyan: paal
+  source_nid: 1414194337
+- id: organize
+  pos: verb
+  lemma: עָרַך
+  english: organize, edit, handle
+  binyan: paal
+  source_nid: 1414194338
+- id: burn
+  pos: verb
+  lemma: שָׂרָף
+  english: burn
+  binyan: paal
+  source_nid: 1414194339
+- id: clap
+  pos: verb
+  lemma: מָחָא
+  english: clap
+  binyan: paal
+  source_nid: 1414194340
+- id: shake-hands
+  pos: verb
+  lemma: לָחָץ יָדַיִים
+  english: shake hands
+  binyan: paal
+  source_nid: 1414194341
+- id: reveal
+  pos: verb
+  lemma: חָשַׂף
+  english: reveal, expose
+  binyan: paal
+  source_nid: 1414194342
+- id: attack
+  pos: verb
+  lemma: תָקַף
+  english: attack
+  binyan: paal
+  source_nid: 1414194343
