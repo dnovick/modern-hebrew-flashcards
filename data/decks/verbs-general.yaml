@@ -4,9 +4,8 @@ meta:
   - audio_meaning
   source_deck: Modern Hebrew::Verbs::General
   notes:
-  - The three misfiled adverbs (תֵכֶף, בְּפֵרוּשׁ, and one more) were moved out; every
-    remaining entry here is a verb. None has been classified into a binyan sub-deck
-    yet — that's the remaining work, not a data-quality problem.
+  - The three misfiled adverbs (תֵכֶף, בְּפֵרוּשׁ, and one more) were moved out; every remaining entry here is a verb. None has been classified into a binyan sub-deck yet — that's the remaining work, not
+    a data-quality problem.
 entries:
 - id: do
   pos: verb
