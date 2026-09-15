@@ -4,10 +4,8 @@ meta:
   - audio_meaning
   source_deck: Modern Hebrew::Modals
   notes:
-  - Merged with the former Modern Hebrew::Verbs::Modal (2026-09-14) — those 15 entries
-    are pos:modal, not verbs, so filing them under Verbs was a mislabeling. Moving
-    them into this file changes their note GUIDs; the 15 old notes are now orphans
-    to delete in Anki after the next import.
+  - Merged with the former Modern Hebrew::Verbs::Modal (2026-09-14) — those 15 entries are pos:modal, not verbs, so filing them under Verbs was a mislabeling. Moving them into this file changes their note
+    GUIDs; the 15 old notes are now orphans to delete in Anki after the next import.
 entries:
 - id: supposed-to
   pos: modal

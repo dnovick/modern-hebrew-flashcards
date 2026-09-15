@@ -299,3 +299,11 @@ entries:
   hebrew: מְהֵימָה מְהֵימָה מְהֵימָה מְהֵימָה אָמִין מְהֵימָה מְהֵימָה מְהֵימָה אָמִין מְהֵימָה מְהֵימָה אָמִין מְהֵימָה אָמִין אָמִין
   english: reliable
   source_nid: 1414194501
+- id: decorative
+  pos: adjective
+  hebrew: קִישׁוּטִי
+  english: decorative
+  needs_review: true
+  review_notes:
+  - moved from nouns.yaml — קִישׁוּטִי is the adjective "decorative", not a noun; only the ms citation form is recorded, fs/mp/fp not yet confirmed
+  source_nid: 1414194189

@@ -11,9 +11,6 @@ entries:
   gender: m
   tags:
   - topic::fruit
-  needs_review: true
-  review_notes:
-  - gender proposed, not verified — confirm or correct
   source_nid: 1414194163
 - id: grape
   pos: noun
@@ -22,9 +19,6 @@ entries:
   gender: m
   tags:
   - topic::fruit
-  needs_review: true
-  review_notes:
-  - gender proposed, not verified — confirm or correct
   source_nid: 1414194165
 - id: grapefruit
   pos: noun
@@ -33,9 +27,6 @@ entries:
   gender: f
   tags:
   - topic::fruit
-  needs_review: true
-  review_notes:
-  - gender proposed, not verified — confirm or correct
   source_nid: 1414194166
 - id: banana
   pos: noun
@@ -44,9 +35,6 @@ entries:
   gender: f
   tags:
   - topic::fruit
-  needs_review: true
-  review_notes:
-  - gender proposed, not verified — confirm or correct
   source_nid: 1414194167
 - id: strawberry
   pos: noun
@@ -55,9 +43,6 @@ entries:
   gender: m
   tags:
   - topic::fruit
-  needs_review: true
-  review_notes:
-  - gender proposed, not verified — confirm or correct
   source_nid: 1414194168
 - id: apple
   pos: noun
@@ -66,7 +51,4 @@ entries:
   gender: m
   tags:
   - topic::fruit
-  needs_review: true
-  review_notes:
-  - gender proposed, not verified — confirm or correct
   source_nid: 1414194195
