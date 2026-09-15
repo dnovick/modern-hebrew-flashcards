@@ -9,6 +9,7 @@ entries:
   hebrew: תָפוּז
   english: orange
   gender: m
+  plural: תַּפּוּזִים
   tags:
   - topic::fruit
   source_nid: 1414194163
@@ -17,6 +18,7 @@ entries:
   hebrew: עֵנָב
   english: grape
   gender: m
+  plural: עֲנָבִים
   tags:
   - topic::fruit
   source_nid: 1414194165
@@ -25,6 +27,7 @@ entries:
   hebrew: אֶשְכּוֹלִית
   english: grapefruit
   gender: f
+  plural: אֶשְׁכּוֹלִיּוֹת
   tags:
   - topic::fruit
   source_nid: 1414194166
@@ -33,6 +36,7 @@ entries:
   hebrew: בָּנָנָה
   english: banana
   gender: f
+  plural: בָּנָנוֹת
   tags:
   - topic::fruit
   source_nid: 1414194167
@@ -41,6 +45,7 @@ entries:
   hebrew: תוּת
   english: strawberry
   gender: m
+  plural: תּוּתִים
   tags:
   - topic::fruit
   source_nid: 1414194168
@@ -49,6 +54,7 @@ entries:
   hebrew: תַּפּוּחַ
   english: apple
   gender: m
+  plural: תַּפּוּחִים
   tags:
   - topic::fruit
   source_nid: 1414194195
