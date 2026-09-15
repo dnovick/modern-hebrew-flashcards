@@ -8,18 +8,21 @@ entries:
   pos: verb
   lemma: נִמְנַע
   english: abstain
+  root: מ־נ־ע
   binyan: niphal
   source_nid: 1414194365
 - id: be-obliged
   pos: verb
-  lemma: נֶעֱלַץ
+  lemma: נֶאֱלָץ
   english: be obliged
+  root: א־ל־ץ
   binyan: niphal
   source_nid: 1414194366
 - id: pick-on-someone
   pos: verb
   lemma: נִטְפָּל
   english: pick (on someone)
+  root: ט־פ־ל
   binyan: niphal
   governs: אל
   source_nid: 1414194367
@@ -27,17 +30,20 @@ entries:
   pos: verb
   lemma: נֶעֶלָם
   english: disappear
+  root: ע־ל־ם
   binyan: niphal
   source_nid: 1414194368
 - id: be-annoyed
   pos: verb
   lemma: נִרְגַּז
   english: be annoyed, be angry
+  root: ר־ג־ז
   binyan: niphal
   source_nid: 1414194369
 - id: freak-out
   pos: verb
   lemma: נִלְחָץ
   english: freak out
+  root: ל־ח־ץ
   binyan: niphal
   source_nid: 1414194370

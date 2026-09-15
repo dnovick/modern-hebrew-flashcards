@@ -8,143 +8,167 @@ entries:
   pos: verb
   lemma: הִתְפַּשֵּׁט
   english: get undressed, extend, spread
+  root: פ־שׁ־ט
   binyan: hitpael
   source_nid: 1414194436
 - id: be-accepted
   pos: verb
   lemma: הִתְקָבֶּל
   english: be accepted, be received
+  root: ק־ב־ל
   binyan: hitpael
   source_nid: 1414194437
 - id: discuss
   pos: verb
   lemma: הִתְווַכֵּחַ
   english: discuss, argue, debate
+  root: ו־כ־ח
   binyan: hitpael
   source_nid: 1414194438
 - id: discuss-2
   pos: verb
   lemma: הִידָּבֵּר
   english: discuss, participate in a discussion
+  root: ד־ב־ר
   binyan: hitpael
   source_nid: 1414194439
 - id: join-a-group
   pos: verb
   lemma: הִצְטָרֵף
   english: join (a group, organization)
+  root: צ־ר־ף
   binyan: hitpael
   source_nid: 1414194440
 - id: resign
   pos: verb
   lemma: הִתְפָּטֵר
   english: resign, quit, get rid of (slang)
+  root: פ־ט־ר
   binyan: hitpael
   source_nid: 1414194441
 - id: develop-oneself
   pos: verb
   lemma: הִתְפָּתֵּחַ
   english: develop (oneself), evolve
+  root: פ־ת־ח
   binyan: hitpael
   source_nid: 1414194442
 - id: behave
   pos: verb
   lemma: הִתְנַהֵג
   english: behave
+  root: נ־ה־ג
   binyan: hitpael
   source_nid: 1414194443
 - id: get-down
   pos: verb
   lemma: הִשְׁתַּטֵּחַ
   english: get down, prostrate oneself, be flattened
+  root: שׁ־ט־ח
   binyan: hitpael
   source_nid: 1414194444
 - id: pretend
   pos: verb
   lemma: הִתְייַמֵּר
   english: pretend
+  root: י־מ־ר
   binyan: hitpael
   source_nid: 1414194445
 - id: improve
   pos: verb
   lemma: הִשְׁתַפֵּר
   english: improve
+  root: שׁ־פ־ר
   binyan: hitpael
   source_nid: 1414194446
 - id: crumble
   pos: verb
   lemma: הִתְפּוֹרֵר
   english: crumble
+  root: פ־ר־ר
   binyan: hitpael
   source_nid: 1414194447
 - id: look
   pos: verb
   lemma: הִתְבּוֹנֵן
   english: look, contemplate
+  root: ב־י־ן
   binyan: hitpael
   source_nid: 1414194429
 - id: interfere
   pos: verb
   lemma: הִתְעָרֵב
   english: interfere
+  root: ע־ר־ב
   binyan: hitpael
   source_nid: 1414194423
 - id: pant
   pos: verb
   lemma: הִתְנָשֵף
   english: pant
+  root: נ־שׁ־ף
   binyan: hitpael
   source_nid: 1414194424
 - id: breathe-heavily
   pos: verb
   lemma: הִתְנַשֵּׁם
   english: breathe heavily
+  root: נ־שׁ־ם
   binyan: hitpael
   source_nid: 1414194425
 - id: participate
   pos: verb
   lemma: הִשְׁתַּתֵּף
   english: participate
+  root: שׁ־ת־ף
   binyan: hitpael
   source_nid: 1414194426
 - id: workout
   pos: verb
   lemma: הִתְעַמֵּל
   english: workout
+  root: ע־מ־ל
   binyan: hitpael
   source_nid: 1414194427
 - id: train
   pos: verb
   lemma: הִתְאַמֵּן
   english: train, practice
+  root: א־מ־ן
   binyan: hitpael
   source_nid: 1414194428
 - id: cough
   pos: verb
   lemma: הִשְׁתַּעֵל
   english: cough
+  root: שׁ־ע־ל
   binyan: hitpael
   source_nid: 1414194430
 - id: compete
   pos: verb
   lemma: הִתְמוֹדֵד
   english: compete
+  root: מ־ד־ד
   binyan: hitpael
   source_nid: 1414194431
 - id: renounce
   pos: verb
   lemma: הִתְכַּחֵשׁ
   english: renounce, deny
+  root: כ־ח־שׁ
   binyan: hitpael
   source_nid: 1414194432
 - id: stretch-oneself
   pos: verb
   lemma: הִתְמָתֵּחַ
   english: stretch oneself
+  root: מ־ת־ח
   binyan: hitpael
   source_nid: 1414194433
 - id: dress-up
   pos: verb
   lemma: הִתְחַפֵּשׂ
   english: dress up, disguise
+  root: ח־פ־שׂ
   binyan: hitpael
   source_nid: 1414194435
