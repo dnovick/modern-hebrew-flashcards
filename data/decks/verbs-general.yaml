@@ -4,7 +4,9 @@ meta:
   - audio_meaning
   source_deck: Modern Hebrew::Verbs::General
   notes:
-  - Source deck mixes parts of speech — it contains adverbs (תֵכֶף 'instantaneously', בְּפֵרוּשׁ 'clearly') alongside verbs. Entries whose gloss looks adverbial are flagged; the rest still need a pass.
+  - The three misfiled adverbs (תֵכֶף, בְּפֵרוּשׁ, and one more) were moved out; every
+    remaining entry here is a verb. None has been classified into a binyan sub-deck
+    yet — that's the remaining work, not a data-quality problem.
 entries:
 - id: do
   pos: verb
