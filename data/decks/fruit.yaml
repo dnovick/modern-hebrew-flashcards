@@ -1,5 +1,5 @@
 meta:
-  name: Fruit
+  name: Nouns::Fruit
   card_types:
   - audio_meaning
   source_deck: Modern Hebrew::Fruit
