@@ -123,13 +123,16 @@ def test_building_the_real_decks(tmp_path: Path) -> None:
     """Behavioral test: build every real deck and inspect the package Anki would read."""
     decks = load_all(DECKS_DIR)
     expected_notes = sum(len(deck.entries) for _, deck in decks)
+    expected_decks = sum(1 for _, deck in decks if deck.entries)
 
     out = tmp_path / "out.apkg"
     stats = build_package(decks, out)
     # Counts come from the data, not a literal: entries legitimately come and go as
-    # duplicates are merged, and a hardcoded number just fails on the next merge.
+    # duplicates are merged, and a hardcoded number just fails on the next merge. A
+    # deck file may also sit empty as an intake bucket awaiting classification
+    # (verbs-general.yaml) — build_package skips those, so expected_decks does too.
     assert stats.notes == expected_notes
-    assert stats.decks == len(decks)
+    assert stats.decks == expected_decks
 
     conn = _open_package(out, tmp_path / "unpacked")
     models_json, decks_json = conn.execute("select models, decks from col").fetchone()

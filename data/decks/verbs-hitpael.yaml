@@ -82,3 +82,69 @@ entries:
   english: look, contemplate
   binyan: hitpael
   source_nid: 1414194429
+- id: interfere
+  pos: verb
+  lemma: הִתְעָרֵב
+  english: interfere
+  binyan: hitpael
+  source_nid: 1414194423
+- id: pant
+  pos: verb
+  lemma: הִתְנָשֵף
+  english: pant
+  binyan: hitpael
+  source_nid: 1414194424
+- id: breathe-heavily
+  pos: verb
+  lemma: הִתְנַשֵּׁם
+  english: breathe heavily
+  binyan: hitpael
+  source_nid: 1414194425
+- id: participate
+  pos: verb
+  lemma: הִשְׁתַּתֵּף
+  english: participate
+  binyan: hitpael
+  source_nid: 1414194426
+- id: workout
+  pos: verb
+  lemma: הִתְעַמֵּל
+  english: workout
+  binyan: hitpael
+  source_nid: 1414194427
+- id: train
+  pos: verb
+  lemma: הִתְאַמֵּן
+  english: train, practice
+  binyan: hitpael
+  source_nid: 1414194428
+- id: cough
+  pos: verb
+  lemma: הִשְׁתַּעֵל
+  english: cough
+  binyan: hitpael
+  source_nid: 1414194430
+- id: compete
+  pos: verb
+  lemma: הִתְמוֹדֵד
+  english: compete
+  binyan: hitpael
+  source_nid: 1414194431
+- id: renounce
+  pos: verb
+  lemma: הִתְכַּחֵשׁ
+  english: renounce, deny
+  binyan: hitpael
+  source_nid: 1414194432
+- id: stretch-oneself
+  pos: verb
+  lemma: הִתְמָתֵּחַ
+  english: stretch oneself
+  binyan: hitpael
+  source_nid: 1414194433
+- id: dress-up
+  pos: verb
+  lemma: הִתְחַפֵּשׂ
+  english: dress up, disguise
+  binyan: hitpael
+  source_nid: 1414194435

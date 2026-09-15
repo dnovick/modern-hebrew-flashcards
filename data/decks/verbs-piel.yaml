@@ -94,3 +94,33 @@ entries:
   english: converse, chat
   binyan: piel
   source_nid: 1414194390
+- id: belch
+  pos: verb
+  lemma: גִיהֵק
+  english: belch
+  binyan: piel
+  source_nid: 1414194371
+- id: hiccup
+  pos: verb
+  lemma: שִׁיהֵק
+  english: hiccup
+  binyan: piel
+  source_nid: 1414194372
+- id: pay
+  pos: verb
+  lemma: שִילֵם
+  english: pay
+  binyan: piel
+  source_nid: 1414194373
+- id: refuse
+  pos: verb
+  lemma: סִירֵב
+  english: refuse, decline, reject
+  binyan: piel
+  source_nid: 1414194374
+- id: wear-out
+  pos: verb
+  lemma: רִיפֵּט
+  english: wear out, tatter
+  binyan: piel
+  source_nid: 1414194375
