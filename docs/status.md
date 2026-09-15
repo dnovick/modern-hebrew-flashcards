@@ -1,7 +1,7 @@
 ---
 type: status
 scope: modern-hebrew-flashcards
-updated: 2026-09-14
+updated: 2026-09-15
 ---
 
 # Where the project stands
@@ -21,6 +21,14 @@ machines. Update it when the answer to "what was I in the middle of" changes.
 - **First review pass complete.** All 38 originally-flagged entries resolved: 24
   pointings confirmed, 3 duplicates deleted, 2 entries merged, 3 refiled into the
   right decks.
+- **Noun gender review complete (2026-09-15).** All 85 proposed genders resolved: 83
+  confirmed via green flag and harvested normally. Five needed more than a flag and
+  were fixed by hand per the owner's call: `decoration` → moved to `adjectives.yaml`
+  as `decorative` (קִישׁוּטִי); it was never a noun and is still `needs_review` there —
+  only the ms form is known, fs/mp/fp aren't. `jewelry` and `savings` were restored
+  to their singular (תַּכְשִׁיט, חִסָּכוֹן) with a `plural:` field, instead of storing only
+  the plural. `excuse`'s typo was fixed (תֵיוּץ → תֵּירוּץ). `mashed-potatoes` confirmed
+  m via the normal flag/harvest path.
 - **Deck hierarchy reorganized (2026-09-14).** Deck names are now POS-first, with
   topic sub-decks only where a real cluster exists: `Adjectives::Human Attributes`
   (was a standalone `Human Attributes` deck — those 99 entries are adjectives, so
@@ -36,33 +44,19 @@ machines. Update it when the answer to "what was I in the middle of" changes.
 
 ## In progress
 
-**85 noun gender proposals await review.** Every noun in `nouns.yaml` and `fruit.yaml`
-has a proposed `gender` and is flagged `needs_review`. Search `tag:needs-review` in
-Anki; the gender shows on the answer side. Multi-select and flag in bulk — most are
-obvious from the ending.
+**One adjective still needs review.** `decorative` (קִישׁוּטִי, in `adjectives.yaml`) is
+tagged `needs_review` — only its ms citation form is recorded; fs/mp/fp aren't
+confirmed. Low priority, tracked under "remaining enrichment" below rather than as
+its own effort.
 
-Five carry a second note worth reading before deciding: `קִישׁוּטִי` (adjective, not a
-noun — gender left unset), `תֵיוּץ` (likely a typo for `תֵּירוּץ`), `תַכְשִׁיטִים` and
-`חִסְכוֹנוֹת` (stored as plurals; an `-ot` plural does not make a noun feminine), and
-`פִּירָה` (loanword, lower confidence).
+All orphan cleanup from the deck reorg and the gender-review fixes is done — the
+collection currently has zero orphans (`scripts/harvest_review.py` reports this).
 
-**Orphan notes to delete in Anki after the next import** — imports never delete
-notes, so a rebuild leaves the old copies behind whenever an entry's GUID changes.
-
-- Three from the earlier refiling:
-
-      English:"instantaneously" OR English:"clearly" OR English:"look, contemplate"
-
-  filtered to `deck:"Modern Hebrew::Verbs::General"` so the new copies are not caught.
-
-- Fifteen from the 2026-09-14 modals merge, findable as the notes still sitting in
-  `deck:"Modern Hebrew::Verbs::Modal"` after import (the rebuilt deck is
-  `Modern Hebrew::Modals`; the old `Verbs::Modal` deck should end up empty and can be
-  deleted along with its notes).
+## Next
 
 1. **Organizing the corpus (current focus, 2026-09-14 owner request).** The deck
    hierarchy reorg above is the first step. Remaining: classify the 40
-   `Verbs::General` entries into their binyan sub-decks; decide whether `Nouns` (79
+   `Verbs::General` entries into their binyan sub-decks; decide whether `Nouns` (78
    entries, no strong topical clusters beyond `Fruit`) is worth splitting further as
    more nouns are added.
 2. **Remaining enrichment.** Noun plurals, adjective agreement forms beyond the
