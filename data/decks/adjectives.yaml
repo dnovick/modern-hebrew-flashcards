@@ -6,298 +6,546 @@ meta:
 entries:
 - id: prosperous
   pos: adjective
-  hebrew: מְשַׂגְשֵׂג
   english: prosperous
+  forms:
+    ms: מְשַׂגְשֵׂג
+    fs: מְשַׂגְשֶׂגֶת
+    mp: מְשַׂגְשְׂגִים
+    fp: מְשַׂגְשְׂגוֹת
   source_nid: 1414194251
 - id: exhausted
   pos: adjective
-  hebrew: מְתוּשְתָש
   english: exhausted
+  forms:
+    ms: מוּתָשׁ
+    fs: מוּתֶשֶׁת
+    mp: מוּתָשִׁים
+    fp: מוּתָשׁוֹת
+  needs_review: true
+  review_notes:
+  - stored Hebrew was corrupted (repeated/garbled text from extraction) — replaced with מוּתָשׁ, the standard word for "exhausted"; forms confirmed via usage (Reverso), confirm this is what was intended
   source_nid: 1414194253
 - id: clear
   pos: adjective
-  hebrew: שָקוּף
   english: clear, transparent
+  forms:
+    ms: שָקוּף
+    fs: שְׁקוּפָה
+    mp: שְׁקוּפִים
+    fp: שְׁקוּפוֹת
   source_nid: 1414194254
 - id: ashamed
   pos: adjective
-  hebrew: מְבוּיָשׁ
   english: ashamed
+  forms:
+    ms: מְבוּיָשׁ
+    fs: מְבוּיֶשֶׁת
+    mp: מְבוּיָשִׁים
+    fp: מְבוּיָשׁוֹת
   source_nid: 1414194255
 - id: perfect
   pos: adjective
-  hebrew: מוּשְׁלָם
   english: perfect
+  forms:
+    ms: מוּשְׁלָם
+    fs: מֻשְׁלֶמֶת
+    mp: מֻשְׁלָמִים
+    fp: מֻשְׁלָמוֹת
   source_nid: 1414194259
 - id: sanctimonious
   pos: adjective
-  hebrew: מִתְחַסֵד
   english: sanctimonious, self righteous
+  forms:
+    ms: מִתְחַסֵד
+    fs: מִתְחַסֶּדֶת
+    mp: מִתְחַסְּדִים
+    fp: מִתְחַסְּדוֹת
   source_nid: 1414194261
 - id: lukewarm
   pos: adjective
-  hebrew: פּוֹשֵׁר
   english: lukewarm
+  forms:
+    ms: פּוֹשֵׁר
+    fs: פּוֹשֶׁרֶת
+    mp: פּוֹשְׁרִים
+    fp: פּוֹשְׁרוֹת
   source_nid: 1414194262
 - id: ridiculous
   pos: adjective
-  hebrew: מְגוּחָךְ
   english: ridiculous
+  forms:
+    ms: מְגוּחָךְ
+    fs: מְגֻחֶכֶת
+    mp: מְגֻחָכִים
+    fp: מְגֻחָכוֹת
   source_nid: 1414194263
 - id: fluent
   pos: adjective
-  hebrew: שׁוֹטֵף
   english: fluent
+  forms:
+    ms: שׁוֹטֵף
+    fs: שׁוֹטֶפֶת
+    mp: שׁוֹטְפִים
+    fp: שׁוֹטְפוֹת
   source_nid: 1414194264
 - id: naughty
   pos: adjective
-  hebrew: שׁוֹבָב
   english: naughty
+  forms:
+    ms: שׁוֹבָב
+    fs: שׁוֹבָבָה
+    mp: שׁוֹבָבִים
+    fp: שׁוֹבָבוֹת
   source_nid: 1414194267
 - id: nervous
   pos: adjective
-  hebrew: חָרֵד
   english: nervous, anxious
+  forms:
+    ms: חָרֵד
+    fs: חֲרֵדָה
+    mp: חֲרֵדִים
+    fp: חֲרֵדוֹת
   source_nid: 1414194269
 - id: innocent
   pos: adjective
-  hebrew: תָמִים
   english: innocent, naive
+  forms:
+    ms: תָמִים
+    fs: תְּמִימָה
+    mp: תְּמִימִים
+    fp: תְּמִימוֹת
   source_nid: 1414194271
 - id: polite
   pos: adjective
-  hebrew: מְנוּמָס
   english: polite
+  forms:
+    ms: מְנוּמָס
+    fs: מְנֻמֶּסֶת
+    mp: מְנֻמָּסִים
+    fp: מְנֻמָּסוֹת
   source_nid: 1414194273
 - id: enthusiastic
   pos: adjective
-  hebrew: נִלְהָב
   english: enthusiastic
+  forms:
+    ms: נִלְהָב
+    fs: נִלְהֶבֶת
+    mp: נִלְהָבִים
+    fp: נִלְהָבוֹת
   source_nid: 1414194275
 - id: calm
   pos: adjective
-  hebrew: רָגוּעַ
   english: calm, easygoing
+  forms:
+    ms: רָגוּעַ
+    fs: רְגוּעָה
+    mp: רְגוּעִים
+    fp: רְגוּעוֹת
   source_nid: 1414194277
 - id: hard-working
   pos: adjective
-  hebrew: חָרוּץ
   english: hard-working
+  forms:
+    ms: חָרוּץ
+    fs: חֲרוּצָה
+    mp: חֲרוּצִים
+    fp: חֲרוּצוֹת
   source_nid: 1414194278
 - id: introverted
   pos: adjective
-  hebrew: מוּפְנָם
   english: introverted
+  forms:
+    ms: מוּפְנָם
+    fs: מוּפְנֶמֶת
+    mp: מוּפְנָמִים
+    fp: מוּפְנָמוֹת
   source_nid: 1414194279
 - id: indecisive
   pos: adjective
-  hebrew: הָסֶסָן
   english: indecisive, hesitant
+  forms:
+    ms: הָסֶסָן
+    fs: הָסֶסָנִית
+    mp: הָסֶסָנִים
+    fp: הָסֶסָנִיּוֹת
   source_nid: 1414194281
 - id: sympathetic
   pos: adjective
-  hebrew: אוֹהֵד
   english: sympathetic, supportive
+  forms:
+    ms: אוֹהֵד
+    fs: אוֹהֶדֶת
+    mp: אוֹהֲדִים
+    fp: אוֹהֲדוֹת
   source_nid: 1414194283
 - id: serious
   pos: adjective
-  hebrew: רְצִינִי
   english: serious
+  forms:
+    ms: רְצִינִי
+    fs: רְצִינִית
+    mp: רְצִינִיִּים
+    fp: רְצִינִיּוֹת
   source_nid: 1414194286
 - id: limited
   pos: adjective
-  hebrew: מוּגְבָּל
   english: limited
+  forms:
+    ms: מוּגְבָּל
+    fs: מֻגְבֶּלֶת
+    mp: מֻגְבָּלִים
+    fp: מֻגְבָּלוֹת
   source_nid: 1414194287
 - id: vacant
   pos: adjective
-  hebrew: פָּנוּי
   english: vacant
+  forms:
+    ms: פָּנוּי
+    fs: פְּנוּיָה
+    mp: פְּנוּיִים
+    fp: פְּנוּיוֹת
   source_nid: 1414194288
 - id: reckless
   pos: adjective
-  hebrew: פָּזִיז
   english: reckless
+  forms:
+    ms: פָּזִיז
+    fs: פְּזִיזָה
+    mp: פְּזִיזִים
+    fp: פְּזִיזוֹת
   source_nid: 1414194289
 - id: commercial
   pos: adjective
-  hebrew: מִסְחָרִי
   english: commercial
+  forms:
+    ms: מִסְחָרִי
+    fs: מִסְחָרִית
+    mp: מִסְחָרִיִּים
+    fp: מִסְחָרִיּוֹת
   source_nid: 1414194290
 - id: unfit
   pos: adjective
-  hebrew: נִפְסָד
   english: unfit, faulty, indecent
+  forms:
+    ms: נִפְסָד
+    fs: נִפְסֶדֶת
+    mp: נִפְסָדִים
+    fp: נִפְסָדוֹת
   source_nid: 1414194291
 - id: reasonable
   pos: adjective
-  hebrew: סָבִיר
   english: reasonable
+  forms:
+    ms: סָבִיר
+    fs: סְבִירָה
+    mp: סְבִירִים
+    fp: סְבִירוֹת
   source_nid: 1414194292
 - id: personal
   pos: adjective
-  hebrew: אִישִׁי
   english: personal
+  forms:
+    ms: אִישִׁי
+    fs: אִישִׁית
+    mp: אִישִׁיִּים
+    fp: אִישִׁיּוֹת
   source_nid: 1414194293
 - id: official
   pos: adjective
-  hebrew: רִשְׁמִי
   english: official
+  forms:
+    ms: רִשְׁמִי
+    fs: רִשְׁמִית
+    mp: רִשְׁמִיִּים
+    fp: רִשְׁמִיּוֹת
   source_nid: 1414194294
 - id: logical
   pos: adjective
-  hebrew: הֶגְיוֹנִי
   english: logical
+  forms:
+    ms: הֶגְיוֹנִי
+    fs: הֶגְיוֹנִית
+    mp: הֶגְיוֹנִיִּים
+    fp: הֶגְיוֹנִיּוֹת
   source_nid: 1414194295
 - id: talented
   pos: adjective
-  hebrew: מוּכְשָׁר
   english: talented
+  forms:
+    ms: מוּכְשָׁר
+    fs: מוּכְשֶׁרֶת
+    mp: מוּכְשָׁרִים
+    fp: מוּכְשָׁרוֹת
   source_nid: 1414194296
 - id: crowded
   pos: adjective
-  hebrew: צָפוּף
   english: crowded, dense
+  forms:
+    ms: צָפוּף
+    fs: צְפוּפָה
+    mp: צְפוּפִים
+    fp: צְפוּפוֹת
   source_nid: 1414194297
 - id: elegant
   pos: adjective
-  hebrew: מְהוּדָר
   english: elegant, fancy
+  forms:
+    ms: מְהוּדָר
+    fs: מְהוּדֶּרֶת
+    mp: מְהוּדָּרִים
+    fp: מְהוּדָּרוֹת
   source_nid: 1414194298
 - id: complicated
   pos: adjective
-  hebrew: מְסוּבָך
   english: complicated
+  forms:
+    ms: מְסוּבָך
+    fs: מְסוּבֶּכֶת
+    mp: מְסוּבָּכִים
+    fp: מְסוּבָּכוֹת
   source_nid: 1414194299
 - id: clear-2
   pos: adjective
-  hebrew: צָלוּל
   english: clear, lucid
+  forms:
+    ms: צָלוּל
+    fs: צְלוּלָה
+    mp: צְלוּלִים
+    fp: צְלוּלוֹת
   source_nid: 1414194300
 - id: flexible
   pos: adjective
-  hebrew: גָמִישׁ
   english: flexible
+  forms:
+    ms: גָמִישׁ
+    fs: גְּמִישָׁה
+    mp: גְּמִישִׁים
+    fp: גְּמִישׁוֹת
   source_nid: 1414194301
 - id: intelligent
   pos: adjective
-  hebrew: נָבוֹן
   english: intelligent, smart
+  forms:
+    ms: נָבוֹן
+    fs: נְבוֹנָה
+    mp: נְבוֹנִים
+    fp: נְבוֹנוֹת
   source_nid: 1414194302
 - id: clueless
   pos: adjective
-  hebrew: חֲסַר מוּשָּׂג
   english: clueless
+  forms:
+    ms: חֲסַר מוּשָּׂג
+    fs: חֲסַרַת מוּשָּׂג
+    mp: חַסְרֵי מוּשָּׂג
+    fp: חֲסֵרוֹת מוּשָּׂג
+  needs_review: true
+  review_notes:
+  - construct phrase (חסר מושג); forms derived from the general construct-state agreement rule for חסר, not independently attested for this exact phrase
   source_nid: 1414194303
 - id: disgraceful
   pos: adjective
-  hebrew: מַחְפִּיר
   english: disgraceful, shameful
+  forms:
+    ms: מַחְפִּיר
+    fs: מַחְפִּירָה
+    mp: מַחְפִּירִים
+    fp: מַחְפִּירוֹת
   source_nid: 1414194305
 - id: bald
   pos: adjective
-  hebrew: קֵרֵחַ
   english: bald
+  forms:
+    ms: קֵרֵחַ
+    fs: קֵרַחַת
+    mp: קֵרְחִים
+    fp: קֵרְחוֹת
   source_nid: 1414194306
 - id: common
   pos: adjective
-  hebrew: נָפוֹץ
   english: common
+  forms:
+    ms: נָפוֹץ
+    fs: נְפוֹצָה
+    mp: נְפוֹצִים
+    fp: נְפוֹצוֹת
   source_nid: 1414194307
 - id: deaf
   pos: adjective
-  hebrew: חֵרֵש
   english: deaf
+  forms:
+    ms: חֵרֵש
+    fs: חֵרֶשֶׁת
+    mp: חֵרְשִׁים
+    fp: חֵרְשׁוֹת
   source_nid: 1414194464
 - id: naked
   pos: adjective
-  hebrew: עֵירוֹם
   english: naked
+  forms:
+    ms: עֵירוֹם
+    fs: עֵירוּמָּה
+    mp: עֵירוּמִּים
+    fp: עֵירוּמּוֹת
   source_nid: 1414194465
 - id: tense
   pos: adjective
-  hebrew: מָתוּחַ
   english: tense
+  forms:
+    ms: מָתוּחַ
+    fs: מְתוּחָה
+    mp: מְתוּחִים
+    fp: מְתוּחוֹת
   source_nid: 1414194466
 - id: whole
   pos: adjective
-  hebrew: שָׁלֵם
   english: whole, complete
+  forms:
+    ms: שָׁלֵם
+    fs: שְׁלֵמָה
+    mp: שְׁלֵמִים
+    fp: שְׁלֵמוֹת
   source_nid: 1414194468
 - id: shy
   pos: adjective
-  hebrew: בַּייְשָן
   english: shy
+  forms:
+    ms: בַּייְשָן
+    fs: בַּיְשָׁנִית
+    mp: בַּיְשָׁנִים
+    fp: בַּיְשָׁנִיּוֹת
   source_nid: 1414194472
 - id: likely
   pos: adjective
-  hebrew: עָלוּל
   english: likely
+  forms:
+    ms: עָלוּל
+    fs: עֲלוּלָה
+    mp: עֲלוּלִים
+    fp: עֲלוּלוֹת
   source_nid: 1414194473
 - id: exciting
   pos: adjective
-  hebrew: מַלְהִיב
   english: exciting
+  forms:
+    ms: מַלְהִיב
+    fs: מַלְהִיבָה
+    mp: מַלְהִיבִים
+    fp: מַלְהִיבוֹת
   source_nid: 1414194474
 - id: seasoned
   pos: adjective
-  hebrew: מְתוּבָל
   english: seasoned
+  forms:
+    ms: מְתוּבָל
+    fs: מְתוּבֶּלֶת
+    mp: מְתוּבָּלִים
+    fp: מְתוּבָּלוֹת
   source_nid: 1414194476
 - id: remorseful
   pos: adjective
-  hebrew: מָלֵא חֲרָטָה
   english: remorseful
+  forms:
+    ms: מָלֵא חֲרָטָה
+    fs: מְלֵאַת חֲרָטָה
+    mp: מְלֵאֵי חֲרָטָה
+    fp: מְלֵאוֹת חֲרָטָה
+  needs_review: true
+  review_notes:
+  - construct phrase (מלא חרטה); forms derived from the general construct-state agreement rule for מלא, not independently attested for this exact phrase
   source_nid: 1414194481
 - id: generous
   pos: adjective
-  hebrew: נָדִיב
   english: generous
+  forms:
+    ms: נָדִיב
+    fs: נְדִיבָה
+    mp: נְדִיבִים
+    fp: נְדִיבוֹת
   source_nid: 1414194482
 - id: kind
   pos: adjective
-  hebrew: אָדִיב
   english: kind
+  forms:
+    ms: אָדִיב
+    fs: אֲדִיבָה
+    mp: אֲדִיבִים
+    fp: אֲדִיבוֹת
   source_nid: 1414194484
 - id: bad-tempered
   pos: adjective
-  hebrew: רָגְזָן
   english: bad-tempered, cantankerous
+  forms:
+    ms: רָגְזָן
+    fs: רָגְזָנִית
+    mp: רָגְזָנִים
+    fp: רָגְזָנִיּוֹת
   source_nid: 1414194486
 - id: aggressive
   pos: adjective
-  hebrew: תוֹקְפָנִי
   english: aggressive
+  forms:
+    ms: תוֹקְפָנִי
+    fs: תּוֹקְפָנִית
+    mp: תּוֹקְפָנִיִּים
+    fp: תּוֹקְפָנִיּוֹת
   source_nid: 1414194488
 - id: extroverted
   pos: adjective
-  hebrew: מוּחְצָן
   english: extroverted
+  forms:
+    ms: מוּחְצָן
+    fs: מוּחְצֶנֶת
+    mp: מוּחְצָנִים
+    fp: מוּחְצָנוֹת
   source_nid: 1414194490
 - id: sociable
   pos: adjective
-  hebrew: חֶבְרוּתִי
   english: sociable, social
+  forms:
+    ms: חֶבְרוּתִי
+    fs: חֶבְרוּתִית
+    mp: חֶבְרוּתִיִּים
+    fp: חֶבְרוּתִיּוֹת
   source_nid: 1414194492
 - id: diligent
   pos: adjective
-  hebrew: שָׁקְדָן
   english: diligent
+  forms:
+    ms: שָׁקְדָן
+    fs: שַׁקְדָנִית
+    mp: שַׁקְדָנִים
+    fp: שַׁקְדָנִיּוֹת
   source_nid: 1414194496
 - id: ambitious
   pos: adjective
-  hebrew: שְׁאַפְתָנִי
   english: ambitious
+  forms:
+    ms: שְׁאַפְתָנִי
+    fs: שְׁאַפְתָנִית
+    mp: שְׁאַפְתָנִיִּים
+    fp: שְׁאַפְתָנִיּוֹת
   source_nid: 1414194498
 - id: moody
   pos: adjective
-  hebrew: מְצוּבְרָח
   english: moody
+  forms:
+    ms: מְצוּבְרָח
+    fs: מְצוּבְרַחַת
+    mp: מְצוּבְרָחִים
+    fp: מְצוּבְרָחוֹת
   source_nid: 1414194500
 - id: reliable
   pos: adjective
-  hebrew: מְהֵימָה מְהֵימָה מְהֵימָה מְהֵימָה אָמִין מְהֵימָה מְהֵימָה מְהֵימָה אָמִין מְהֵימָה מְהֵימָה אָמִין מְהֵימָה אָמִין אָמִין
   english: reliable
+  forms:
+    ms: אָמִין
+    fs: אֲמִינָה
+    mp: אֲמִינִים
+    fp: אֲמִינוֹת
+  needs_review: true
+  review_notes:
+  - stored Hebrew was corrupted (repeated/garbled text from extraction) — replaced with אָמִין, the standard word for "reliable"; confirm this is what was intended
   source_nid: 1414194501
 - id: decorative
   pos: adjective

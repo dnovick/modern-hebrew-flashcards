@@ -11,6 +11,8 @@ entries:
   forms:
     ms: טוֹב
     fs: טוֹבָה
+    mp: טוֹבִים
+    fp: טוֹבוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -25,6 +27,8 @@ entries:
   forms:
     ms: נֶחְמָד
     fs: נֶחְמָדָה
+    mp: נֶחְמָדִים
+    fp: נֶחְמָדוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -39,6 +43,8 @@ entries:
   forms:
     ms: אָדִיב
     fs: אֲדִיבָה
+    mp: אֲדִיבִים
+    fp: אֲדִיבוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -53,6 +59,8 @@ entries:
   forms:
     ms: נָדִיב
     fs: נְדִיבָה
+    mp: נְדִיבִים
+    fp: נְדִיבוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -67,6 +75,8 @@ entries:
   forms:
     ms: אַמִּיץ
     fs: אַמִּיצָה
+    mp: אַמִּיצִים
+    fp: אַמִּיצוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -81,6 +91,8 @@ entries:
   forms:
     ms: יָשָׁר
     fs: יְשָׁרָה
+    mp: יְשָׁרִים
+    fp: יְשָׁרוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -95,6 +107,8 @@ entries:
   forms:
     ms: נֶאֱמָן
     fs: נֶאֱמָנָה
+    mp: נֶאֱמָנִים
+    fp: נֶאֱמָנוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -109,6 +123,8 @@ entries:
   forms:
     ms: אָמִין
     fs: אֲמִינָה
+    mp: אֲמִינִים
+    fp: אֲמִינוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -123,6 +139,8 @@ entries:
   forms:
     ms: סַבְלָנִי
     fs: סַבְלָנִית
+    mp: סַבְלָנִיִּים
+    fp: סַבְלָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -137,6 +155,8 @@ entries:
   forms:
     ms: חָרוּץ
     fs: חֲרוּצָה
+    mp: חֲרוּצִים
+    fp: חֲרוּצוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -151,6 +171,8 @@ entries:
   forms:
     ms: אַחְרָאִי
     fs: אַחְרָאִית
+    mp: אַחְרָאִיִּים
+    fp: אַחְרָאִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -165,6 +187,8 @@ entries:
   forms:
     ms: מְנֻמָּס
     fs: מְנֻמֶּסֶת
+    mp: מְנֻמָּסִים
+    fp: מְנֻמָּסוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -179,6 +203,8 @@ entries:
   forms:
     ms: רַחְמָן
     fs: רַחְמָנִית
+    mp: רַחְמָנִים
+    fp: רַחְמָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -193,6 +219,8 @@ entries:
   forms:
     ms: עָנָו
     fs: עֲנָוָה
+    mp: עֲנָוִים
+    fp: עֲנָווֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -207,6 +235,8 @@ entries:
   forms:
     ms: צָנוּעַ
     fs: צְנוּעָה
+    mp: צְנוּעִים
+    fp: צְנוּעוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -221,6 +251,8 @@ entries:
   forms:
     ms: שָׂמֵחַ
     fs: שְׂמֵחָה
+    mp: שְׂמֵחִים
+    fp: שְׂמֵחוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -235,6 +267,8 @@ entries:
   forms:
     ms: עַלִּיז
     fs: עַלִּיזָה
+    mp: עַלִּיזִים
+    fp: עַלִּיזוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -249,6 +283,8 @@ entries:
   forms:
     ms: רָגוּעַ
     fs: רְגוּעָה
+    mp: רְגוּעִים
+    fp: רְגוּעוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -263,6 +299,8 @@ entries:
   forms:
     ms: שָׁקֵט
     fs: שְׁקֵטָה
+    mp: שְׁקֵטִים
+    fp: שְׁקֵטוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -277,6 +315,8 @@ entries:
   forms:
     ms: חֲבֵרוּתִי
     fs: חֲבֵרוּתִית
+    mp: חֲבֵרוּתִיִּים
+    fp: חֲבֵרוּתִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -291,6 +331,8 @@ entries:
   forms:
     ms: רַע
     fs: רָעָה
+    mp: רָעִים
+    fp: רָעוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -305,6 +347,8 @@ entries:
   forms:
     ms: אַכְזָרִי
     fs: אַכְזָרִית
+    mp: אַכְזָרִיִּים
+    fp: אַכְזָרִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -319,6 +363,8 @@ entries:
   forms:
     ms: אָנֹכִי
     fs: אָנֹכִית
+    mp: אָנֹכִיִּים
+    fp: אָנֹכִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -333,6 +379,8 @@ entries:
   forms:
     ms: קַמְצָן
     fs: קַמְצָנִית
+    mp: קַמְצָנִים
+    fp: קַמְצָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -347,6 +395,8 @@ entries:
   forms:
     ms: עַצְלָן
     fs: עַצְלָנִית
+    mp: עַצְלָנִים
+    fp: עַצְלָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -361,6 +411,8 @@ entries:
   forms:
     ms: עַצְבָּנִי
     fs: עַצְבָּנִית
+    mp: עַצְבָּנִיִּים
+    fp: עַצְבָּנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -375,6 +427,8 @@ entries:
   forms:
     ms: גַּאַוְתָן
     fs: גַּאַוְתָנִית
+    mp: גַּאַוְתָנִים
+    fp: גַּאַוְתָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -389,6 +443,8 @@ entries:
   forms:
     ms: יָהִיר
     fs: יְהִירָה
+    mp: יְהִירִים
+    fp: יְהִירוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -403,6 +459,8 @@ entries:
   forms:
     ms: שַׁקְרָן
     fs: שַׁקְרָנִית
+    mp: שַׁקְרָנִים
+    fp: שַׁקְרָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -417,6 +475,8 @@ entries:
   forms:
     ms: רַמַּאי
     fs: רַמָּאִית
+    mp: רַמָּאִים
+    fp: רַמָּאִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -431,6 +491,8 @@ entries:
   forms:
     ms: פַּחְדָן
     fs: פַּחְדָנִית
+    mp: פַּחְדָנִים
+    fp: פַּחְדָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -445,6 +507,8 @@ entries:
   forms:
     ms: טִפֵּשׁ
     fs: טִפְּשָׁה
+    mp: טִפְּשִׁים
+    fp: טִפְּשׁוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -459,6 +523,8 @@ entries:
   forms:
     ms: גַּס
     fs: גַּסָּה
+    mp: גַּסִּים
+    fp: גַּסּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -473,6 +539,8 @@ entries:
   forms:
     ms: חָצוּף
     fs: חֲצוּפָה
+    mp: חֲצוּפִים
+    fp: חֲצוּפוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -487,6 +555,8 @@ entries:
   forms:
     ms: עַקְשָׁן
     fs: עַקְשָׁנִית
+    mp: עַקְשָׁנִים
+    fp: עַקְשָׁנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -501,6 +571,8 @@ entries:
   forms:
     ms: תּוֹקְפָנִי
     fs: תּוֹקְפָנִית
+    mp: תּוֹקְפָנִיִּים
+    fp: תּוֹקְפָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -515,6 +587,8 @@ entries:
   forms:
     ms: אַלִּים
     fs: אַלִּימָה
+    mp: אַלִּימִים
+    fp: אַלִּימוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -529,6 +603,8 @@ entries:
   forms:
     ms: שְׁתַלְטָן
     fs: שְׁתַלְטָנִית
+    mp: שְׁתַלְטָנִים
+    fp: שְׁתַלְטָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -543,6 +619,8 @@ entries:
   forms:
     ms: חַשְׁדָן
     fs: חַשְׁדָנִית
+    mp: חַשְׁדָנִים
+    fp: חַשְׁדָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -557,6 +635,8 @@ entries:
   forms:
     ms: מְפֻנָּק
     fs: מְפֻנֶּקֶת
+    mp: מְפֻנָּקִים
+    fp: מְפֻנָּקוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -571,6 +651,8 @@ entries:
   forms:
     ms: חָכָם
     fs: חֲכָמָה
+    mp: חֲכָמִים
+    fp: חֲכָמוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -584,6 +666,8 @@ entries:
   forms:
     ms: נָבוֹן
     fs: נְבוֹנָה
+    mp: נְבוֹנִים
+    fp: נְבוֹנוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -597,6 +681,8 @@ entries:
   forms:
     ms: פִּקֵּחַ
     fs: פִּקַּחַת
+    mp: פִּקְּחִים
+    fp: פִּקְּחוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -610,6 +696,8 @@ entries:
   forms:
     ms: מַבְרִיק
     fs: מַבְרִיקָה
+    mp: מַבְרִיקִים
+    fp: מַבְרִיקוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -623,6 +711,8 @@ entries:
   forms:
     ms: מוּכְשָׁר
     fs: מוּכְשֶׁרֶת
+    mp: מוּכְשָׁרִים
+    fp: מוּכְשָׁרוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -636,6 +726,8 @@ entries:
   forms:
     ms: יְצִירָתִי
     fs: יְצִירָתִית
+    mp: יְצִירָתִיִּים
+    fp: יְצִירָתִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -649,6 +741,8 @@ entries:
   forms:
     ms: סַקְרָן
     fs: סַקְרָנִית
+    mp: סַקְרָנִים
+    fp: סַקְרָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -662,6 +756,8 @@ entries:
   forms:
     ms: מְלֻמָּד
     fs: מְלֻמֶּדֶת
+    mp: מְלֻמָּדִים
+    fp: מְלֻמָּדוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -675,6 +771,8 @@ entries:
   forms:
     ms: מְנֻסֶּה
     fs: מְנֻסָּה
+    mp: מְנֻסִּים
+    fp: מְנֻסּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -688,6 +786,8 @@ entries:
   forms:
     ms: קַפְּדָן
     fs: קַפְּדָנִית
+    mp: קַפְּדָנִים
+    fp: קַפְּדָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -701,6 +801,8 @@ entries:
   forms:
     ms: עָצוּב
     fs: עֲצוּבָה
+    mp: עֲצוּבִים
+    fp: עֲצוּבוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -714,6 +816,8 @@ entries:
   forms:
     ms: כּוֹעֵס
     fs: כּוֹעֶסֶת
+    mp: כּוֹעֲסִים
+    fp: כּוֹעֲסוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -727,6 +831,8 @@ entries:
   forms:
     ms: מְאֻשָּׁר
     fs: מְאֻשֶּׁרֶת
+    mp: מְאֻשָּׁרִים
+    fp: מְאֻשָּׁרוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -740,6 +846,8 @@ entries:
   forms:
     ms: עָיֵף
     fs: עֲיֵפָה
+    mp: עֲיֵפִים
+    fp: עֲיֵפוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -753,6 +861,8 @@ entries:
   forms:
     ms: מֻדְאָג
     fs: מֻדְאֶגֶת
+    mp: מֻדְאָגִים
+    fp: מֻדְאָגוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -766,6 +876,8 @@ entries:
   forms:
     ms: נִרְגָּשׁ
     fs: נִרְגֶּשֶׁת
+    mp: נִרְגָּשִׁים
+    fp: נִרְגָּשׁוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -779,6 +891,8 @@ entries:
   forms:
     ms: מְבֻלְבָּל
     fs: מְבֻלְבֶּלֶת
+    mp: מְבֻלְבָּלִים
+    fp: מְבֻלְבָּלוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -792,6 +906,8 @@ entries:
   forms:
     ms: בָּטוּחַ
     fs: בְּטוּחָה
+    mp: בְּטוּחִים
+    fp: בְּטוּחוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -805,6 +921,8 @@ entries:
   forms:
     ms: בַּיְשָׁן
     fs: בַּיְשָׁנִית
+    mp: בַּיְשָׁנִים
+    fp: בַּיְשָׁנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -818,6 +936,8 @@ entries:
   forms:
     ms: מְפֻחָד
     fs: מְפֻחֶדֶת
+    mp: מְפֻחָדִים
+    fp: מְפֻחָדוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -831,6 +951,8 @@ entries:
   forms:
     ms: רָעֵב
     fs: רְעֵבָה
+    mp: רְעֵבִים
+    fp: רְעֵבוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -844,6 +966,8 @@ entries:
   forms:
     ms: צָמֵא
     fs: צְמֵאָה
+    mp: צְמֵאִים
+    fp: צְמֵאוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -857,6 +981,8 @@ entries:
   forms:
     ms: גֵּאֶה
     fs: גֵּאָה
+    mp: גֵּאִים
+    fp: גֵּאוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -870,6 +996,8 @@ entries:
   forms:
     ms: מְאֹהָב
     fs: מְאֹהֶבֶת
+    mp: מְאֹהָבִים
+    fp: מְאֹהָבוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -883,6 +1011,8 @@ entries:
   forms:
     ms: מְאֻכְזָב
     fs: מְאֻכְזֶבֶת
+    mp: מְאֻכְזָבִים
+    fp: מְאֻכְזָבוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -896,6 +1026,8 @@ entries:
   forms:
     ms: יָפֶה
     fs: יָפָה
+    mp: יָפִים
+    fp: יָפוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -909,6 +1041,8 @@ entries:
   forms:
     ms: מְכֹעָר
     fs: מְכֹעֶרֶת
+    mp: מְכֹעָרִים
+    fp: מְכֹעָרוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -922,6 +1056,8 @@ entries:
   forms:
     ms: גָּבוֹהַּ
     fs: גְּבוֹהָה
+    mp: גְּבוֹהִים
+    fp: גְּבוֹהוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -935,6 +1071,8 @@ entries:
   forms:
     ms: נָמוּךְ
     fs: נְמוּכָה
+    mp: נְמוּכִים
+    fp: נְמוּכוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -948,6 +1086,8 @@ entries:
   forms:
     ms: רָזֶה
     fs: רָזָה
+    mp: רָזִים
+    fp: רָזוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -961,6 +1101,8 @@ entries:
   forms:
     ms: שָׁמֵן
     fs: שְׁמֵנָה
+    mp: שְׁמֵנִים
+    fp: שְׁמֵנוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -974,6 +1116,8 @@ entries:
   forms:
     ms: חָזָק
     fs: חֲזָקָה
+    mp: חֲזָקִים
+    fp: חֲזָקוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -987,6 +1131,8 @@ entries:
   forms:
     ms: חַלָּשׁ
     fs: חַלָּשָׁה
+    mp: חַלָּשִׁים
+    fp: חַלָּשׁוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1000,6 +1146,8 @@ entries:
   forms:
     ms: צָעִיר
     fs: צְעִירָה
+    mp: צְעִירִים
+    fp: צְעִירוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1013,6 +1161,8 @@ entries:
   forms:
     ms: זָקֵן
     fs: זְקֵנָה
+    mp: זְקֵנִים
+    fp: זְקֵנוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1026,6 +1176,8 @@ entries:
   forms:
     ms: בָּרִיא
     fs: בְּרִיאָה
+    mp: בְּרִיאִים
+    fp: בְּרִיאוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1039,6 +1191,8 @@ entries:
   forms:
     ms: חוֹלֶה
     fs: חוֹלָה
+    mp: חוֹלִים
+    fp: חוֹלוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1052,6 +1206,8 @@ entries:
   forms:
     ms: שָׁזוּף
     fs: שְׁזוּפָה
+    mp: שְׁזוּפִים
+    fp: שְׁזוּפוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1065,6 +1221,8 @@ entries:
   forms:
     ms: בָּהִיר
     fs: בְּהִירָה
+    mp: בְּהִירִים
+    fp: בְּהִירוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1078,6 +1236,8 @@ entries:
   forms:
     ms: כֵּהֶה
     fs: כֵּהָה
+    mp: כֵּהִים
+    fp: כֵּהוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1091,6 +1251,8 @@ entries:
   forms:
     ms: קֵרֵחַ
     fs: קֵרַחַת
+    mp: קֵרְחִים
+    fp: קֵרְחוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1104,6 +1266,8 @@ entries:
   forms:
     ms: שְׁרִירִי
     fs: שְׁרִירִית
+    mp: שְׁרִירִיִּים
+    fp: שְׁרִירִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1117,6 +1281,8 @@ entries:
   forms:
     ms: זָרִיז
     fs: זְרִיזָה
+    mp: זְרִיזִים
+    fp: זְרִיזוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1130,6 +1296,8 @@ entries:
   forms:
     ms: מְגֻשָּׁם
     fs: מְגֻשֶּׁמֶת
+    mp: מְגֻשָּׁמִים
+    fp: מְגֻשָּׁמוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1143,6 +1311,8 @@ entries:
   forms:
     ms: עָשִׁיר
     fs: עֲשִׁירָה
+    mp: עֲשִׁירִים
+    fp: עֲשִׁירוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1156,6 +1326,8 @@ entries:
   forms:
     ms: נָשׂוּי
     fs: נְשׂוּאָה
+    mp: נְשׂוּאִים
+    fp: נְשׂוּאוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1169,6 +1341,8 @@ entries:
   forms:
     ms: רַוָּק
     fs: רַוָּקָה
+    mp: רַוָּקִים
+    fp: רַוָּקוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1182,6 +1356,8 @@ entries:
   forms:
     ms: מְפֻרְסָם
     fs: מְפֻרְסֶמֶת
+    mp: מְפֻרְסָמִים
+    fp: מְפֻרְסָמוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1195,6 +1371,8 @@ entries:
   forms:
     ms: בּוֹדֵד
     fs: בּוֹדֵדָה
+    mp: בּוֹדְדִים
+    fp: בּוֹדְדוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1208,6 +1386,8 @@ entries:
   forms:
     ms: מַצְחִיק
     fs: מַצְחִיקָה
+    mp: מַצְחִיקִים
+    fp: מַצְחִיקוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1221,6 +1401,8 @@ entries:
   forms:
     ms: מְשַׁעֲמֵם
     fs: מְשַׁעֲמֶמֶת
+    mp: מְשַׁעַמְמִים
+    fp: מְשַׁעַמְמוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1234,6 +1416,8 @@ entries:
   forms:
     ms: רְצִינִי
     fs: רְצִינִית
+    mp: רְצִינִיִּים
+    fp: רְצִינִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1247,6 +1431,8 @@ entries:
   forms:
     ms: מוּזָר
     fs: מוּזָרָה
+    mp: מוּזָרִים
+    fp: מוּזָרוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1260,6 +1446,8 @@ entries:
   forms:
     ms: דָּתִי
     fs: דָּתִית
+    mp: דָּתִיִּים
+    fp: דָּתִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1273,6 +1461,8 @@ entries:
   forms:
     ms: חִלּוֹנִי
     fs: חִלּוֹנִית
+    mp: חִלּוֹנִיִּים
+    fp: חִלּוֹנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1286,6 +1476,8 @@ entries:
   forms:
     ms: רָגִישׁ
     fs: רְגִישָׁה
+    mp: רְגִישִׁים
+    fp: רְגִישׁוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1299,6 +1491,8 @@ entries:
   forms:
     ms: קָשׁוּחַ
     fs: קְשׁוּחָה
+    mp: קְשׁוּחִים
+    fp: קְשׁוּחוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1312,6 +1506,8 @@ entries:
   forms:
     ms: אָדִישׁ
     fs: אֲדִישָׁה
+    mp: אֲדִישִׁים
+    fp: אֲדִישׁוֹת
   tags:
   - topic::human-attributes
   - adjectives
@@ -1325,6 +1521,8 @@ entries:
   forms:
     ms: וַתְרָן
     fs: וַתְרָנִית
+    mp: וַתְרָנִים
+    fp: וַתְרָנִיּוֹת
   tags:
   - topic::human-attributes
   - adjectives
