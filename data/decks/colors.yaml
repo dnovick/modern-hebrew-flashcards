@@ -1,0 +1,162 @@
+meta:
+  name: Adjectives::Colors
+  card_types:
+  - audio_meaning
+entries:
+- id: red
+  pos: adjective
+  english: red
+  forms:
+    ms: אָדֹם
+    fs: אֲדֻמָּה
+    mp: אֲדֻמִּים
+    fp: אֲדֻמּוֹת
+  tags:
+  - topic::colors
+- id: orange
+  pos: adjective
+  english: orange
+  forms:
+    ms: כָּתֹם
+    fs: כְּתֻמָּה
+    mp: כְּתֻמִּים
+    fp: כְּתֻמּוֹת
+  tags:
+  - topic::colors
+- id: yellow
+  pos: adjective
+  english: yellow
+  forms:
+    ms: צָהֹב
+    fs: צְהֻבָּה
+    mp: צְהֻבִּים
+    fp: צְהֻבּוֹת
+  tags:
+  - topic::colors
+- id: green
+  pos: adjective
+  english: green
+  forms:
+    ms: יָרֹק
+    fs: יְרֻקָּה
+    mp: יְרֻקִּים
+    fp: יְרֻקּוֹת
+  tags:
+  - topic::colors
+- id: blue
+  pos: adjective
+  english: blue
+  forms:
+    ms: כָּחֹל
+    fs: כְּחֻלָּה
+    mp: כְּחֻלִּים
+    fp: כְּחֻלּוֹת
+  tags:
+  - topic::colors
+- id: purple
+  pos: adjective
+  english: purple
+  forms:
+    ms: סָגֹל
+    fs: סְגֻלָּה
+    mp: סְגֻלִּים
+    fp: סְגֻלּוֹת
+  tags:
+  - topic::colors
+- id: pink
+  pos: adjective
+  english: pink
+  forms:
+    ms: וָרֹד
+    fs: וְרֻדָּה
+    mp: וְרֻדִּים
+    fp: וְרֻדּוֹת
+  tags:
+  - topic::colors
+- id: brown
+  pos: adjective
+  english: brown
+  forms:
+    ms: חוּם
+    fs: חוּמָה
+    mp: חוּמִים
+    fp: חוּמוֹת
+  tags:
+  - topic::colors
+- id: black
+  pos: adjective
+  english: black
+  forms:
+    ms: שָׁחֹר
+    fs: שְׁחֹרָה
+    mp: שְׁחֹרִים
+    fp: שְׁחֹרוֹת
+  tags:
+  - topic::colors
+- id: white
+  pos: adjective
+  english: white
+  forms:
+    ms: לָבָן
+    fs: לְבָנָה
+    mp: לְבָנִים
+    fp: לְבָנוֹת
+  tags:
+  - topic::colors
+- id: gray
+  pos: adjective
+  english: gray, grey
+  forms:
+    ms: אָפֹר
+    fs: אֲפֹרָה
+    mp: אֲפֹרִים
+    fp: אֲפֹרוֹת
+  tags:
+  - topic::colors
+- id: gold
+  pos: adjective
+  english: gold, golden
+  forms:
+    ms: זָהֹב
+    fs: זְהֻבָּה
+    mp: זְהֻבִּים
+    fp: זְהֻבּוֹת
+  tags:
+  - topic::colors
+- id: silver
+  pos: adjective
+  english: silver
+  forms:
+    ms: כַּסְפִּי
+    fs: כַּסְפִּית
+    mp: כַּסְפִּיִּים
+    fp: כַּסְפִּיּוֹת
+  tags:
+  - topic::colors
+- id: turquoise
+  pos: adjective
+  english: turquoise
+  forms:
+    ms: טוּרְקִיז
+    fs: טוּרְקִיז
+    mp: טוּרְקִיז
+    fp: טוּרְקִיז
+  tags:
+  - topic::colors
+  review_notes:
+  - modern loanword; does not inflect for gender/number in normal usage — all four
+    forms are the same word, this is correct, not missing data
+- id: beige
+  pos: adjective
+  english: beige
+  forms:
+    ms: בֵּז'
+    fs: בֵּז'
+    mp: בֵּז'
+    fp: בֵּז'
+  tags:
+  - topic::colors
+  review_notes:
+  - modern loanword, non-inflecting like turquoise; this specific word's
+    non-inflection is inferred from the same pattern in other invariant color
+    loanwords (turquoise, burgundy) rather than independently sourced

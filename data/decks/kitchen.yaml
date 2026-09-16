@@ -1,0 +1,230 @@
+meta:
+  name: Nouns::Kitchen
+  card_types:
+  - audio_meaning
+entries:
+- id: pot
+  pos: noun
+  hebrew: סִיר
+  english: pot
+  gender: m
+  plural: סִירִים
+  tags:
+  - topic::kitchen
+- id: frying-pan
+  pos: noun
+  hebrew: מַחְבָת
+  english: frying pan
+  gender: f
+  plural: מַחְבַתּוֹת
+  tags:
+  - topic::kitchen
+- id: plate
+  pos: noun
+  hebrew: צַלַּחַת
+  english: plate
+  gender: f
+  plural: צַלָּחוֹת
+  tags:
+  - topic::kitchen
+- id: bowl
+  pos: noun
+  hebrew: קְעָרָה
+  english: bowl
+  gender: f
+  plural: קְעָרוֹת
+  tags:
+  - topic::kitchen
+- id: cup
+  pos: noun
+  hebrew: כּוֹס
+  english: cup, glass (drinking vessel)
+  gender: f
+  plural: כּוֹסוֹת
+  tags:
+  - topic::kitchen
+- id: mug
+  pos: noun
+  hebrew: סֵפֶל
+  english: mug
+  gender: m
+  plural: סְפָלִים
+  tags:
+  - topic::kitchen
+- id: fork
+  pos: noun
+  hebrew: מַזְלֵג
+  english: fork
+  gender: m
+  plural: מַזְלְגוֹת
+  tags:
+  - topic::kitchen
+  review_notes:
+  - irregular -ot plural despite masculine gender; verified, not a guess
+- id: knife
+  pos: noun
+  hebrew: סַכִּין
+  english: knife
+  gender: f
+  plural: סַכִּינִים
+  tags:
+  - topic::kitchen
+  review_notes:
+  - traditionally a dual-gender noun (m or f); f is standard in modern spoken
+    Hebrew and is what's stored here
+- id: spoon
+  pos: noun
+  hebrew: כַּף
+  english: spoon
+  gender: f
+  plural: כַּפּוֹת
+  tags:
+  - topic::kitchen
+  review_notes:
+  - the dual form כַּפַּיִם is also commonly used colloquially in place of the plural
+- id: teaspoon
+  pos: noun
+  hebrew: כַּפִּית
+  english: teaspoon
+  gender: f
+  plural: כַּפִּיּוֹת
+  tags:
+  - topic::kitchen
+- id: stove
+  pos: noun
+  hebrew: כִּירָה
+  english: stove
+  gender: f
+  plural: כִּירוֹת
+  tags:
+  - topic::kitchen
+  review_notes:
+  - the dual כִּירַיִם is the more common everyday word for a stovetop specifically
+- id: oven
+  pos: noun
+  hebrew: תַּנּוּר
+  english: oven
+  gender: m
+  plural: תַּנּוּרִים
+  tags:
+  - topic::kitchen
+- id: refrigerator
+  pos: noun
+  hebrew: מְקָרֵר
+  english: refrigerator
+  gender: m
+  plural: מְקָרְרִים
+  tags:
+  - topic::kitchen
+- id: sink
+  pos: noun
+  hebrew: כִּיּוֹר
+  english: sink
+  gender: m
+  plural: כִּיּוֹרִים
+  tags:
+  - topic::kitchen
+- id: cutting-board
+  pos: noun
+  hebrew: קֶרֶשׁ חִתּוּךְ
+  english: cutting board
+  gender: m
+  plural: קַרְשֵׁי חִתּוּךְ
+  needs_review: true
+  review_notes:
+  - compound noun; קרש's own inflection is confirmed, but the exact nikud of חיתוך
+    within this specific compound is not independently attested
+  tags:
+  - topic::kitchen
+- id: kettle
+  pos: noun
+  hebrew: קוּמְקוּם
+  english: kettle
+  gender: m
+  plural: קוּמְקוּמִים
+  tags:
+  - topic::kitchen
+- id: napkin
+  pos: noun
+  hebrew: מַפִּית
+  english: napkin
+  gender: f
+  plural: מַפִּיּוֹת
+  tags:
+  - topic::kitchen
+- id: tablecloth
+  pos: noun
+  hebrew: מַפָּה
+  english: tablecloth
+  gender: f
+  plural: מַפּוֹת
+  tags:
+  - topic::kitchen
+- id: cupboard
+  pos: noun
+  hebrew: אָרוֹן
+  english: cupboard, cabinet
+  gender: m
+  plural: אֲרוֹנוֹת
+  tags:
+  - topic::kitchen
+- id: microwave
+  pos: noun
+  hebrew: מִיקְרוֹגַל
+  english: microwave
+  gender: m
+  plural: מִיקְרוֹגַלִים
+  tags:
+  - topic::kitchen
+- id: dishwasher
+  pos: noun
+  hebrew: מֵדִיחַ
+  english: dishwasher
+  gender: m
+  plural: מְדִיחִים
+  tags:
+  - topic::kitchen
+- id: strainer
+  pos: noun
+  hebrew: מִסְנֶנֶת
+  english: strainer, colander
+  gender: f
+  plural: מִסְנָנוֹת
+  tags:
+  - topic::kitchen
+- id: grater
+  pos: noun
+  hebrew: מִגְרֶרֶת
+  english: grater
+  gender: f
+  plural: מִגְרָרוֹת
+  tags:
+  - topic::kitchen
+- id: whisk
+  pos: noun
+  hebrew: מַקְצִיף
+  english: whisk
+  gender: m
+  plural: מַקְצִיפִים
+  tags:
+  - topic::kitchen
+- id: apron
+  pos: noun
+  hebrew: סִינָר
+  english: apron
+  gender: m
+  plural: סִינָרִים
+  needs_review: true
+  review_notes:
+  - plural not independently attested (Wiktionary explicitly lists it as missing);
+    proposed by the regular masculine pattern
+  tags:
+  - topic::kitchen
+- id: tray
+  pos: noun
+  hebrew: מַגָּשׁ
+  english: tray
+  gender: m
+  plural: מַגָּשִׁים
+  tags:
+  - topic::kitchen
