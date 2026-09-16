@@ -92,6 +92,39 @@ def test_an_adjective_edit_updates_the_ms_form_too() -> None:
     assert entry.forms == {"ms": "טוֹב", "fs": "טוֹבָה"}
 
 
+def test_an_adjective_with_only_forms_is_not_falsely_stale() -> None:
+    """forms["ms"] is the citation form for an entry with no separate `hebrew` key.
+
+    Regression test: adjectives.yaml switched to this forms-only convention once
+    every entry had a full paradigm (see the agreement-forms enrichment), and
+    _citation() initially only checked `hebrew`/`lemma` — every such entry read as
+    an empty citation, which find_stale mistook for the collection being behind.
+    """
+    from hebrew_cards.review import find_stale
+
+    entry = Entry(
+        id="ball", pos="adjective", english="good",
+        forms={"ms": "טוֹב", "fs": "טוֹבָה", "mp": "טוֹבִים", "fp": "טוֹבוֹת"},
+    )
+    decks = a_deck(entry)
+    note = flagged_note("ball", "טוֹב", FLAG_NONE)
+    note = RawNote(**{**note.__dict__, "fields": ("טוֹב", "good", "", "", "", "", "")})
+    assert find_stale(decks, [note]) == []
+
+
+def test_an_edit_on_a_forms_only_adjective_updates_ms_not_hebrew() -> None:
+    """Harvesting an edit must not resurrect a `hebrew` key the convention dropped."""
+    entry = Entry(
+        id="ball", pos="adjective", english="good",
+        forms={"ms": "טוב", "fs": "טוֹבָה", "mp": "טוֹבִים", "fp": "טוֹבוֹת"},
+        needs_review=True,
+    )
+    decks = a_deck(entry)
+    harvest(decks, [flagged_note("ball", "טוֹב", FLAG_GREEN)])
+    assert entry.forms is not None and entry.forms["ms"] == "טוֹב"
+    assert entry.hebrew is None
+
+
 def test_an_empty_field_never_wipes_the_hebrew() -> None:
     """A blank field in Anki is far more likely a mistake than an intended deletion."""
     entry = an_entry()
