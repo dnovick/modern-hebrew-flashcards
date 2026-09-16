@@ -83,13 +83,29 @@ class HarvestResult:
 
 
 def _citation(entry: Entry) -> str:
-    return entry.hebrew or entry.lemma or ""
+    """The citation form Anki actually shows, mirroring build._field_values.
+
+    Nouns/verbs carry `hebrew`/`lemma` directly. An adjective may carry either
+    that too (a leftover from extraction, e.g. human-attributes.yaml) or rely
+    entirely on `forms["ms"]` (the documented convention, used once an entry has
+    its full paradigm) — check both rather than assuming the first is set.
+    """
+    if entry.hebrew:
+        return entry.hebrew
+    if entry.lemma:
+        return entry.lemma
+    if entry.forms:
+        return entry.forms.get("ms", "")
+    return ""
 
 
 def _set_citation(entry: Entry, value: str) -> None:
     if entry.lemma is not None:
         entry.lemma = value
-    else:
+    elif entry.hebrew is not None or not (entry.forms and "ms" in entry.forms):
+        # Only fall back to `hebrew` when there's no forms["ms"] to carry the
+        # citation instead — an entry using the forms-only convention should
+        # stay that way rather than have `hebrew` resurrected by a harvest.
         entry.hebrew = value
     if entry.forms and "ms" in entry.forms:
         entry.forms["ms"] = value
